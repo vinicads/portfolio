@@ -5,13 +5,24 @@
     padding: 0;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
-    overflow-x: hidden;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 body {
 
     min-height: 100vh;
+    background-color: #0e0101;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #B385F2;
+}
+
+::-webkit-scrollbar-track{
     background-color: #060000;
 }
 
@@ -28,6 +39,7 @@ nav {
     z-index: 100;
     height: 10vh;
     transition: 0.5s ease-in-out;
+    letter-spacing: 2px;
 }
 
 .fixed {
@@ -37,7 +49,16 @@ nav {
     z-index: 1000;
     background-color: #060000;
     z-index: 1000;
-    box-shadow: #B385F2 0px 5px 15px 0px;
+}
+
+.fixed::after {
+    content: '';
+    position: absolute;
+    background-color: #B385F2;
+    width: 100%;
+    height: 1vh;
+    top: 10vh;
+    filter: blur(5px);
 }
 
 .fixed.animate-in {
@@ -98,13 +119,13 @@ nav {
 }
 
 .navigation li::after {
-    content: " ";
+    content: "";
     width: 0;
-    height: 4px;
+    height: 2px;
     background-color: #B385F2;
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 0;    
     transition: 0.3s ease-in-out;
 }
 
@@ -140,6 +161,7 @@ nav {
    align-items: center;
    height: 100vh;
    overflow-y: hidden;
+   letter-spacing: 2px;
 }
 
 .parallax img{
@@ -215,6 +237,27 @@ nav {
     opacity: 0.8;
 }
 
+.textAnimate{
+    color: transparent;
+    font-size: 4vw;
+    background: linear-gradient(45deg, red, blue, green);
+    background-size: 400% 100%;
+    animation: degradeAnimation 5s linear alternate infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin: 2%;
+}
+
+@keyframes degradeAnimation {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 100%;
+    }
+}
+
 
 @keyframes cursor {
     to{
@@ -234,13 +277,213 @@ nav {
     }
 }
 
+.display {
+    z-index: 100;
+    width: 1024px;
+    margin: 10% auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 2%;
+
+}
+
+.myPhoto {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: 0.3s ease-in-out;
+}
+
+.box-degrade {
+    position: relative;
+    width: 80%;
+    background-color: #060000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+
+.box-degrade::before, .box-degrade::after {
+    content: '';
+    position: absolute;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    background: linear-gradient(90deg, red, blue, green);
+    z-index: -1;
+    background-size: 500% 100%;
+    border-radius: 15px;
+    animation: degradeAnimation 2s linear alternate infinite;
+}
+
+.box-degrade img{
+    width: 100%;
+    border-radius: 15px;
+    filter: grayscale(100%);
+    transition: 0.3s ease-in-out;
+}
+
+.myPhoto:hover{
+    transform: translatey(-10px);
+}
+
+.myPhoto .box-degrade img:hover{
+    filter: grayscale(0);
+}
+
+
+div.whoIAm {
+    width: 60%;
+    color: white;
+    text-align: center;
+}
+
+div.whoIAm .text {
+    font-size: 1vw;
+    text-align: left;
+}
+
+.dinamicCard {
+    border: 1px solid #333333;
+    border-radius: 10px;
+    padding: 2%;
+}
+
+.items {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.item {
+    font-size: 1vw;
+    cursor: pointer;
+    margin-right: 1.5%;
+    transition: 0.3s  ease-in-out;
+}
+
+.emphasis { 
+    color: #B385F2;
+}
+
+.paragraph {
+    margin: 2%;
+}
+
+.item:hover, .item.active {
+    color: #B385F2;
+}
+
+.dinamicCard .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dinamicCard .skills, .education {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    padding: 3%;
+    transform: translateX(10px);
+}
+
+.cardItem {
+    text-align: left;
+    font-size: 1vw;
+    margin: 5%;
+}
+
+.titleItem {
+    margin-bottom: 0.5rem;
+}
+
+.cardContent ul {
+    list-style: none;
+}
+
+.skills {
+    display: grid;
+}
+
+.education {
+    display: none;
+}
+
+.in {
+    animation: join 0.3s forwards linear;
+}
+
+.out {
+    animation: exit 0.3s forwards linear;
+}
+
+@keyframes join {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes exit {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.cardsServ{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.cardServ{
+    flex-direction: column;
+    background-color: #060000;
+    width:auto;
+    text-align: center;
+    color: #fff;
+    padding: 2%;
+    margin: 5%;
+    transition: 0.3s linear;
+}
+
+.cardServ:hover{
+    background-color: transparent;
+    transform: translateY(-5px);
+}
+
+.cardServ img{
+    width: 50%;
+    filter: invert(100%);
+    height: auto;
+}
+
+.cardServ div {
+    font-size: 1vw;
+    margin: 5%;
+}
+
+.titleCard {
+    font-size: 2.5vw !important;
+}
+
 
 @media (max-width: 1024px){
 
-    .parallax img {
+    .display {
         width: auto;
-        object-fit: cover; 
-        object-position: center;
     }
 
     .cards{
@@ -253,6 +496,34 @@ nav {
 
     .info{
         font-size: 1.5vw;
+    }
+
+    .textAnimate {
+        font-size: 5vw;
+    }
+
+    div.whoIAm .text {
+        font-size: 1.5vw;
+    }
+
+    .item {
+        font-size: 1.5vw;
+    }
+
+    .cardItem {
+        font-size: 1.5vw;
+    }
+
+    .cardServ div {
+        font-size: 1.5vw;
+    }
+    
+    .titleCard {
+        font-size: 3.0vw !important;
+    }
+
+    .cardServ img{
+        width: 30%;
     }
 }
 
@@ -352,6 +623,87 @@ nav {
     .info{
         font-size: 2vw;
     }
+
+    .display {
+        flex-direction: column-reverse;    
+    }
+
+    div.whoIAm{
+        width: 100%;
+        background-color: black;
+        margin-bottom: 2%;
+        margin-bottom: 3%;
+    }
+
+    div.whoIAm .text{
+        font-size: 1.7vw;
+    }
+
+    .textAnimate {
+        font-size: 6vw;
+    }
+
+    .item {
+        font-size: 1.7vw;
+    }
+
+    .cardItem {
+        font-size: 1.7vw;
+    }
+
+    .myPhoto {
+        width: 60%;
+    }
+
+    .cardServ div {
+        font-size: 1.7vw;
+    }
+    
+    .titleCard {
+        font-size: 3..5vw !important;
+    }
+}
+
+@media (max-width: 630px){
+    .parallax {
+        overflow-x: hidden;
+    }
+
+    div.whoIAm .text{
+        font-size: 2vw;
+    }
+
+    .textAnimate {
+        font-size: 6vw;
+    }
+
+    .item {
+        font-size: 2vw;
+    }
+
+    .cardItem {
+        font-size: 2vw;
+    }
+
+    .cardServ div {
+        font-size: 2vw;
+    }
+    
+    .titleCard {
+        font-size: 3.5vw !important;
+    }
+}
+
+@media (max-width: 600px){
+    .parallax img {
+        width: auto;
+        object-fit: cover; 
+        object-position: center;
+    }
+
+    .cardServ img{
+        width: 40%;
+    }
 }
 
 @media (max-width: 425px){
@@ -370,6 +722,34 @@ nav {
     .info{
         font-size: 3vw;
     }
+
+    div.whoIAm .text{
+        font-size: 2.5vw;
+    }
+
+    .textAnimate {
+        font-size: 7vw;
+    }
+
+    .item {
+        font-size: 2.5vw;
+    }
+
+    .cardItem {
+        font-size: 2.5vw;
+    }
+
+    .cardServ div {
+        font-size: 2.5vw;
+    }
+    
+    .titleCard {
+        font-size: 4vw !important;
+    }
+
+    .cardServ img{
+        width: 20%;
+    }
 }
 
 @media (max-width: 320px){
@@ -377,5 +757,28 @@ nav {
         width: 40%;
     }
 
+    div.whoIAm .text{
+        font-size: 3vw;
+    }
+
+    .textAnimate {
+        font-size: 8vw;
+    }
+
+    .item {
+        font-size: 3vw;
+    }
+
+    .cardItem {
+        font-size: 3vw;
+    }
+
+    .cardServ div {
+        font-size: 3vw;
+    }
+    
+    .titleCard {
+        font-size: 5vw !important;
+    }
 }
 

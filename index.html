@@ -29,22 +29,155 @@
         <img src="./assets/images/background-parafall.jpg" id="fundoCompleto">
         <h2 id="text">
             <div class="textChange">
-                <div>Ola, sou</div> &nbsp; <label class="animated-text" id="animated-text"></label>
+                <div>Olá, sou</div> &nbsp; <label class="animated-text" id="animated-text"></label>
             </div>
-                <div class="smallText">Transformando ideias em verdadeiras experiencias digitais.</div>
+                <div class="smallText">Transformando ideias em verdadeiras experiências digitais.</div>
                 <div class="cards">
                     <div class="card">
-                        <div class="number">2</div>
+                        <div class="number" data-value="2">0</div>
                         <div class="info">Projetos</div>
                     </div>
                     <div class="card">
-                        <div class="number">6</div>
+                        <div class="number" data-value="6">0</div>
                         <div class="info">Meses</div>
                     </div>
                 </div>
         </h2>
         <img src="./assets/images/baixoFundo.png" id="baixoFundo">
     </section>
+    <section class="display">
+        <div class="myPhoto">
+            <div class="box-degrade">
+                <img src="./assets/images/imagemQuemSouEu.jpg" alt="">
+            </div>
+        </div>
+        <div class="whoIAm">
+            <h1 class="textAnimate">Quem sou eu</h1>
+            <div class="text">
+                <div class="paragraph">
+                    Olá, me chamo <label for="" class="emphasis">Vinicius Augusto dos Santos</label>,
+                tenho <label for="" class="empashis">19 anos</label>e sou um amante da área de tecnologia.</div>
+                <div class="paragraph">
+                    Tenho como objetivo criar experiências únicas com sistemas desenvolvidos seguindo as
+                    <label for="" class="empashis">melhores práticas da programação</label>, com um <label for="" class="emphasis">design moderno</label>,
+                    <label for="" class="empashis">responsivo</label> e <label for="" class="emphasis">fácil</label>.
+                </div>
+                <div class="paragraph">
+                    Meu principal foco é o <label for="" class="emphasis">desenvolvimento WEB</label>, porém, estou disposto à ir átras do que for preciso para
+                    <label for="" class="emphasis">transformar a sua ideia</label>, em uma <label for="" class="emphasis">realidade</label>.
+                </div>
+            </div>
+            <div class="dinamicCard">
+                <ul class="items">
+                    <li class="item active" id="skillsMenu" onclick="alternateContent(1)">Habilidades</li>
+                    <li class="item" id="educationMenu" onclick="alternateContent(2)">Educação</li>
+                </ul>
+                <div class="content">
+                    <div class="skills in" id="skills">
+                        <div class="cardItem">
+                            <div class="titleItem">Frontend:</div>
+                            <div class="cardContent">
+                                <ul>
+                                    <li>HTML, CSS, JS;</li>
+                                    <li>Vue;</li>
+                                    <li>Bootstrap.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="cardItem">
+                            <div class="titleItem">Backend:</div>
+                            <div class="cardContent">
+                                <ul>
+                                    <li>Express;</li>
+                                    <li>Sequelize;</li>
+                                    <li>Prisma;</li>
+                                    <li>Nest.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="cardItem">
+                            <div class="titleItem">Desenvolvimento de jogos:</div>
+                            <div class="cardContent">
+                                <ul>
+                                    <li>Gamemaker.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="education" id="education">
+                        <div class="cardItem">
+                            <div class="titleItem">Ensino médio:</div>
+                            <div class="cardContent">
+                                <ul>
+                                    <li>Eletrô Mococa</li>
+                                    <li>2020 até 2022</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="cardItem">
+                            <div class="titleItem">Curso técnico:</div>
+                            <div class="cardContent">
+                                <ul>
+                                    <li>Desenvolvimento de Sistemas</li>
+                                    <li>2020 até 2022</li>
+                                    <li>Finalizado</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="cardItem">
+                            <div class="titleItem">Curso superior:</div>
+                            <div class="cardContent">
+                                <ul>
+                                    <li>Fatec Mococa</li>
+                                    <li>2023 até agora</li>
+                                    <li>Cursando</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="display">
+        <div style="text-align: center;">
+            <h1 class="textAnimate">Serviços</h1>
+            <div class="cardsServ">
+                <div class="cardServ box-degrade">
+                    <div><img src="./assets/icons/web.png" alt=""></div>
+                    <div class="titleCard">Desenvolvimento WEB</div>
+                    <div>Desenvolvimento de sites responsivos e intuitivos, feito do jeitinho que você desejar, usando as melhores práticas e tecnologias mais modernas.</div>
+                </div>
+                <div class="box-degrade cardServ">
+                    <div><img src="./assets/icons/game.png" alt=""></div>
+                    <div class="titleCard">Jogos</div>
+                    <div>Criação de jogos pixelados com objetivo de proporcionar uma experiência única ao usuário.</div>
+                </div>
+                <div class="box-degrade cardServ">
+                    <div><img src="./assets/icons/ecommerce.png" alt=""></div>
+                    <div class="titleCard">E-commerce</div>
+                    <div>Uma ótima alternativa para expor seu comércio para o mundo! Criação de lojas online para você vender seus produtos ou serviços com total controle e segurança.</div>
+                </div>
+                <div class="box-degrade cardServ">
+                    <div><img src="./assets/icons/seguranca.png" alt=""></div>
+                    <div class="titleCard">Dados e Segurança</div>
+                    <div>Implementação das melhores práticas de segurança para proteger dados sensíveis e a integridade das informações dos sistemas.</div>
+                </div>
+                <div class="box-degrade cardServ">
+                    <div><img src="./assets/icons/page.png" alt=""></div>
+                    <div class="titleCard">Landing Page</div>
+                    <div>Criação de páginas atrativas e com design moderno com objetivo de persuadir o usuário a realizar o que você desejar.</div>
+                </div>
+                <div class="box-degrade cardServ">
+                    <div><img src="./assets/icons/gotolink.png" alt=""></div>
+                    <div class="titleCard">Manutenção e Suporte</div>
+                    <div>Serviços de manutenção e suporte técnico para atualizações contínuas, fazendo com que seu sistema nunca fique obsoleto.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section style="z-index: 101; background-color: #06000; color: white; position: relative;">
         <div>ads</div>
         <div>ads</div>
