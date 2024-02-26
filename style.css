@@ -11,7 +11,7 @@
 body {
 
     min-height: 100vh;
-    background-color: #0e0101;
+    background-color: #060000;
 }
 
 ::-webkit-scrollbar {
@@ -240,7 +240,7 @@ nav {
 .textAnimate{
     color: transparent;
     font-size: 4vw;
-    background: linear-gradient(45deg, red, blue, green);
+    background: linear-gradient(45deg, #023373, #5854BF, #B18DF9, #E288CE);
     background-size: 400% 100%;
     animation: degradeAnimation 5s linear alternate infinite;
     -webkit-background-clip: text;
@@ -313,7 +313,7 @@ nav {
     position: absolute;
     width: calc(100% + 10px);
     height: calc(100% + 10px);
-    background: linear-gradient(90deg, red, blue, green);
+    background: linear-gradient(45deg, #023373, #5854BF, #B18DF9, #E288CE);
     z-index: -1;
     background-size: 500% 100%;
     border-radius: 15px;
@@ -348,7 +348,7 @@ div.whoIAm .text {
 }
 
 .dinamicCard {
-    border: 1px solid #333333;
+    border: 1px solid #595959;
     border-radius: 10px;
     padding: 2%;
 }
@@ -395,7 +395,8 @@ div.whoIAm .text {
 
 .cardItem {
     text-align: left;
-    font-size: 1vw;
+    font-size: 0.7vw;
+    text-wrap: wrap;
     margin: 5%;
 }
 
@@ -476,9 +477,16 @@ div.whoIAm .text {
 }
 
 .titleCard {
-    font-size: 2.5vw !important;
+    width: 100%;
+    font-size: 1.5vw !important;
+    text-wrap: wrap;
 }
 
+@media (max-width: 1440px){
+    .cardItem {
+        font-size: 1vw;
+    }
+}
 
 @media (max-width: 1024px){
 
@@ -519,7 +527,7 @@ div.whoIAm .text {
     }
     
     .titleCard {
-        font-size: 3.0vw !important;
+        font-size: 2.5vw !important;
     }
 
     .cardServ img{
