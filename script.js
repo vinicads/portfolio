@@ -19,11 +19,12 @@ window.addEventListener('scroll', () => {
     if (currentScroll < lastScrollTop) {
         navbar.classList.add('animate-out');
         navbar.addEventListener('animationend', handleAnimationEnd);
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
         return;
     }
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 
-    if (value > 300){
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    if (value > 100){
         navbar.classList.remove('animate-out');
         navbar.classList.add('fixed');
         navbar.classList.add('animate-in');
@@ -41,6 +42,7 @@ window.addEventListener('load', () => {
 
 function handleAnimationEnd(event) {
     if (event.animationName === 'reverseFixedNavbar') {
+        navbar.classList.remove('animate-out');
         navbar.classList.remove('fixed');
         navbar.removeEventListener('animationend', handleAnimationEnd);
     }  
