@@ -598,6 +598,89 @@ div.whoIAm .text {
     cursor: pointer;
 }
 
+ footer {
+    width: 100%;
+    color: #fff;
+    background-color: #0a0909;
+    text-align: center;
+}
+
+.footerContent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 1rem 1.5rem;
+    font-size: 1vw;
+
+}
+
+.footerContacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerContacts h2, .footerList h2 {
+    font-size: 2vw !important;
+} 
+
+.socialMedia {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.socialMedia .footerLink {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+}
+
+.footerList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    list-style: none;
+    text-decoration: none;
+}
+
+.footerLi {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 0.75rem;
+    list-style: none;
+}
+
+.footerList .footerLink {
+    color: #fff;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.footerList .footerLink:hover {
+    color: #B18DF9;
+}
+
+.footerCopyight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #060000;
+    font-size: 0.7vw;
+    padding: 1.5rem;
+    color: #cccccc;
+    font-weight: 100;
+    width: 100%;
+    text-align: center;
+}
+
+.footerCopyight label {
+    color: #fff;
+}
 
 @media (max-width: 1440px){
     .cardItem {
@@ -709,6 +792,17 @@ div.whoIAm .text {
         font-size: 2vw;
     }
 
+    .footerContent {
+        font-size: 1.5vw;
+    }
+    
+    .footerContacts h2, .footerList h2 {
+        font-size: 2.5vw !important;
+    } 
+
+    .footerCopyight {
+        font-size: 1.5vw;
+    }
 }
 
 @media (max-width: 768px){
@@ -862,6 +956,23 @@ div.whoIAm .text {
     .callMe button {
         font-size: 2.5vw;
     }
+
+    .footerContent {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .footerContent {
+        font-size: 2vw;
+    }
+    
+    .footerContacts h2, .footerList h2 {
+        font-size: 3vw !important;
+    } 
+
+    .footerCopyight {
+        font-size: 2vw;
+    }
 }
 
 @media (max-width: 630px){
@@ -908,6 +1019,19 @@ div.whoIAm .text {
     .callMe button {
         font-size: 3vw;
     }
+
+    .footerContent {
+        font-size: 1.5vw;
+    }
+    
+    .footerContacts h2, .footerList h2 {
+        font-size: 2.5vw !important;
+    } 
+
+    .footerCopyight {
+        text-wrap: wrap;
+        font-size: 1.5vw;
+    }
 }
 
 @media (max-width: 600px){
@@ -919,6 +1043,30 @@ div.whoIAm .text {
 
     .cardServ img{
         width: 40%;
+    }
+
+    .footerContent {
+        display: block;
+        font-size: 3vw;
+        text-align: center;
+    }
+
+    .footerList {
+        justify-content: start;
+        align-items: start;
+        text-align: left;
+        gap: 0;
+        margin: 5% 0;
+    }
+    
+    .footerContacts h2, .footerList h2{
+        font-size: 4.5vw !important;
+        justify-content: left;
+    } 
+
+    .footerCopyight {
+        font-size: 3vw;
+        text-align: left;
     }
 }
 
@@ -993,6 +1141,17 @@ div.whoIAm .text {
         font-size: 3.5vw;
     }
     
+    .socialMedia {
+        gap: 1vw;
+    }
+
+}
+
+@media (max-width: 340px){
+    .cardsServ {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
 }
 
 @media (max-width: 320px){
@@ -1022,10 +1181,6 @@ div.whoIAm .text {
     
     .titleCard {
         font-size: 5vw !important;
-    }
-
-    .cardsServ {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 
     .box-degrade::before, .box-degrade::after {
