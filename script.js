@@ -42,8 +42,8 @@ window.addEventListener('load', () => {
 
 function handleAnimationEnd(event) {
     if (event.animationName === 'reverseFixedNavbar') {
-        navbar.classList.remove('animate-out');
         navbar.classList.remove('fixed');
+        navbar.classList.remove('animate-out');
         navbar.removeEventListener('animationend', handleAnimationEnd);
     }  
 }
