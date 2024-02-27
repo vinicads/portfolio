@@ -172,3 +172,28 @@ function alternateContent(index){
         }
     }
 }
+
+function sendMessage(){
+    var number = "5519992806229";
+  
+    var message = "Olá! Vi seu website e quero iniciar meu projeto."; 
+    
+    var link = "https://api.whatsapp.com/send?phone=" + number + "&text=" + encodeURIComponent(message);
+    
+    window.open(link);
+}
+
+function downloadCurriculum() {
+    event.preventDefault();
+    var urlCurriculo = "./assets/files/CV_Vinicius.pdf";
+    
+    var link = document.createElement("a");
+    link.href = urlCurriculo;
+    link.download = "CV_Vinicius.pdf";
+    link.target = "_blank"; 
+    
+    document.body.appendChild(link);
+    link.click();
+    
+    document.body.removeChild(link);
+  }
