@@ -30,8 +30,8 @@ Este site foi desenvolvido com as seguintes tecnologias:
 Estou sempre aberto(a) a novas oportunidades e colaborações. Se você gostaria de discutir um projeto, oferecer uma oportunidade de emprego ou apenas bater um papo, sinta-se à vontade para entrar em contato comigo pelos seguintes meios:
 
 - Email: vinicim.augusto@outlook.com
-- LinkedIn: 
-- Website: 
+- LinkedIn: https://www.linkedin.com/in/vinicius-augusto-dos-santos-2108b1237/
+- Website: https://vinicads.github.io/portfolio/
 
 ## Agradecimentos
 
