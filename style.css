@@ -903,11 +903,10 @@ animation: showDown 1s forwards ease-in-out;
 
 .container-slider {
     display: flex;
-    width: 100%;
     align-items: center;
     justify-content: center;
     margin: 2% 0;
-    height: 50vh;
+    height: 40vh;
 }
 
 .container-images {
@@ -1042,6 +1041,12 @@ animation: showDown 1s forwards ease-in-out;
     }
 }
 
+@media (max-width: 1220px) {
+    .container-slider {
+        height: 35vh;
+    }
+}
+
 @media (max-width: 1024px){
 
     .display {
@@ -1091,6 +1096,8 @@ animation: showDown 1s forwards ease-in-out;
     .portfolio, .portfolio.reverse {
         margin: 5% 0;
         display: flex;
+        justify-content: center;
+        align-items: center;
         flex-direction: column-reverse;
         text-align: center;
     }
@@ -1349,6 +1356,7 @@ animation: showDown 1s forwards ease-in-out;
     }
 
     .container-slider {
+
         height: 35vh;
         max-width: 100%;
     }
@@ -1411,6 +1419,11 @@ animation: showDown 1s forwards ease-in-out;
         text-wrap: wrap;
         font-size: 1.5vw;
     }
+
+    .container-slider {
+        height: 30vh;
+        max-width: 100%;
+    }
     
 }
 
@@ -1451,7 +1464,7 @@ animation: showDown 1s forwards ease-in-out;
 
 
     .container-slider {
-        height: 30vh;
+        height: 25vh;
         max-width: 100%;
     }
 }
@@ -1532,7 +1545,9 @@ animation: showDown 1s forwards ease-in-out;
     }
 
     .container-slider {
-        height: 25vh;
+        text-align: center;
+        height: 20vh;
+
     }
     
 }
