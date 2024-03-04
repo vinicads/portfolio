@@ -3,6 +3,45 @@ let baixoFundo = document.getElementById('baixoFundo')
 let navbar = document.getElementById('navbar')
 let lastScrollTop = 0;
 
+
+const myObserver = new IntersectionObserver((entries) => {
+    entries.forEach( (entry) => {
+        if (entry.isIntersecting){
+            entry.target.classList.add('show')
+        }
+    });
+});
+
+const foot = document.querySelector('.foot');
+myObserver.observe(foot);
+const myPhoto = document.getElementById('myPhoto');
+myObserver.observe(myPhoto);
+const whoIAm = document.getElementById('whoIAm');
+myObserver.observe(whoIAm);
+const textWhoIAm = document.getElementById('textWhoIAm');
+myObserver.observe(textWhoIAm);
+const dinamicCard = document.getElementById('dinamicCard');
+myObserver.observe(dinamicCard);
+const title = document.querySelectorAll('#title');
+title.forEach(element => {
+    myObserver.observe(element);
+});
+const cardServ = document.querySelectorAll('.cardsServ .box-degrade.cardServ');
+cardServ.forEach(element => {
+    myObserver.observe(element);
+});
+const portfolioImage = document.querySelectorAll('#portfolioImage');
+portfolioImage.forEach(element => {
+    myObserver.observe(element);
+});
+const description = document.querySelectorAll('#description');
+description.forEach(element => {
+    myObserver.observe(element);
+});
+const contact = document.getElementById('contact');
+myObserver.observe(contact);
+
+
 window.addEventListener('scroll', () => {
     
     //parallax
@@ -66,12 +105,12 @@ function showLinks() {
 }
 
 window.addEventListener('load', () => {
-    typeWriter(0)
+    typeWriter(0);
 })
 
 function typeWriter(index) {
     var animatedText = document.getElementById("animated-text");
-    const words = ["Vinicius Augusto dos Santos", "Desenvolvedor fullstack"];
+    const words = ["Vinicius Augusto dos Santos", "Desenvolvedor Full Stack"];
     animatedText.textContent = "";
     var word = words[index].split('');
 
@@ -197,3 +236,93 @@ function downloadCurriculum() {
     
     document.body.removeChild(link);
   }
+
+  function downloadGame() {
+    var url = './assets/files/Eletrove-Banca.rar';
+    var filename = url.substring(url.lastIndexOf("/") + 1);
+
+    var link = document.createElement("a");
+    link.href = url;
+    link.download = filename;
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    document.body.removeChild(link);
+}
+
+  //slider
+  const slider = document.querySelectorAll('#slider1 .slider');
+  const btnPrev1 = document.getElementById('prev-button1');
+  const btnNext1 = document.getElementById('next-button1');
+
+  const slider2 = document.querySelectorAll('#slider2 .slider');
+  const btnPrev2 = document.getElementById('prev-button2');
+  const btnNext2 = document.getElementById('next-button2');
+
+  let currentSlide1 = 0; 
+  let currentSlide2 = 0; 
+
+  function hideSlider(slide) {
+    if (slide == 1){
+        slider.forEach(item => {
+            item.classList.remove('on');
+        });
+    }else {
+        slider2.forEach(item => {
+            item.classList.remove('on');
+        });
+    }
+  }
+
+  function showSlider(slide){
+    if (slide == 1){
+        slider[currentSlide1].classList.add('on');
+    }else {
+        slider2[currentSlide2].classList.add('on');
+    }
+    
+  }
+
+
+
+  btnNext1.addEventListener('click', () => {
+    hideSlider(1);
+    if (currentSlide1 === slider.length - 1){
+        currentSlide1 = 0;
+    }else{
+        currentSlide1++;
+    }
+    showSlider(1);
+  });
+
+  btnPrev1.addEventListener('click', () => {
+    hideSlider(1);
+    if (currentSlide1 === 0){
+        currentSlide1 = slider.length - 1;
+    }else{
+        currentSlide1--;
+    }
+    showSlider(1);
+  });
+
+  btnNext2.addEventListener('click', () => {
+    hideSlider(2);
+    if (currentSlide2 === slider2.length - 1){
+        currentSlide2 = 0;
+    }else{
+        currentSlide2++;
+    }
+    showSlider(2);
+  });
+
+  btnPrev2.addEventListener('click', () => {
+    hideSlider(2);
+    if (currentSlide2 === 0){
+        currentSlide2 = slider2.length - 1;
+    }else{
+        currentSlide2--;
+    }
+    showSlider(2);
+  });

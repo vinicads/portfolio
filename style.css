@@ -6,12 +6,18 @@
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
     letter-spacing: 1px;
+    scroll-behavior: smooth;
+    scroll-padding: 6rem;
 }
 
 body {
-
+    overflow-x: hidden;
     min-height: 100vh;
     background-color: #060000;
+}
+
+html {
+    overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -24,6 +30,21 @@ body {
 
 ::-webkit-scrollbar-track{
     background-color: #060000;
+}
+
+.contentPage {
+    display: block;
+    opacity: 0;
+    animation: 2s openContent forwards ease-in-out;
+}
+
+@keyframes openContent {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 
@@ -40,6 +61,7 @@ nav {
     height: 10vh;
     transition: 0.5s ease-in-out;
     letter-spacing: 2px;
+    overflow-y: hidden;
 }
 
 .fixed {
@@ -66,6 +88,20 @@ nav {
 
 .fixed.animate-out {
     animation: 0.5s forwards ease-in-out reverseFixedNavbar;        
+}
+
+
+@keyframes showDown {
+    from {
+        opacity: 0;
+        filter: blur(15px);
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
 }
 
 @keyframes reverseFixedNavbar {
@@ -99,13 +135,13 @@ nav {
     justify-content: center;
 }
 
-.navigation:hover li{
+.navigation:hover a{
     opacity: 0.8;
  
 }
 
 
-.navigation li {
+.navigation a {
     text-decoration: none;
     color: white;
     margin-inline: 1.5vw;
@@ -116,7 +152,7 @@ nav {
     position: relative;
 }
 
-.navigation li::after {
+.navigation a::after {
     content: "";
     width: 0;
     height: 2px;
@@ -127,12 +163,12 @@ nav {
     transition: 0.3s ease-in-out;
 }
 
-.navigation li:hover{
+.navigation a:hover{
     cursor: pointer;
     opacity: 1;
 }
 
-.navigation li:hover::after{
+.navigation a:hover::after{
     width: 100%;
 }
 
@@ -296,7 +332,65 @@ nav {
     justify-content: center;
     align-items: center;
     position: relative;
+    opacity: 0;
+    transform: translateX(-50px);
+    filter: blur(15px);
     transition: 0.3s ease-in-out;
+}
+
+.myPhoto.show {
+    animation: showLeft 1s forwards ease-in-out;
+}
+@keyframes showLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+        filter: blur(15px);
+    }
+    to {
+        transform: translateX(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+@keyframes showRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+        filter: blur(15px);
+    }
+    to {
+        transform: translateX(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+@keyframes showUp {
+    from {
+        opacity: 0;
+        transform: translatey(100px);
+        filter: blur(15px);
+    }
+    to {
+        transform: translatey(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+@keyframes showDown {
+    from {
+        opacity: 0;
+        transform: translatey(100px);
+        filter: blur(15px);
+    }
+    to {
+        transform: translatey(0);
+        filter: blur(0);
+        opacity: 1;
+    }
 }
 
 .box-degrade {
@@ -347,12 +441,46 @@ div.whoIAm {
 div.whoIAm .text {
     font-size: 1vw;
     text-align: left;
+    opacity: 0;
+    transform: translateX(100px);
+    filter: blur(15px);
+}
+
+div.whoIAm .text.show {
+    animation: showRight 1s forwards ease-in-out;
+}
+
+#whoIAm {
+    opacity: 0;
+    transform: translateX(100px);
+    filter: blur(15px);
+}
+
+#whoIAm.show {
+    animation: showRight 1s forwards ease-in-out;
 }
 
 .dinamicCard {
     border: 1px solid #595959;
     border-radius: 10px;
     padding: 2%;
+    opacity: 0;
+    transform: translateX(100px);
+    filter: blur(15px);
+}
+
+.dinamicCard.show {
+    animation: showRight 1s forwards ease-in-out;
+}
+
+#title {
+    opacity: 0;
+    transform: translatey(100px);
+    filter: blur(15px);
+}
+
+#title.show {
+    animation: showUp 1s forwards ease-in-out;
 }
 
 .items {
@@ -453,13 +581,61 @@ div.whoIAm .text {
 
 .cardServ{
     flex-direction: column;
-    background-color: #060000;
+    background-color: #060000 !important;
     width:auto;
     text-align: center;
     color: #fff;
     padding: 2%;
     margin: 5%;
     transition: 0.3s linear;
+}
+
+
+.box-degrade.cardServ {
+    opacity: 0;
+    transform: translateX(100px);
+    filter: blur(15px);
+}
+
+.box-degrade.cardServ.show {
+    animation: showCard 1s forwards ease-in-out;
+}
+
+.box-degrade.cardServ:nth-child(1){
+    animation-delay: 200ms;
+}
+
+.box-degrade.cardServ:nth-child(2){
+    animation-delay: 400ms;
+}
+
+.box-degrade.cardServ:nth-child(3){
+    animation-delay: 600ms;
+}
+
+.box-degrade.cardServ:nth-child(4){
+    animation-delay: 200ms;
+}
+
+.box-degrade.cardServ:nth-child(5){
+    animation-delay: 400ms;
+}
+
+.box-degrade.cardServ:nth-child(6){
+    animation-delay: 600ms;
+}
+
+@keyframes showCard {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+        filter: blur(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
 }
 
 .cardServ:hover{
@@ -510,15 +686,24 @@ div.whoIAm .text {
     width: 60%;
 }
 
-.portfolioImage img{
-    width: 100%;
-    border-radius: 15px;
-    filter: grayscale(100%);
-    transition: 0.3s;
+#portfolioImage {
+    opacity: 0;
+    filter: blur(15px);
+    transform: translateX(-50px);
 }
 
-.portfolioImage img:hover{
-    filter: grayscale(0);
+#portfolioImage.show {
+    animation: showLeft 1s forwards ease-in-out;
+}
+
+#description {
+    opacity: 0;
+    filter: blur(15px);
+    transform: translateX(50px);
+}
+
+#description.show {
+    animation: showRight 1s forwards ease-in-out;
 }
 
 .description {
@@ -531,7 +716,7 @@ div.whoIAm .text {
 }
 
 .descriptionPortfolio {
-    background-color: #0F0303;
+    background-color: #0a0909;
     padding: 5%;
     margin: 5% 0;
     border-radius: 15px;
@@ -558,6 +743,7 @@ div.whoIAm .text {
 }
 
 .icons a img:hover {
+    cursor: pointer;
     transform: scale(1.1);
 }
 
@@ -646,6 +832,16 @@ div.whoIAm .text {
     text-decoration: none;
 }
 
+.foot {
+opacity: 0;
+transform: translatey(-100px);
+filter: blur(15px);
+}
+
+.foot.show {
+animation: showDown 1s forwards ease-in-out;
+}
+
 .footerLi {
     display: flex;
     flex-direction: column;
@@ -660,6 +856,19 @@ div.whoIAm .text {
     transition: 0.3s;
     text-decoration: none;
 }
+
+
+.footerLink img {
+    width: 100%;
+    filter: invert(100%);
+    transition: 0.3 ease-in-out;
+}
+
+.footerLink img:hover {
+    transform: scale(1.1);
+}
+
+
 
 .footerList .footerLink:hover {
     color: #B18DF9;
@@ -682,6 +891,143 @@ div.whoIAm .text {
     color: #fff;
 }
 
+#contact {
+    opacity: 0;
+    filter: blur(15px);
+    transform: translateY(50px);
+}
+
+#contact.show {
+    animation: showUp 1s forwards ease-in-out;
+}
+
+.container-slider {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: 2% 0;
+    height: 50vh;
+}
+
+.container-images {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+}
+
+
+.slider {
+    position: absolute;
+    border-radius: 15px;
+    height: 100%;
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+}
+
+.on {
+    opacity: 1;
+}
+
+#prev-button1, #next-button1, #prev-button2, #next-button2{
+    background: none;
+    margin-top: 2%;
+    border: none;
+    width: 30px;
+    height: 30px;
+    color: white;
+    transition: 0.3s ease-in-out;
+}
+
+#prev-button1 img, #next-button1 img, #prev-button2 img, #next-button2 img {
+    filter: invert(100%);
+    width: 100%;
+}
+
+#next-button1 img, #next-button2 img {
+    transform: rotate(180deg);
+}
+
+#prev-button1:hover, #next-button1:hover, #prev-button2:hover, #next-button2:hover {
+    cursor: pointer;
+    transform: scale(1.05)
+}
+
+.buttonsSlider {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.social {
+    margin: 0 2%;
+    background: none;
+    position: fixed;
+    bottom: 0; 
+    left: 0;
+    z-index: 100000;
+}
+
+.logos {
+    background-color: #060000;
+    border: 1px solid #B385F2;
+    border-radius: 15px;
+    margin: 1rem 0;
+    width: 2.5rem;
+    transition: 0.5s ease-in-out;
+}
+
+.logoSocial {
+    border-radius: 15px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: white;
+    font-size: 0.8vw;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+
+.logos:hover {
+    width: 10rem;
+}
+
+
+.logoImage {
+    text-align: center;
+}
+
+.logoImage img {
+    filter: invert(100%);
+    width: 2.5rem;
+    padding: 25%;
+}
+
+.logoSocial:hover {
+    background-color: #B385F2;
+    cursor: pointer;
+    backdrop-filter: blur(200px);
+}
+
+
+.divLine {
+    width: 2.5rem;
+    text-align: center;
+}
+
+.line {
+    width: 1px;
+    background-color: #B385F2;
+    border-radius: 15px;
+    height: 5rem;
+    margin: 0 auto;
+}
+
+
 @media (max-width: 1440px){
     .cardItem {
         font-size: 1vw;
@@ -691,7 +1037,7 @@ div.whoIAm .text {
         width: 1024px;
     }
 
-    .cardServ {
+    .cardsServ {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 }
@@ -830,9 +1176,13 @@ div.whoIAm .text {
         overflow-y: auto;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-around;
         transform: translateX(100%);
         transition: 0.3s ease-in;
+    }
+
+    .social {
+        display: none;
     }
 
     nav{
@@ -892,6 +1242,30 @@ div.whoIAm .text {
 
     .cards{
         width: 25%;
+    }
+
+    .box-degrade.cardServ:nth-child(1){
+        animation-delay: 200ms;
+    }
+    
+    .box-degrade.cardServ:nth-child(2){
+        animation-delay: 400ms;
+    }
+    
+    .box-degrade.cardServ:nth-child(3){
+        animation-delay: 200ms;
+    }
+    
+    .box-degrade.cardServ:nth-child(4){
+        animation-delay: 400ms;
+    }
+    
+    .box-degrade.cardServ:nth-child(5){
+        animation-delay: 200ms;
+    }
+    
+    .box-degrade.cardServ:nth-child(6){
+        animation-delay: 400ms;
     }
 
     .number{
@@ -1068,6 +1442,12 @@ div.whoIAm .text {
         font-size: 3vw;
         text-align: left;
     }
+
+    .container-slider {
+        height: 35vh;
+        max-width: 100%;
+    }
+    
 }
 
 @media (max-width: 425px){
@@ -1145,6 +1525,16 @@ div.whoIAm .text {
         gap: 1vw;
     }
 
+    .container-slider {
+        height: 30vh;
+    }
+    
+}
+
+@media (max-width: 370px){
+    .container-slider {
+        height: 25vh;
+    }
 }
 
 @media (max-width: 340px){
@@ -1183,17 +1573,6 @@ div.whoIAm .text {
         font-size: 5vw !important;
     }
 
-    .box-degrade::before, .box-degrade::after {
-        content: '';
-        position: absolute;
-        width: calc(100% + 5px);
-        height: calc(100% + 5px);
-        background: linear-gradient(45deg, #023373, #5854BF, #B18DF9, #E288CE);
-        z-index: -1;
-        background-size: 500% 100%;
-        border-radius: 15px;
-        animation: degradeAnimation 2s linear alternate infinite;
-    }
 
     .descriptionPortfolio {
         font-size: 3vw;

@@ -5,267 +5,329 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vinicius Augusto dos Santos - Portfólio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="imagex/png" href="./assets/icons/iconSite.png">
 </head>
 <body>
-    <header>
-        
-        <nav id="navbar">
-            <h2 class="logo">&lt; Vini.<label>ADS /></label></h2>
-            <div class="menu" onclick="openMenu()" id="menu"> 
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-            <ul class="navigation" id="navigation">
-                <li>Quem sou eu</li>
-                <li>Servicos</li>
-                <li>Portfolio</li>
-                <li>Contato</li>
-            </ul>
-        </nav>
-    </header>
 
-    <section class="parallax"> 
-        <img src="./assets/images/background-parafall.jpg" id="fundoCompleto">
-        <h2 id="text">
-            <div class="textChange">
-                <div>Olá, sou</div> &nbsp; <label class="animated-text" id="animated-text"></label>
-            </div>
-                <div class="smallText">Transformando ideias em verdadeiras experiências digitais.</div>
-                <div class="cards">
-                    <div class="card">
-                        <div class="number" data-value="2">0</div>
-                        <div class="info">Projetos</div>
-                    </div>
-                    <div class="card">
-                        <div class="number" data-value="6">0</div>
-                        <div class="info">Meses</div>
-                    </div>
-                </div>
-        </h2>
-        <img src="./assets/images/baixoFundo.png" id="baixoFundo">
-    </section>
-    <section class="display">
-        <div class="myPhoto">
-            <div class="box-degrade">
-                <img src="./assets/images/imagemQuemSouEu.jpg" alt="">
-            </div>
-        </div>
-        <div class="whoIAm">
-            <h1 class="textAnimate">Quem sou eu</h1>
-            <div class="text">
-                <div class="paragraph">
-                    Olá, me chamo <label for="" class="emphasis">Vinicius Augusto dos Santos</label>,
-                tenho <label for="" class="empashis">19 anos</label>e sou um amante da área de tecnologia.</div>
-                <div class="paragraph">
-                    Tenho como objetivo criar experiências únicas com sistemas desenvolvidos seguindo as
-                    <label for="" class="empashis">melhores práticas da programação</label>, com um <label for="" class="emphasis">design moderno</label>,
-                    <label for="" class="empashis">responsivo</label> e <label for="" class="emphasis">fácil</label>.
-                </div>
-                <div class="paragraph">
-                    Meu principal foco é o <label for="" class="emphasis">desenvolvimento WEB</label>, porém, estou disposto à ir átras do que for preciso para
-                    <label for="" class="emphasis">transformar a sua ideia</label>, em uma <label for="" class="emphasis">realidade</label>.
-                </div>
-            </div>
-            <div class="dinamicCard">
-                <ul class="items">
-                    <li class="item active" id="skillsMenu" onclick="alternateContent(1)">Habilidades</li>
-                    <li class="item" id="educationMenu" onclick="alternateContent(2)">Educação</li>
-                </ul>
-                <div class="content">
-                    <div class="skills in" id="skills">
-                        <div class="cardItem">
-                            <div class="titleItem">Frontend:</div>
-                            <div class="cardContent">
-                                <ul>
-                                    <li>HTML, CSS, JS;</li>
-                                    <li>Vue;</li>
-                                    <li>Bootstrap.</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="cardItem">
-                            <div class="titleItem">Backend:</div>
-                            <div class="cardContent">
-                                <ul>
-                                    <li>Express;</li>
-                                    <li>Sequelize;</li>
-                                    <li>Prisma;</li>
-                                    <li>Nest.</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="cardItem">
-                            <div class="titleItem">Desenvolvimento de jogos:</div>
-                            <div class="cardContent">
-                                <ul>
-                                    <li>Gamemaker.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="education" id="education">
-                        <div class="cardItem">
-                            <div class="titleItem">Ensino médio:</div>
-                            <div class="cardContent">
-                                <ul>
-                                    <li>Eletrô Mococa</li>
-                                    <li>2020 até 2022</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="cardItem">
-                            <div class="titleItem">Curso técnico:</div>
-                            <div class="cardContent">
-                                <ul>
-                                    <li>Desenvolvimento de Sistemas</li>
-                                    <li>2020 até 2022</li>
-                                    <li>Finalizado</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="cardItem">
-                            <div class="titleItem">Curso superior:</div>
-                            <div class="cardContent">
-                                <ul>
-                                    <li>Fatec Mococa</li>
-                                    <li>2023 até agora</li>
-                                    <li>Cursando</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="display main">
-            <h1 class="textAnimate">Serviços</h1>
-            <div class="cardsServ">
-                <div class="cardServ box-degrade">
-                    <div><img src="./assets/icons/web.png" alt=""></div>
-                    <div class="titleCard">Desenvolvimento WEB</div>
-                    <div>Desenvolvimento de sites responsivos e intuitivos, feito do jeitinho que você desejar, usando as melhores práticas e tecnologias mais modernas.</div>
-                </div>
-                <div class="box-degrade cardServ">
-                    <div><img src="./assets/icons/game.png" alt=""></div>
-                    <div class="titleCard">Jogos</div>
-                    <div>Criação de jogos pixelados com objetivo de proporcionar uma experiência única ao usuário.</div>
-                </div>
-                <div class="box-degrade cardServ">
-                    <div><img src="./assets/icons/ecommerce.png" alt=""></div>
-                    <div class="titleCard">E-commerce</div>
-                    <div>Uma ótima alternativa para expor seu comércio para o mundo! Criação de lojas online para você vender seus produtos ou serviços com total controle e segurança.</div>
-                </div>
-                <div class="box-degrade cardServ">
-                    <div><img src="./assets/icons/seguranca.png" alt=""></div>
-                    <div class="titleCard">Dados e Segurança</div>
-                    <div>Implementação das melhores práticas de segurança para proteger dados sensíveis e a integridade das informações dos sistemas.</div>
-                </div>
-                <div class="box-degrade cardServ">
-                    <div><img src="./assets/icons/page.png" alt=""></div>
-                    <div class="titleCard">Landing Page</div>
-                    <div>Criação de páginas atrativas e com design moderno com objetivo de persuadir o usuário a realizar o que você desejar.</div>
-                </div>
-                <div class="box-degrade cardServ">
-                    <div><img src="./assets/icons/gotolink.png" alt=""></div>
-                    <div class="titleCard">Manutenção e Suporte</div>
-                    <div>Serviços de manutenção e suporte técnico para atualizações contínuas, fazendo com que seu sistema nunca fique obsoleto.</div>
-                </div>
-            </div>
-    </section>
-
-    <section class="display main">
-        <h1 class="textAnimate">Portfólio</h1>
-        <div class="portfolio">
-            <div class="portfolioImage"><img src="assets/images/santacasa.jpg" alt=""></div>
-            <div class="description">
-                <div class="titleCard">Solicitacao de prontuarios</div>
-                <div class="descriptionPortfolio">Projjeto desenvolvido para uma automacao nos processos de solicitacao de prontuarios, tornando o controle e as solicitacoes realizadas de forma online.</div>
-                <div class="icons">
-                    <a href=""><img src="./assets/icons/gotolink.png" alt=""></a>
-                    <a href=""><img src="./assets/icons/gotolink.png" alt=""></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="portfolio reverse">
-            <div class="portfolioImage"><img src="assets/images/santacasa.jpg" alt=""></div>
-            <div class="description reverse">
-                <div class="titleCard">Eletrove</div>
-                <div class="descriptionPortfolio">Jogo desenvolvido em grupo para a conclusao do curso tecnico, todo feito em pixels e em 8D, com uma aventura que te deixa imerso e uma experiencia inesquecivel.</div>
-                <div class="icons">
-                    <a href=""><img src="./assets/icons/gotolink.png" alt=""></a>
-                    <a href=""><img src="./assets/icons/gotolink.png" alt=""></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="display">
-        <div class="box-degrade contact">
-            <h1 class="textAnimate">Contato</h1>
-            <div class="attractiveText">Entre em contato com um toque!</div>
-            <div class="messageContact">Minhas redes sociais e meu e-mail estao sempre abertos para novas oportunidades, 
-                entre em contato comigo e eu te retornarei o mais rapidamente possivel!</div>
-            <div class="callMe"><button class="textAnimate" onclick="sendMessage()">Entrar em contato</button></div>
-        </div>
-    </section>
-
-
-    <footer>
-        <div class="footerContent">
-            <div class="footerContacts">
+    <div class="contentPage">
+        <header id="header">
+            <nav id="navbar">
                 <h2 class="logo">&lt; Vini.<label>ADS /></label></h2>
-                <p>Transfomando suas ideias em codigos.</p>
+                <div class="menu" onclick="openMenu()" id="menu"> 
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+                <ul class="navigation" id="navigation">
+                    <a href="#sectionWhoIAm">Quem sou eu</a>
+                    <a href="#sectionServices">Servicos</a>
+                    <a href="#sectionPortfolio">Portfólio</a>
+                    <a href="#contact">Contato</a>
+                </ul>
+            </nav>
+        </header>
     
-                <div class="socialMedia">
-                    <a href="" class="footerLink">s</a>
-                    <a href="" class="footerLink">s</a>
-                    <a href="" class="footerLink">s</a>
-                    <a href="" class="footerLink">s</a>
-                    <a href="" class="footerLink">s</a>
+        <section class="parallax"> 
+            <img src="./assets/images/background-parafall.jpg" id="fundoCompleto">
+            <h2 id="text">
+                <div class="textChange">
+                    <div>Olá, sou</div> &nbsp; <label class="animated-text" id="animated-text"></label>
+                </div>
+                    <div class="smallText">Transformando ideias em verdadeiras experiências digitais.</div>
+                    <div class="cards">
+                        <div class="card">
+                            <div class="number" data-value="2">0</div>
+                            <div class="info">Projetos</div>
+                        </div>
+                        <div class="card">
+                            <div class="number" data-value="6">0</div>
+                            <div class="info">Meses</div>
+                        </div>
+                    </div>
+            </h2>
+            <img src="./assets/images/baixoFundo.png" id="baixoFundo">
+        </section>
+    
+        <section class="display" id="sectionWhoIAm">
+            <div class="myPhoto" id="myPhoto">
+                <div class="box-degrade">
+                    <img src="./assets/images/imagemQuemSouEu.jpg" alt="">
                 </div>
             </div>
-            <div class="footerList">
-                <h2>Contato</h2>
-                <ul class="footerLi">
-                    <li>
-                        <a href="mailto:vinicim.augusto@outlook.com" class="footerLink">vinicim.augusto@outlook.com</a>
-                    </li>
-                    <li>
-                        <a href="tel:+5519992806229" class="footerLink">+55 (19) 99280-6229</a>
-                    </li>
-                    <li >
-                        <a href="" class="footerLink" onclick="downloadCurriculum()" >Curriculo</a>
-                    </li>
-                    <li >
-                        Sao Paulo, Brasil
-                    </li>
-                </ul>
-        </div>
-            <div class="footerList">
-                    <h2>Navegar</h2>
+            <div class="whoIAm">
+                <h1 class="textAnimate" id="whoIAm">Quem sou eu</h1>
+                <div class="text" id="textWhoIAm">
+                    <div class="paragraph">
+                        Olá, me chamo <label for="" class="emphasis">Vinicius Augusto dos Santos</label>,
+                    tenho <label for="" class="empashis">19 anos</label>e sou um amante da área de tecnologia.</div>
+                    <div class="paragraph">
+                        Tenho como objetivo criar experiências únicas com sistemas desenvolvidos seguindo as
+                        <label for="" class="empashis">melhores práticas da programação</label>, com um <label for="" class="emphasis">design moderno</label>,
+                        <label for="" class="empashis">responsivo</label> e <label for="" class="emphasis">fácil</label>.
+                    </div>
+                    <div class="paragraph">
+                        Meu principal foco é o <label for="" class="emphasis">desenvolvimento WEB</label>, porém, estou disposto à ir átras do que for preciso para
+                        <label for="" class="emphasis">transformar a sua ideia</label>, em uma <label for="" class="emphasis">realidade</label>.
+                    </div>
+                </div>
+                <div class="dinamicCard" id="dinamicCard">
+                    <ul class="items">
+                        <li class="item active" id="skillsMenu" onclick="alternateContent(1)">Habilidades</li>
+                        <li class="item" id="educationMenu" onclick="alternateContent(2)">Educação</li>
+                    </ul>
+                    <div class="content">
+                        <div class="skills in" id="skills">
+                            <div class="cardItem">
+                                <div class="titleItem">Frontend:</div>
+                                <div class="cardContent">
+                                    <ul>
+                                        <li>HTML, CSS, JS;</li>
+                                        <li>Vue;</li>
+                                        <li>Bootstrap.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="cardItem">
+                                <div class="titleItem">Backend:</div>
+                                <div class="cardContent">
+                                    <ul>
+                                        <li>Express;</li>
+                                        <li>Sequelize;</li>
+                                        <li>Prisma;</li>
+                                        <li>Nest.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="cardItem">
+                                <div class="titleItem">Desenvolvimento de jogos:</div>
+                                <div class="cardContent">
+                                    <ul>
+                                        <li>Gamemaker.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="education" id="education">
+                            <div class="cardItem">
+                                <div class="titleItem">Ensino médio:</div>
+                                <div class="cardContent">
+                                    <ul>
+                                        <li>Eletrô Mococa</li>
+                                        <li>2020 até 2022</li>
+                                        <li>Finalizado</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="cardItem">
+                                <div class="titleItem">Curso técnico:</div>
+                                <div class="cardContent">
+                                    <ul>
+                                        <li>Eletrô Mococa</li>
+                                        <li>Desenvolvimento de Sistemas</li>
+                                        <li>2020 até 2022</li>
+                                        <li>Finalizado</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="cardItem">
+                                <div class="titleItem">Curso superior:</div>
+                                <div class="cardContent">
+                                    <ul>
+                                        <li>Fatec Mococa</li>
+                                        <li>Análise e Desenvolvimento de Sistemas</li>
+                                        <li>2023 até agora</li>
+                                        <li>Cursando</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section class="display main" id="sectionServices">
+                <h1 class="textAnimate" id="title">Serviços</h1>
+                <div class="cardsServ">
+                    <div class="box-degrade cardServ ">
+                        <div><img src="./assets/icons/web.png" alt=""></div>
+                        <div class="titleCard">Desenvolvimento WEB</div>
+                        <div>Desenvolvo sites responsivos e intuitivos, utilizando as melhores práticas e tecnologias modernas. Garanto uma experiência excepcional para os usuários, combinando funcionalidade e estética para elevar sua presença online ao próximo nível.</div>
+                    </div>
+                    <div class="box-degrade cardServ">
+                        <div><img src="./assets/icons/game.png" alt=""></div>
+                        <div class="titleCard">Jogos</div>
+                        <div>
+                            Criação de jogos pixelados envolventes e cativantes, proporcionando uma experiência única aos jogadores. Com um estilo visual nostálgico e desafios emocionantes, meu objetivo é oferecer diversão e entretenimento de alta qualidade.</div>
+                    </div>
+                    <div class="box-degrade cardServ">
+                        <div><img src="./assets/icons/ecommerce.png" alt=""></div>
+                        <div class="titleCard">E-commerce</div>
+                        <div>
+                            Crio e-commerce que expõe globalmente seu negócio, garantindo controle e segurança na venda de produtos ou serviços. Ofereço solução completa para maximizar vendas online, proporcionando experiência de compra eficiente e confiável para seus clientes.</div>
+                    </div>
+                    <div class="box-degrade cardServ">
+                        <div><img src="./assets/icons/seguranca.png" alt=""></div>
+                        <div class="titleCard">Dados e Segurança</div>
+                        <div>Implemento as melhores práticas de segurança para proteger dados sensíveis e garantir a integridade das informações nos sistemas, assegurando a conformidade com regulamentações de proteção de dados.</div>
+                    </div>
+                    <div class="box-degrade cardServ">
+                        <div><img src="./assets/icons/page.png" alt=""></div>
+                        <div class="titleCard">Landing Page</div>
+                        <div>Landing pages atrativas e com design moderno, focadas em persuadir os usuários a realizar a ação desejada. Utilizo técnicas de design e conteúdo para maximizar conversões e alcançar os objetivos estabelecidos.</div>
+                    </div>
+                    <div class="box-degrade cardServ">
+                        <div><img src="./assets/icons/manu.png" alt=""></div>
+                        <div class="titleCard">Manutenção e Suporte</div>
+                        <div>Serviços de manutenção e suporte técnico contínuos para garantir a atualização constante do seu sistema, evitando a obsolescência. Resolvo problemas e implemento atualizações essenciais, mantendo seu sistema eficiente e seguro.</div>
+                    </div>
+                </div>
+        </section>
+    
+        <section class="display main" id="sectionPortfolio">
+            <h1 class="textAnimate" id="title">Portfólio</h1>
+            <div class="portfolio">
+                <div class="portfolioImage" id="portfolioImage">
+                    <div class="container-slider">
+                        <div class="container-images" id="slider1">
+                            <img src="assets/images/santacasa1.jpg" class="slider on" alt="">
+                            <img src="assets/images/santacasa2.jpg" class="slider" alt="">
+                            <img src="assets/images/santacasa3.jpg" class="slider" alt="">
+                            <img src="assets/images/santacasa4.jpg" class="slider" alt="">
+                        </div>
+                    </div>
+                    <div class="buttonsSlider">
+                        <button id="prev-button1"><img src="./assets/icons/arrow.png" alt=""></button>
+                        <button id="next-button1"><img src="./assets/icons/arrow.png" alt=""></button>
+                    </div>
+                </div>
+                <div class="description" id="description">
+                    <div class="titleCard">Solicitacao de prontuarios</div>
+                    <div class="descriptionPortfolio">Sistema de automação para solicitação de prontuários, permitindo controle e solicitações online. Usuários podem solicitar e monitorar prontuários, enquanto colaboradores recebem e tratam as solicitações, facilitando o processo de forma eficiente e acessível.</div>
+                    <div class="icons">
+                        <a href="https://santacasamococa.org.br" target="_blank"><img src="./assets/icons/gotolink.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="portfolio reverse">
+                <div class="portfolioImage" id="description">
+                    <div class="container-slider">
+                        <div class="container-images" id="slider2">
+                            <img src="assets/images/eletrove.jpg" class="slider on" alt="">
+                            <img src="assets/images/eletrove2.jpg" class="slider" alt="">
+                            <img src="assets/images/eletrove3.jpg" class="slider" alt="">
+                            <img src="assets/images/eletrove4.jpg" class="slider" alt="">
+                            <img src="assets/images/eletrove5.jpg" class="slider" alt="">
+                            <img src="assets/images/eletrove6.jpg" class="slider" alt="">
+                            <img src="assets/images/eletrove7.jpg" class="slider" alt="">
+                            <img src="assets/images/eletrove8.jpg" class="slider" alt="">
+                            <img src="assets/images/eletrove9.jpg" class="slider" alt="">
+                            <img src="assets/images/eletrove10.jpg" class="slider" alt="">
+                            <img src="assets/images/eletrove11.jpg" class="slider" alt="">
+                            <img src="assets/images/eletrove12.jpg" class="slider" alt="">
+                            <img src="assets/images/eletrove13.jpg" class="slider" alt="">
+                        </div>
+                    </div>
+                    <div class="buttonsSlider">
+                        <button id="prev-button2"><img src="./assets/icons/arrow.png" alt=""></button>
+                        <button id="next-button2"><img src="./assets/icons/arrow.png" alt=""></button>
+                    </div>
+                </div>
+                <div class="description reverse" id="portfolioImage">
+                    <div class="titleCard">Eletrove</div>
+                    <div class="descriptionPortfolio"> O jogo "Eletrove" foi criado em equipe como projeto final do curso técnico, totalmente em pixels e em 8D, oferecendo uma aventura imersiva e inesquecível. Nele, você assume o papel de um aluno em uma escola de recuperação, enfrentando desafios para garantir suas férias.</div>
+                    <div class="icons">
+                        <a onclick="downloadGame()"><img src="./assets/icons/download.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section class="display" id="contact">
+            <div class="box-degrade contact">
+                <h1 class="textAnimate">Contato</h1>
+                <div class="attractiveText">Entre em contato com um toque!</div>
+                <div class="messageContact">Minhas redes sociais e meu e-mail estão sempre abertos para novas oportunidades. Entre em contato comigo, e eu retornarei o mais rapidamente possível!</div>
+                <div class="callMe"><button class="textAnimate" onclick="sendMessage()">Entrar em contato</button></div>
+            </div>
+        </section>
+    
+            <div class="social">
+                <div class="logos">
+                    <a href="https://github.com/vinicads" target="_blank" class="logoSocial">
+                        <div class="logoImage"><img src="./assets/icons/github.png" alt=""></div>GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/vinicius-augusto-dos-santos-2108b1237/" target="_blank" class="logoSocial">
+                        <div class="logoImage"><img src="./assets/icons/linkedin.png" alt=""></div>Linkedin
+                    </a>
+                    <a href="https://www.instagram.com/viniaugustods/" target="_blank" class="logoSocial">
+                        <div class="logoImage"><img src="./assets/icons/instagram.png" alt=""></div>Instagram
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100006825964500" target="_blank" class="logoSocial">
+                        <div class="logoImage"><img src="./assets/icons/facebook.png" alt=""></div>Facebook
+                    </a>
+                    
+                </div>
+
+                <div class="divLine"><div class="line"></div></div>
+         
+            </div>
+    
+        <footer class="foot">
+            <div class="footerContent">
+                <div class="footerContacts">
+                    <h2 class="logo">&lt; Vini.<label>ADS /></label></h2>
+                    <p>Transfomando suas ideias em codigos.</p>
+        
+                    <div class="socialMedia">
+                        <a href="https://github.com/vinicads" target="_blank" class="footerLink"><img src="./assets/icons/github.png" alt=""></a>
+                        <a href="https://www.linkedin.com/in/vinicius-augusto-dos-santos-2108b1237/" target="_blank" class="footerLink"><img src="./assets/icons/linkedin.png" alt=""></a>
+                        <a href="https://www.instagram.com/viniaugustods/" target="_blank" class="footerLink"><img src="./assets/icons/instagram.png" alt=""></a>
+                        <a href="https://www.facebook.com/profile.php?id=100006825964500" target="_blank" class="footerLink"><img src="./assets/icons/facebook.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="footerList">
+                    <h2>Contato</h2>
                     <ul class="footerLi">
                         <li>
-                            <a href="" class="footerLink">Quem sou eu</a>
+                            <a href="mailto:vinicim.augusto@outlook.com" class="footerLink">vinicim.augusto@outlook.com</a>
                         </li>
                         <li>
-                            <a href="" class="footerLink">Servicos</a>
+                            <a href="tel:+5519992806229" class="footerLink">+55 (19) 99280-6229</a>
                         </li>
-                        <li>
-                            <a href="" class="footerLink">Portfolio</a>
+                        <li >
+                            <a href="" class="footerLink" onclick="downloadCurriculum()">Curriculo</a>
                         </li>
-                        <li>
-                            <a href="" class="footerLink">Contato</a>
+                        <li >
+                            Sao Paulo, Brasil
                         </li>
                     </ul>
             </div>
-        </div>
-        <div class="footerCopyight">Copyright © &nbsp; <label for=""> Vinicius Augusto dos Santos.</label></div>
-    </footer>
+                <div class="footerList">
+                        <h2>Navegar</h2>
+                        <ul class="footerLi">
+                            <li>
+                                <a href="#sectionWhoIAm" class="footerLink">Quem sou eu</a>
+                            </li>
+                            <li>
+                                <a href="#sectionServices" class="footerLink">Servicos</a>
+                            </li>
+                            <li>
+                                <a href="#sectionPortfolio" class="footerLink">Portfólio</a>
+                            </li>
+                            <li>
+                                <a href="#contact" class="footerLink">Contato</a>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+            <div class="footerCopyight">Copyright © &nbsp; <label for=""> Vinicius Augusto dos Santos.</label></div>
+        </footer>
+    </div>
+ 
 
-    <script src="script.js"></script>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
