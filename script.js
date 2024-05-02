@@ -12,8 +12,6 @@ const myObserver = new IntersectionObserver((entries) => {
     });
 });
 
-const foot = document.querySelector('.foot');
-myObserver.observe(foot);
 const myPhoto = document.getElementById('myPhoto');
 myObserver.observe(myPhoto);
 const whoIAm = document.getElementById('whoIAm');

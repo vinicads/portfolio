@@ -832,15 +832,7 @@ div.whoIAm .text.show {
     text-decoration: none;
 }
 
-.foot {
-opacity: 0;
-transform: translatey(-100px);
-filter: blur(15px);
-}
 
-.foot.show {
-animation: showDown 1s forwards ease-in-out;
-}
 
 .footerLi {
     display: flex;
