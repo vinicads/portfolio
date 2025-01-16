@@ -251,76 +251,46 @@ function downloadCurriculum() {
 }
 
   //slider
-  const slider = document.querySelectorAll('#slider1 .slider');
-  const btnPrev1 = document.getElementById('prev-button1');
-  const btnNext1 = document.getElementById('next-button1');
-
-  const slider2 = document.querySelectorAll('#slider2 .slider');
-  const btnPrev2 = document.getElementById('prev-button2');
-  const btnNext2 = document.getElementById('next-button2');
-
-  let currentSlide1 = 0; 
-  let currentSlide2 = 0; 
-
-  function hideSlider(slide) {
-    if (slide == 1){
-        slider.forEach(item => {
-            item.classList.remove('on');
-        });
-    }else {
-        slider2.forEach(item => {
-            item.classList.remove('on');
-        });
-    }
+  const sliders = {
+    slider1: { elements: document.querySelectorAll('#slider1 .slider'), currentSlide: 0 },
+    slider2: { elements: document.querySelectorAll('#slider2 .slider'), currentSlide: 0 },
+    slider3: { elements: document.querySelectorAll('#slider3 .slider'), currentSlide: 0 },
+    slider4: { elements: document.querySelectorAll('#slider4 .slider'), currentSlide: 0 },
+    slider5: { elements: document.querySelectorAll('#slider5 .slider'), currentSlide: 0 },
+    slider6: { elements: document.querySelectorAll('#slider6 .slider'), currentSlide: 0 },
+  };
+  
+  function hideSlider(sliderName) {
+    sliders[sliderName].elements.forEach(item => item.classList.remove('on'));
   }
-
-  function showSlider(slide){
-    if (slide == 1){
-        slider[currentSlide1].classList.add('on');
-    }else {
-        slider2[currentSlide2].classList.add('on');
-    }
-    
+  
+  function showSlider(sliderName) {
+    const { elements, currentSlide } = sliders[sliderName];
+    elements[currentSlide].classList.add('on');
   }
-
-
-
-  btnNext1.addEventListener('click', () => {
-    hideSlider(1);
-    if (currentSlide1 === slider.length - 1){
-        currentSlide1 = 0;
-    }else{
-        currentSlide1++;
+  
+  function navigateSlider(sliderName, direction) {
+    const slider = sliders[sliderName];
+    hideSlider(sliderName);
+  
+    if (direction === 'next') {
+      slider.currentSlide = (slider.currentSlide + 1) % slider.elements.length;
+    } else if (direction === 'prev') {
+      slider.currentSlide = (slider.currentSlide - 1 + slider.elements.length) % slider.elements.length;
     }
-    showSlider(1);
-  });
-
-  btnPrev1.addEventListener('click', () => {
-    hideSlider(1);
-    if (currentSlide1 === 0){
-        currentSlide1 = slider.length - 1;
-    }else{
-        currentSlide1--;
-    }
-    showSlider(1);
-  });
-
-  btnNext2.addEventListener('click', () => {
-    hideSlider(2);
-    if (currentSlide2 === slider2.length - 1){
-        currentSlide2 = 0;
-    }else{
-        currentSlide2++;
-    }
-    showSlider(2);
-  });
-
-  btnPrev2.addEventListener('click', () => {
-    hideSlider(2);
-    if (currentSlide2 === 0){
-        currentSlide2 = slider2.length - 1;
-    }else{
-        currentSlide2--;
-    }
-    showSlider(2);
+  
+    showSlider(sliderName);
+  }
+  
+  function setupSliderControls(sliderName) {
+    const btnPrev = document.getElementById(`prev-button${sliderName.slice(-1)}`);
+    const btnNext = document.getElementById(`next-button${sliderName.slice(-1)}`);
+  
+    btnPrev.addEventListener('click', () => navigateSlider(sliderName, 'prev'));
+    btnNext.addEventListener('click', () => navigateSlider(sliderName, 'next'));
+  }
+  
+  Object.keys(sliders).forEach(sliderName => {
+    setupSliderControls(sliderName);
+    showSlider(sliderName); 
   });

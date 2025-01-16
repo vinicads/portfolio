@@ -923,7 +923,7 @@ div.whoIAm .text.show {
     opacity: 1;
 }
 
-#prev-button1, #next-button1, #prev-button2, #next-button2{
+#prev-button1, #next-button1, #prev-button2, #next-button2, #prev-button3, #next-button3, #prev-button4, #next-button4, #prev-button5, #next-button5, #prev-button6, #next-button6{
     background: none;
     margin-top: 2%;
     border: none;
@@ -933,16 +933,16 @@ div.whoIAm .text.show {
     transition: 0.3s ease-in-out;
 }
 
-#prev-button1 img, #next-button1 img, #prev-button2 img, #next-button2 img {
+#prev-button1 img, #next-button1 img, #prev-button2 img, #next-button2 img, #prev-button3 img, #next-button3 img, #prev-button4 img, #next-button4 img, #prev-button5 img, #next-button5 img, #prev-button6 img, #next-button6 img {
     filter: invert(100%);
     width: 100%;
 }
 
-#next-button1 img, #next-button2 img {
+#next-button1 img, #next-button2 img, #next-button3 img, #next-button4 img, #next-button5 img, #next-button6 img {
     transform: rotate(180deg);
 }
 
-#prev-button1:hover, #next-button1:hover, #prev-button2:hover, #next-button2:hover {
+#prev-button1:hover, #next-button1:hover, #prev-button2:hover, #next-button2:hover, #prev-button3:hover, #next-button3:hover, #prev-button4:hover, #next-button4:hover, #prev-button5:hover, #next-button5:hover, #prev-button6:hover, #next-button6:hover {
     cursor: pointer;
     transform: scale(1.05)
 }
