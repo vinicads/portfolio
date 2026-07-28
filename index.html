@@ -1,451 +1,234 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vinicius Augusto dos Santos - Portfólio</title>
+    <meta name="description" content="Portfólio de Vinicius Augusto dos Santos, desenvolvedor full stack focado em sistemas web, interfaces responsivas e produtos digitais profissionais.">
+    <meta name="theme-color" content="#f8f8f9">
+    <title>Vinicius Augusto dos Santos | Desenvolvedor Full Stack</title>
+    <link rel="preload" href="./assets/images/optimized/encontrando-fretes-cover.jpg" as="image">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" type="imagex/png" href="./assets/icons/iconSite.png">
+    <link rel="shortcut icon" type="image/png" href="./assets/icons/iconSite.png">
 </head>
 <body>
+    <a class="skip-link" href="#main">Ir para o conteúdo</a>
+    <div class="page-progress" aria-hidden="true" data-scroll-progress></div>
+    <div class="cursor-dot" aria-hidden="true" data-cursor-dot></div>
+    <div class="cursor-ring" aria-hidden="true" data-cursor-ring></div>
 
-    <div class="contentPage">
-        <header id="header">
-            <nav id="navbar">
-                <h2 class="logo">&lt; Vini.<label>ADS /></label></h2>
-                <div class="menu" onclick="openMenu()" id="menu"> 
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
+    <header class="site-header" data-header>
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="siteMenu" aria-expanded="false" data-menu-toggle>
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav-shell" aria-label="Principal">
+            <a class="brand" href="#hero" aria-label="Vinicius Augusto dos Santos">
+                <span class="brand-mark">VA</span>
+                <span>Vinicius Augusto</span>
+            </a>
+
+            <div class="nav-panel" id="siteMenu" data-menu>
+                <a href="#about" data-nav="about">Sobre</a>
+                <a href="#paths" data-nav="paths">Atuação</a>
+                <a href="#services" data-nav="services">Serviços</a>
+                <a href="#projects" data-nav="projects">Projetos</a>
+                <a href="#contact" data-nav="contact">Contato</a>
+                <button class="theme-button icon-button" type="button" data-theme-toggle aria-label="Alternar tema">
+                    <span data-theme-icon aria-hidden="true">☾</span>
+                </button>
+                <button class="lang-button" type="button" data-lang-toggle aria-label="Change language">
+                    <span data-current-lang>PT</span>
+                </button>
+                <a class="nav-cta" href="#contact" data-copy="navCta"></a>
+            </div>
+        </nav>
+    </header>
+
+    <a class="floating-cta" data-whatsapp-link target="_blank" rel="noopener" data-copy="floatingCta" aria-label="Chamar no WhatsApp"></a>
+
+    <main id="main">
+        <section class="hero" id="hero">
+            <div class="hero-copy reveal">
+                <div class="hero-control-row">
+                    <p class="section-kicker" data-copy="hero.eyebrow"></p>
                 </div>
-                <ul class="navigation" id="navigation">
-                    <a href="#sectionWhoIAm">Quem sou eu</a>
-                    <a href="#sectionServices">Serviços</a>
-                    <a href="#sectionPortfolio">Portfólio</a>
-                    <a href="#contact">Contato</a>
+                <h1 data-hero-title></h1>
+                <p class="hero-role" data-copy="hero.role"></p>
+                <p class="hero-lead" data-copy="hero.lead"></p>
+                <ul class="hero-points" aria-label="Destaques">
+                    <li><span data-copy="hero.pointOne"></span></li>
+                    <li><span data-copy="hero.pointTwo"></span></li>
+                    <li><span data-copy="hero.pointThree"></span></li>
                 </ul>
-            </nav>
-        </header>
-    
-        <section class="parallax"> 
-            <img src="./assets/images/background-parafall.jpg" id="fundoCompleto">
-            <h2 id="text">
-                <div class="textChange">
-                    <div>Olá, sou</div> &nbsp; <label class="animated-text" id="animated-text"></label>
-                </div>
-                    <div class="smallText">Transformando ideias em verdadeiras experiências digitais.</div>
-                    <div class="cards">
-                        <div class="card">
-                            <div class="number" data-value="6">0</div>
-                            <div class="info">Projetos</div>
-                        </div>
-                        <div class="card">
-                            <div class="number" data-value="2">0</div>
-                            <div class="info">Anos</div>
-                        </div>
-                    </div>
-            </h2>
-            <img src="./assets/images/baixoFundo.png" id="baixoFundo">
-        </section>
-    
-        <section class="display" id="sectionWhoIAm">
-            <div class="myPhoto" id="myPhoto">
-                <div class="box-degrade">
-                    <img src="./assets/images/imagemQuemSouEu.jpg" alt="">
+                <p class="hero-status" data-copy="hero.availability"></p>
+                <div class="hero-actions">
+                    <a class="button primary" href="#projects" data-copy="hero.primaryCta"></a>
+                    <a class="button secondary" href="#contact" data-copy="hero.secondaryCta"></a>
+                    <a class="button ghost" href="#services" data-copy="hero.tertiaryCta"></a>
                 </div>
             </div>
-            <div class="whoIAm">
-                <h1 class="textAnimate" id="whoIAm">Quem sou eu</h1>
-                <div class="text" id="textWhoIAm">
-                    <div class="paragraph">
-                        Olá, me chamo <label for="" class="emphasis">Vinicius Augusto dos Santos</label>,
-                    tenho <label for="" class="empashis">20 anos</label> e sou um amante da área de tecnologia.</div>
-                    <div class="paragraph">
-                        Tenho como objetivo criar experiências únicas com sistemas desenvolvidos seguindo as
-                        <label for="" class="empashis">melhores práticas da programação</label>, com um <label for="" class="emphasis">design moderno</label>,
-                        <label for="" class="empashis">responsivo</label> e <label for="" class="emphasis">fácil</label>.
-                    </div>
-                    <div class="paragraph">
-                        Meu principal foco é o <label for="" class="emphasis">desenvolvimento WEB</label>, porém, estou disposto à ir átras do que for preciso para
-                        <label for="" class="emphasis">transformar a sua ideia</label>, em uma <label for="" class="emphasis">realidade</label>.
-                    </div>
+
+            <aside class="hero-showcase reveal" data-hero-showcase aria-label="Projeto em destaque"></aside>
+
+            <dl class="facts-strip reveal" data-stats></dl>
+        </section>
+
+        <section class="tech-section" aria-label="Tecnologias">
+            <div class="tech-list" data-tech-list></div>
+        </section>
+
+        <section class="section paths-section" id="paths">
+            <div class="section-heading reveal">
+                <p class="section-kicker" data-copy="paths.eyebrow"></p>
+                <h2 data-copy="paths.title"></h2>
+                <p data-copy="paths.lead"></p>
+            </div>
+            <div class="path-grid" data-paths></div>
+            <div class="cta-strip reveal">
+                <div>
+                    <strong data-copy="paths.ctaTitle"></strong>
+                    <p data-copy="paths.ctaText"></p>
                 </div>
-                <div class="dinamicCard" id="dinamicCard">
-                    <ul class="items">
-                        <li class="item active" id="skillsMenu" onclick="alternateContent(1)">Habilidades</li>
-                        <li class="item" id="educationMenu" onclick="alternateContent(2)">Educação</li>
-                    </ul>
-                    <div class="content">
-                        <div class="skills in" id="skills">
-                            <div class="cardItem">
-                                <div class="titleItem">Frontend:</div>
-                                <div class="cardContent">
-                                    <ul>
-                                        <li>HTML, CSS, JS;</li>
-                                        <li>Vue;</li>
-                                        <li>React;</li>
-                                        <li>Angular;</li>
-                                        <li>Bootstrap.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="cardItem">
-                                <div class="titleItem">Backend:</div>
-                                <div class="cardContent">
-                                    <ul>
-                                        <li>Node;</li>
-                                        <li>Express;</li>
-                                        <li>Nest;</li>
-                                        <li>C#;</li>
-                                        <li>Go.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="cardItem">
-                                <div class="titleItem">Desenvolvimento de jogos:</div>
-                                <div class="cardContent">
-                                    <ul>
-                                        <li>Gamemaker.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="education" id="education">
-                            <div class="cardItem">
-                                <div class="titleItem">Curso técnico:</div>
-                                <div class="cardContent">
-                                    <ul>
-                                        <li>Eletrô Mococa</li>
-                                        <li>Desenvolvimento de Sistemas</li>
-                                        <li>2020 até 2022</li>
-                                        <li>Finalizado</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="cardItem">
-                                <div class="titleItem">Curso superior:</div>
-                                <div class="cardContent">
-                                    <ul>
-                                        <li>Fatec Mococa</li>
-                                        <li>Análise e Desenvolvimento de Sistemas</li>
-                                        <li>2023 até 2024</li>
-                                        <li>Finalizado</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="cta-actions">
+                    <a class="button primary" data-whatsapp-link target="_blank" rel="noopener" data-copy="paths.primaryCta"></a>
+                    <a class="button soft" href="#projects" data-copy="paths.secondaryCta"></a>
                 </div>
             </div>
         </section>
-    
-        <section class="display main" id="sectionServices">
-                <h1 class="textAnimate" id="title">Serviços</h1>
-                <div class="cardsServ">
-                    <div class="box-degrade cardServ ">
-                        <div><img src="./assets/icons/web.png" alt=""></div>
-                        <div class="titleCard">Desenvolvimento WEB</div>
-                        <div>Desenvolvo sites responsivos e intuitivos, utilizando as melhores práticas e tecnologias modernas. Garanto uma experiência excepcional para os usuários, combinando funcionalidade e estética para elevar sua presença online ao próximo nível.</div>
-                    </div>
-                    <div class="box-degrade cardServ">
-                        <div><img src="./assets/icons/game.png" alt=""></div>
-                        <div class="titleCard">Jogos</div>
-                        <div>
-                            Criação de jogos pixelados envolventes e cativantes, proporcionando uma experiência única aos jogadores. Com um estilo visual nostálgico e desafios emocionantes, meu objetivo é oferecer diversão e entretenimento de alta qualidade.</div>
-                    </div>
-                    <div class="box-degrade cardServ">
-                        <div><img src="./assets/icons/ecommerce.png" alt=""></div>
-                        <div class="titleCard">E-commerce</div>
-                        <div>
-                            Crio e-commerce que expõe globalmente seu negócio, garantindo controle e segurança na venda de produtos ou serviços. Ofereço solução completa para maximizar vendas online, proporcionando experiência de compra eficiente e confiável para seus clientes.</div>
-                    </div>
-                    <div class="box-degrade cardServ">
-                        <div><img src="./assets/icons/seguranca.png" alt=""></div>
-                        <div class="titleCard">Dados e Segurança</div>
-                        <div>Implemento as melhores práticas de segurança para proteger dados sensíveis e garantir a integridade das informações nos sistemas, assegurando a conformidade com regulamentações de proteção de dados.</div>
-                    </div>
-                    <div class="box-degrade cardServ">
-                        <div><img src="./assets/icons/page.png" alt=""></div>
-                        <div class="titleCard">Landing Page</div>
-                        <div>Landing pages atrativas e com design moderno, focadas em persuadir os usuários a realizar a ação desejada. Utilizo técnicas de design e conteúdo para maximizar conversões e alcançar os objetivos estabelecidos.</div>
-                    </div>
-                    <div class="box-degrade cardServ">
-                        <div><img src="./assets/icons/manu.png" alt=""></div>
-                        <div class="titleCard">Manutenção e Suporte</div>
-                        <div>Serviços de manutenção e suporte técnico contínuos para garantir a atualização constante do seu sistema, evitando a obsolescência. Resolvo problemas e implemento atualizações essenciais, mantendo seu sistema eficiente e seguro.</div>
-                    </div>
+
+        <section class="section about-section" id="about">
+            <div class="section-heading reveal">
+                <p class="section-kicker" data-copy="about.eyebrow"></p>
+                <h2 data-copy="about.title"></h2>
+            </div>
+
+            <div class="about-layout">
+                <article class="about-card panel reveal">
+                    <p data-copy="about.paragraphOne"></p>
+                    <p data-copy="about.paragraphTwo"></p>
+                    <p data-copy="about.paragraphThree"></p>
+                </article>
+
+                <div class="skills-area reveal">
+                    <h3 data-copy="about.skillsTitle"></h3>
+                    <div class="skill-grid" data-skills></div>
                 </div>
+            </div>
+
+            <div class="education-strip panel reveal">
+                <h3 data-copy="about.educationTitle"></h3>
+                <div class="timeline" data-education></div>
+            </div>
         </section>
-    
-        <section class="display main" id="sectionPortfolio">
-            <h1 class="textAnimate" id="title">Portfólio</h1>
-            <div class="portfolio">
-                <div class="portfolioImage" id="portfolioImage">
-                    <div class="container-slider">
-                        <div class="container-images" id="slider1">
-                            <img src="assets/images/santacasa1.jpg" class="slider on" alt="">
-                            <img src="assets/images/santacasa2.jpg" class="slider" alt="">
-                            <img src="assets/images/santacasa3.jpg" class="slider" alt="">
-                            <img src="assets/images/santacasa4.jpg" class="slider" alt="">
-                        </div>
-                    </div>
-                    <div class="buttonsSlider">
-                        <button id="prev-button1"><img src="./assets/icons/arrow.png" alt=""></button>
-                        <button id="next-button1"><img src="./assets/icons/arrow.png" alt=""></button>
-                    </div>
-                </div>
-                <div class="description" id="description">
-                    <div class="titleCard">Solicitação de prontuários</div>
-                    <div class="descriptionPortfolio">Sistema de automação para solicitação de prontuários, permitindo controle e solicitações online. Usuários podem solicitar e monitorar prontuários, enquanto colaboradores recebem e tratam as solicitações, facilitando o processo de forma eficiente e acessível.</div>
-                    <div class="icons">
-                        <a href="https://prontuarios.santacasamococa.org.br" target="_blank"><img src="./assets/icons/gotolink.png" alt=""></a>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="portfolio reverse">
-                <div class="portfolioImage" id="description">
-                    <div class="container-slider">
-                        <div class="container-images" id="slider2">
-                            <img src="assets/images/eletrove.jpg" class="slider on" alt="">
-                            <img src="assets/images/eletrove2.jpg" class="slider" alt="">
-                            <img src="assets/images/eletrove3.jpg" class="slider" alt="">
-                            <img src="assets/images/eletrove4.jpg" class="slider" alt="">
-                            <img src="assets/images/eletrove5.jpg" class="slider" alt="">
-                            <img src="assets/images/eletrove6.jpg" class="slider" alt="">
-                            <img src="assets/images/eletrove7.jpg" class="slider" alt="">
-                            <img src="assets/images/eletrove8.jpg" class="slider" alt="">
-                            <img src="assets/images/eletrove9.jpg" class="slider" alt="">
-                            <img src="assets/images/eletrove10.jpg" class="slider" alt="">
-                            <img src="assets/images/eletrove11.jpg" class="slider" alt="">
-                            <img src="assets/images/eletrove12.jpg" class="slider" alt="">
-                            <img src="assets/images/eletrove13.jpg" class="slider" alt="">
-                        </div>
-                    </div>
-                    <div class="buttonsSlider">
-                        <button id="prev-button2"><img src="./assets/icons/arrow.png" alt=""></button>
-                        <button id="next-button2"><img src="./assets/icons/arrow.png" alt=""></button>
-                    </div>
-                </div>
-                <div class="description reverse" id="portfolioImage">
-                    <div class="titleCard">Eletrove</div>
-                    <div class="descriptionPortfolio"> O jogo "Eletrove" foi criado em equipe como projeto final do curso técnico, totalmente em pixels e em 8D, oferecendo uma aventura imersiva e inesquecível. Nele, você assume o papel de um aluno em uma escola de recuperação, enfrentando desafios para garantir suas férias.</div>
-                    <div class="icons">
-                        <a onclick="downloadGame()"><img src="./assets/icons/download.png" alt=""></a>
-                    </div>
-                </div>
-            </div>
 
-                <div class="portfolio">
-                <div class="portfolioImage" id="portfolioImage">
-                    <div class="container-slider">
-                        <div class="container-images" id="slider3">
-                            <img src="assets/images/encontrandoFretes1.jpg" class="slider on" alt="">
-                            <img src="assets/images/encontrandoFretes2.jpg" class="slider" alt="">
-                            <img src="assets/images/encontrandoFretes3.jpg" class="slider" alt="">
-                            <img src="assets/images/encontrandoFretes4.jpg" class="slider" alt="">
-                            <img src="assets/images/encontrandoFretes5.jpg" class="slider" alt="">
-                            <img src="assets/images/encontrandoFretes6.jpg" class="slider" alt="">
-                            <img src="assets/images/encontrandoFretes7.jpg" class="slider" alt="">
-                            <img src="assets/images/encontrandoFretes8.jpg" class="slider" alt="">
-                            <img src="assets/images/encontrandoFretes9.jpg" class="slider" alt="">
-                        </div>
-                    </div>
-                    <div class="buttonsSlider">
-                        <button id="prev-button3"><img src="./assets/icons/arrow.png" alt=""></button>
-                        <button id="next-button3"><img src="./assets/icons/arrow.png" alt=""></button>
-                    </div>
-                </div>
-                <div class="description" id="description">
-                    <div class="titleCard">Encontrando Fretes</div>
-                    <div class="descriptionPortfolio">O Encontrando Fretes é uma plataforma web que conecta motoristas autônomos e empresas que necessitam realizar o transporte de mercadorias. O sistema oferece uma solução eficiente e prática para otimizar a logística de transporte, facilitando a comunicação e a negociação entre as partes envolvidas.</div>
-                    <div class="icons">
-                        <a href="https://encontrandofretes.com" target="_blank"><img src="./assets/icons/gotolink.png" alt=""></a>
-                    </div>
-                </div>
+        <section class="section" id="services">
+            <div class="section-heading reveal">
+                <p class="section-kicker" data-copy="services.eyebrow"></p>
+                <h2 data-copy="services.title"></h2>
+                <p data-copy="services.lead"></p>
             </div>
-
-            <div class="portfolio reverse">
-                <div class="portfolioImage" id="description">
-                    <div class="container-slider">
-                        <div class="container-images" id="slider4">
-                            <img src="assets/images/santacasaSite1.jpg" class="slider on" alt="">
-                            <img src="assets/images/santacasaSite2.jpg" class="slider" alt="">
-                            <img src="assets/images/santacasaSite3.jpg" class="slider" alt="">
-                            <img src="assets/images/santacasaSite4.jpg" class="slider" alt="">
-                            <img src="assets/images/santacasaSite5.jpg" class="slider" alt="">
-                            <img src="assets/images/santacasaSite6.jpg" class="slider" alt="">
-                            <img src="assets/images/santacasaSite7.jpg" class="slider" alt="">
-                            <img src="assets/images/santacasaSite8.jpg" class="slider" alt="">
-                            <img src="assets/images/santacasaSite9.jpg" class="slider" alt="">
-                            <img src="assets/images/santacasaSite10.jpg" class="slider" alt="">
-                            <img src="assets/images/santacasaSite11.jpg" class="slider" alt="">
-                            <img src="assets/images/santacasaSite12.jpg" class="slider" alt="">
-                            <img src="assets/images/santacasaSite13.jpg" class="slider" alt="">
-                        </div>
-                    </div>
-                    <div class="buttonsSlider">
-                        <button id="prev-button4"><img src="./assets/icons/arrow.png" alt=""></button>
-                        <button id="next-button4"><img src="./assets/icons/arrow.png" alt=""></button>
-                    </div>
+            <div class="services-list" data-services></div>
+            <div class="cta-strip reveal">
+                <div>
+                    <strong data-copy="services.ctaTitle"></strong>
+                    <p data-copy="services.ctaText"></p>
                 </div>
-                <div class="description reverse" id="portfolioImage">
-                    <div class="titleCard">Site Institucional da Santa Casa</div>
-                    <div class="descriptionPortfolio"> O site oficial da Santa Casa de Misericórdia de Mococa é um portal completo e acessível, dedicado a informar e atender a comunidade. Com uma navegação simples e intuitiva, o site oferece informações essenciais sobre os serviços hospitalares, notícias, eventos e comunicados.</div>
-                    <div class="icons">
-                        <a href="https://santacasamococa.org.br" target="_blank"><img src="./assets/icons/gotolink.png" alt=""></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="portfolio">
-                <div class="portfolioImage" id="portfolioImage">
-                    <div class="container-slider">
-                        <div class="container-images" id="slider5">
-                            <img src="assets/images/cmsSantaCasa1.jpg" class="slider on" alt="">
-                            <img src="assets/images/cmsSantaCasa2.jpg" class="slider" alt="">
-                            <img src="assets/images/cmsSantaCasa3.jpg" class="slider" alt="">
-                            <img src="assets/images/cmsSantaCasa4.jpg" class="slider" alt="">
-                            <img src="assets/images/cmsSantaCasa5.jpg" class="slider" alt="">
-                            <img src="assets/images/cmsSantaCasa6.jpg" class="slider" alt="">
-                            <img src="assets/images/cmsSantaCasa7.jpg" class="slider" alt="">
-                            <img src="assets/images/cmsSantaCasa8.jpg" class="slider" alt="">
-                        </div>
-                    </div>
-                    <div class="buttonsSlider">
-                        <button id="prev-button5"><img src="./assets/icons/arrow.png" alt=""></button>
-                        <button id="next-button5"><img src="./assets/icons/arrow.png" alt=""></button>
-                    </div>
-                </div>
-                <div class="description" id="description">
-                    <div class="titleCard">CMS da Santa Casa</div>
-                    <div class="descriptionPortfolio">O CMS desenvolvido para a Santa Casa de Misericórdia de Mococa é uma plataforma exclusiva, acessível apenas para os colaboradores da instituição. Criado para atender às necessidades internas, o sistema permite gerenciar de forma prática e eficiente todas as informações exibidas no site institucional.</div>
-                </div>
-            </div>
-
-            <div class="portfolio reverse">
-                <div class="portfolioImage" id="description">
-                    <div class="container-slider">
-                        <div class="container-images" id="slider6">
-                            <img src="assets/images/talentos1.jpg" class="slider on" alt="">
-                            <img src="assets/images/talentos2.jpg" class="slider" alt="">
-                            <img src="assets/images/talentos3.jpg" class="slider" alt="">
-                            <img src="assets/images/talentos4.jpg" class="slider" alt="">
-                            <img src="assets/images/talentos5.jpg" class="slider" alt="">
-                            <img src="assets/images/talentos6.jpg" class="slider" alt="">
-                            <img src="assets/images/talentos7.jpg" class="slider" alt="">
-                            <img src="assets/images/talentos8.jpg" class="slider" alt="">
-                            <img src="assets/images/talentos9.jpg" class="slider" alt="">
-                            <img src="assets/images/talentos10.jpg" class="slider" alt="">
-                            <img src="assets/images/talentos11.jpg" class="slider" alt="">
-                            <img src="assets/images/talentos12.jpg" class="slider" alt="">
-                            <img src="assets/images/talentos13.jpg" class="slider" alt="">
-                            <img src="assets/images/talentos14.jpg" class="slider" alt="">
-                            <img src="assets/images/talentos15.jpg" class="slider" alt="">
-                            <img src="assets/images/talentos16.jpg" class="slider" alt="">
-                            <img src="assets/images/talentos17.jpg" class="slider" alt="">
-                            <img src="assets/images/talentos18.jpg" class="slider" alt="">
-                        </div>
-                    </div>
-                    <div class="buttonsSlider">
-                        <button id="prev-button6"><img src="./assets/icons/arrow.png" alt=""></button>
-                        <button id="next-button6"><img src="./assets/icons/arrow.png" alt=""></button>
-                    </div>
-                </div>
-                <div class="description reverse" id="portfolioImage">
-                    <div class="titleCard">Banco de Talentos</div>
-                    <div class="descriptionPortfolio">O Banco de Talentos da Santa Casa de Misericórdia de Mococa é uma plataforma interna desenvolvida para conectar candidatos qualificados às oportunidades de trabalho disponíveis na instituição. Voltado tanto para a equipe de recrutamento quanto para os interessados em ingressar na Santa Casa, o sistema é prático, seguro e intuitivo.</div>
-                    <div class="icons">
-                        <a href="https://talentos.santacasamococa.org.br" target="_blank"><img src="./assets/icons/gotolink.png" alt=""></a>
-                    </div>
+                <div class="cta-actions">
+                    <a class="button primary" data-whatsapp-link target="_blank" rel="noopener" data-copy="services.primaryCta"></a>
+                    <a class="button soft" href="#workflow" data-copy="services.secondaryCta"></a>
                 </div>
             </div>
         </section>
-    
-        <section class="display" id="contact">
-            <div class="box-degrade contact">
-                <h1 class="textAnimate">Contato</h1>
-                <div class="attractiveText">Entre em contato com um clique!</div>
-                <div class="messageContact">Minhas redes sociais e meu e-mail estão sempre abertos para novas oportunidades. Entre em contato comigo, e eu retornarei o mais rapidamente possível!</div>
-                <div class="callMe"><button class="textAnimate" onclick="sendMessage()">Entrar em contato</button></div>
+
+        <section class="section workflow-section" id="workflow" aria-label="Processo de entrega">
+            <div class="workflow-panel reveal">
+                <div class="section-heading">
+                    <p class="section-kicker" data-copy="workflow.eyebrow"></p>
+                    <h2 data-copy="workflow.title"></h2>
+                    <p data-copy="workflow.lead"></p>
+                </div>
+                <div class="workflow-grid" data-workflow></div>
+                <div class="section-cta">
+                    <p data-copy="workflow.ctaText"></p>
+                    <a class="button primary" data-whatsapp-link target="_blank" rel="noopener" data-copy="workflow.cta"></a>
+                </div>
             </div>
         </section>
-    
-            <div class="social">
-                <div class="logos">
-                    <a href="https://github.com/vinicads" target="_blank" class="logoSocial">
-                        <div class="logoImage"><img src="./assets/icons/github.png" alt=""></div>GitHub
-                    </a>
-                    <a href="https://www.linkedin.com/in/vinicius-augusto-dos-santos-2108b1237/" target="_blank" class="logoSocial">
-                        <div class="logoImage"><img src="./assets/icons/linkedin.png" alt=""></div>Linkedin
-                    </a>
-                    <a href="https://www.instagram.com/viniaugustods/" target="_blank" class="logoSocial">
-                        <div class="logoImage"><img src="./assets/icons/instagram.png" alt=""></div>Instagram
-                    </a>
-                    <a href="https://www.facebook.com/profile.php?id=100006825964500" target="_blank" class="logoSocial">
-                        <div class="logoImage"><img src="./assets/icons/facebook.png" alt=""></div>Facebook
-                    </a>
-                    
-                </div>
 
-                <div class="divLine"><div class="line"></div></div>
-         
+        <section class="section projects-section" id="projects">
+            <div class="section-heading reveal">
+                <p class="section-kicker" data-copy="projects.eyebrow"></p>
+                <h2 data-copy="projects.title"></h2>
+                <p data-copy="projects.lead"></p>
             </div>
-    
-        <footer class="foot">
-            <div class="footerContent">
-                <div class="footerContacts">
-                    <h2 class="logo">&lt; Vini.<label>ADS /></label></h2>
-                    <p>Transfomando suas ideias em códigos.</p>
-        
-                    <div class="socialMedia">
-                        <a href="https://github.com/vinicads" target="_blank" class="footerLink"><img src="./assets/icons/github.png" alt=""></a>
-                        <a href="https://www.linkedin.com/in/vinicius-augusto-dos-santos-2108b1237/" target="_blank" class="footerLink"><img src="./assets/icons/linkedin.png" alt=""></a>
-                        <a href="https://www.instagram.com/viniaugustods/" target="_blank" class="footerLink"><img src="./assets/icons/instagram.png" alt=""></a>
-                        <a href="https://www.facebook.com/profile.php?id=100006825964500" target="_blank" class="footerLink"><img src="./assets/icons/facebook.png" alt=""></a>
+            <div class="project-toolbar reveal" aria-label="Filtros de projetos" data-project-filters></div>
+            <div class="case-list" data-projects></div>
+            <div class="cta-strip reveal">
+                <div>
+                    <strong data-copy="projects.ctaTitle"></strong>
+                    <p data-copy="projects.ctaText"></p>
+                </div>
+                <div class="cta-actions">
+                    <a class="button primary" data-whatsapp-link target="_blank" rel="noopener" data-copy="projects.primaryCta"></a>
+                    <a class="button soft" href="#services" data-copy="projects.secondaryCta"></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact-section" id="contact">
+            <div class="contact-panel panel reveal">
+                <div>
+                    <p class="section-kicker" data-copy="contact.eyebrow"></p>
+                    <h2 data-copy="contact.title"></h2>
+                    <p data-copy="contact.lead"></p>
+                </div>
+                <div class="contact-side">
+                    <div class="contact-actions">
+                        <a class="button primary" data-whatsapp-link target="_blank" rel="noopener" data-copy="contact.whatsapp"></a>
+                        <a class="button secondary" data-resume-link target="_blank" rel="noopener" data-copy="contact.resume"></a>
                     </div>
-                </div>
-                <div class="footerList">
-                    <h2>Contato</h2>
-                    <ul class="footerLi">
-                        <li>
-                            <a href="mailto:vinicim.augusto@outlook.com" class="footerLink">vinicim.augusto@outlook.com</a>
-                        </li>
-                        <li>
-                            <a href="tel:+5519992806229" class="footerLink">+55 (19) 99280-6229</a>
-                        </li>
-                        <li >
-                            <a href="" class="footerLink" onclick="downloadCurriculum()">Curriculo</a>
-                        </li>
-                        <li >
-                            Sao Paulo, Brasil
-                        </li>
-                    </ul>
-            </div>
-                <div class="footerList">
-                        <h2>Navegar</h2>
-                        <ul class="footerLi">
-                            <li>
-                                <a href="#sectionWhoIAm" class="footerLink">Quem sou eu</a>
-                            </li>
-                            <li>
-                                <a href="#sectionServices" class="footerLink">Serviços</a>
-                            </li>
-                            <li>
-                                <a href="#sectionPortfolio" class="footerLink">Portfólio</a>
-                            </li>
-                            <li>
-                                <a href="#contact" class="footerLink">Contato</a>
-                            </li>
-                        </ul>
+                    <div class="contact-list" data-contact-list></div>
                 </div>
             </div>
-            <div class="footerCopyight">Copyright © &nbsp; <label for=""> Vinicius Augusto dos Santos.</label></div>
-        </footer>
-    </div>
- 
+        </section>
+    </main>
 
+    <footer class="site-footer">
+        <div>
+            <a class="brand" href="#hero" aria-label="Vinicius Augusto dos Santos">
+                <span class="brand-mark">VA</span>
+                <span>Vinicius Augusto</span>
+            </a>
+            <p data-copy="footer.tagline"></p>
+        </div>
+        <div class="footer-links" data-footer-socials></div>
+        <p class="copyright" data-footer-copy></p>
+    </footer>
 
+    <dialog class="project-dialog" data-project-dialog aria-labelledby="dialogTitle">
+        <div class="dialog-shell panel">
+            <button class="dialog-close" type="button" aria-label="Fechar projeto" data-dialog-close>×</button>
+            <div class="dialog-media">
+                <img data-dialog-image alt="" decoding="async">
+                <div class="dialog-controls">
+                    <button type="button" data-gallery-prev aria-label="Imagem anterior">Anterior</button>
+                    <span data-gallery-counter></span>
+                    <button type="button" data-gallery-next aria-label="Próxima imagem">Próxima</button>
+                </div>
+            </div>
+            <div class="dialog-content">
+                <p class="section-kicker" data-dialog-category></p>
+                <h2 id="dialogTitle" data-dialog-title></h2>
+                <p data-dialog-description></p>
+                <div class="project-tags" data-dialog-tags></div>
+                <div class="dialog-links" data-dialog-links></div>
+            </div>
+        </div>
+    </dialog>
+
+    <script src="content.js"></script>
     <script src="script.js" defer></script>
 </body>
 </html>

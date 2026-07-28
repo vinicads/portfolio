@@ -1,39 +1,68 @@
-# Meu Portfólio
+# Portfólio pessoal
 
-Bem-vindo ao meu portfólio! Este site foi cuidadosamente desenvolvido para exibir meu conhecimento e habilidades ao mundo. Aqui você encontrará uma coleção dos meus projetos, experiências e habilidades, demonstrando meu compromisso com a excelência e minha paixão pela criação de soluções inovadoras.
+Portfólio estático de Vinicius Augusto dos Santos, feito com HTML, CSS e JavaScript puro.
 
-## Sobre Mim
+## O que mudou
 
-Eu sou Vinicius Augusto, um desenvolvedor apaixonado por tecnologia. Com 1 ano de experiência na área, busco constantemente expandir meus conhecimentos e aprimorar minhas habilidades em desenvolvimento de sistemas.
+- Design completamente refeito com uma interface mais profissional e responsiva.
+- Tema claro e escuro com preferência salva no navegador.
+- Alternância entre português e inglês.
+- Projetos renderizados a partir de dados em `content.js`.
+- Galerias de projetos carregadas sob demanda para reduzir peso inicial.
+- Capas otimizadas em `assets/images/optimized`.
+- Remoção do parallax e dos fundos pesados da primeira dobra.
 
-## Por que Este Portfólio?
+## Como editar projetos
 
-Este portfólio não é apenas um conjunto de projetos; é uma representação do meu trabalho, meu estilo e minha dedicação ao que faço. Cada projeto aqui presente foi desenvolvido com cuidado e atenção aos detalhes, refletindo minha busca pela qualidade e minha paixão por criar experiências únicas.
+Abra `content.js` e procure o array `projects`.
 
-## O Que Você Encontrará Aqui
+Para adicionar um projeto:
 
-- **Projetos**: Uma variedade de projetos que demonstrem minhas habilidades em desenvolvimento web e desenvolvimento de jogos.
-- **Experiência**: Um resumo da minha experiência profissional e educacional.
-- **Habilidades**: Minhas habilidades técnicas e pessoais que contribuem para o meu sucesso como desenvolvedor full stack.
-- **Contato**: Como entrar em contato comigo para oportunidades de colaboração ou simplesmente para uma conversa amigável.
+1. Copie um objeto existente dentro de `projects`.
+2. Troque o `id` por um identificador único.
+3. Ajuste `category` para `web`, `systems` ou `game`.
+4. Informe uma `cover` leve, de preferência dentro de `assets/images/optimized`.
+5. Coloque as imagens completas em `images`.
+6. Preencha textos em português e inglês nos campos `title`, `subtitle` e `description`.
+7. Adicione links em `links`, usando `type: "external"` para site ou `type: "download"` para arquivo.
 
-## Tecnologias Utilizadas
+Exemplo resumido:
 
-Este site foi desenvolvido com as seguintes tecnologias:
+```js
+{
+    id: "meu-projeto",
+    category: "web",
+    cover: "./assets/images/optimized/meu-projeto-cover.jpg",
+    title: {
+        pt: "Meu Projeto",
+        en: "My Project"
+    },
+    subtitle: {
+        pt: "Descrição curta do projeto.",
+        en: "Short project description."
+    },
+    description: {
+        pt: "Descrição completa em português.",
+        en: "Full description in English."
+    },
+    year: "2026",
+    tags: {
+        pt: ["Web", "Dashboard"],
+        en: ["Web", "Dashboard"]
+    },
+    images: [
+        "./assets/images/meuProjeto1.jpg",
+        "./assets/images/meuProjeto2.jpg"
+    ],
+    links: [
+        {
+            type: "external",
+            url: "https://exemplo.com"
+        }
+    ]
+}
+```
 
-- HTML5
-- CSS3
-- JavaScript
+## Como abrir
 
-## Como Entrar em Contato
-
-Estou sempre aberto(a) a novas oportunidades e colaborações. Se você gostaria de discutir um projeto, oferecer uma oportunidade de emprego ou apenas bater um papo, sinta-se à vontade para entrar em contato comigo pelos seguintes meios:
-
-- Email: vinicim.augusto@outlook.com
-- LinkedIn: https://www.linkedin.com/in/vinicius-augusto-dos-santos-2108b1237/
-- Website: https://vinicads.github.io/portfolio/
-
-## Agradecimentos
-
-Agradeço por visitar meu portfólio e espero que você aproveite a experiência. Se você gostou do que viu, não hesite em entrar em contato. Estou ansioso para ouvir de você!
-
+Como é um site estático, basta abrir `index.html` no navegador.
