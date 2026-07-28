@@ -4,6 +4,10 @@
     const content = window.PORTFOLIO_CONTENT;
     if (!content) return;
 
+    const THEME_STORAGE_KEY = "portfolio-theme";
+    const LANGUAGE_STORAGE_KEY = "portfolio-language";
+    const THEMES = new Set(["dark", "light"]);
+
     const state = {
         lang: getInitialLanguage(),
         theme: getInitialTheme(),
@@ -78,18 +82,52 @@
     }
 
     function getInitialLanguage() {
-        const saved = localStorage.getItem("portfolio-language");
+        const saved = getStoredValue(LANGUAGE_STORAGE_KEY);
         return saved === "en" ? "en" : "pt";
     }
 
     function getInitialTheme() {
-        const saved = localStorage.getItem("portfolio-theme");
-        if (saved === "dark" || saved === "light") return saved;
+        const appliedTheme = document.documentElement.dataset.theme;
+        if (THEMES.has(appliedTheme)) return appliedTheme;
+
+        const saved = getStoredValue(THEME_STORAGE_KEY);
+        if (THEMES.has(saved)) return saved;
         return "light";
+    }
+
+    function getStoredValue(key) {
+        try {
+            return window.localStorage.getItem(key);
+        } catch (error) {
+            return null;
+        }
+    }
+
+    function setStoredValue(key, value) {
+        try {
+            window.localStorage.setItem(key, value);
+        } catch (error) {
+            // Keep the active page in sync even when browser storage is unavailable.
+        }
+    }
+
+    function handleStoredPreferenceChange(event) {
+        if (event.key === THEME_STORAGE_KEY && THEMES.has(event.newValue)) {
+            state.theme = event.newValue;
+            applyTheme();
+            return;
+        }
+
+        if (event.key === LANGUAGE_STORAGE_KEY && (event.newValue === "pt" || event.newValue === "en")) {
+            state.lang = event.newValue;
+            renderLanguage();
+            observeReveals();
+        }
     }
 
     function bindEvents() {
         window.addEventListener("scroll", updateScrollProgress, { passive: true });
+        window.addEventListener("storage", handleStoredPreferenceChange);
         bindCursor();
 
         dom.menuToggle?.addEventListener("click", () => {
@@ -104,13 +142,13 @@
 
         dom.themeToggle?.addEventListener("click", () => {
             state.theme = state.theme === "dark" ? "light" : "dark";
-            localStorage.setItem("portfolio-theme", state.theme);
+            setStoredValue(THEME_STORAGE_KEY, state.theme);
             applyTheme();
         });
 
         dom.languageToggle?.addEventListener("click", () => {
             state.lang = state.lang === "pt" ? "en" : "pt";
-            localStorage.setItem("portfolio-language", state.lang);
+            setStoredValue(LANGUAGE_STORAGE_KEY, state.lang);
             renderLanguage();
             observeReveals();
         });
@@ -239,14 +277,25 @@
 
     function applyTheme() {
         dom.html.dataset.theme = state.theme;
+        dom.html.style.colorScheme = state.theme;
         const themeMeta = document.querySelector('meta[name="theme-color"]');
-        if (themeMeta) themeMeta.setAttribute("content", state.theme === "dark" ? "#080808" : "#f8f8f9");
+        if (themeMeta) themeMeta.setAttribute("content", getThemeColor());
 
         if (dom.themeToggle && dom.themeIcon) {
             const nextTheme = state.theme === "dark" ? "light" : "dark";
             dom.themeToggle.setAttribute("aria-label", t(`themeLabel.${nextTheme}`));
-            dom.themeIcon.textContent = state.theme === "dark" ? "☀" : "☾";
+            dom.themeToggle.setAttribute("aria-pressed", String(state.theme === "dark"));
+            dom.themeToggle.dataset.activeTheme = state.theme;
+            dom.themeToggle.dataset.targetTheme = nextTheme;
+            dom.themeIcon.dataset.icon = state.theme === "dark" ? "sun" : "moon";
+            dom.themeIcon.textContent = "";
         }
+    }
+
+    function getThemeColor() {
+        const cssThemeColor = getComputedStyle(dom.html).getPropertyValue("--theme-color").trim();
+        if (cssThemeColor) return cssThemeColor;
+        return state.theme === "dark" ? "#080808" : "#f8f8f9";
     }
 
     function renderHeroShowcase() {

@@ -6,6 +6,25 @@
     <meta name="description" content="Portfólio de Vinicius Augusto dos Santos, desenvolvedor full stack focado em sistemas web, interfaces responsivas e produtos digitais profissionais.">
     <meta name="theme-color" content="#f8f8f9">
     <title>Vinicius Augusto dos Santos | Desenvolvedor Full Stack</title>
+    <script>
+        (() => {
+            const fallbackTheme = document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+            let theme = fallbackTheme;
+
+            try {
+                const savedTheme = localStorage.getItem("portfolio-theme");
+                if (savedTheme === "dark" || savedTheme === "light") theme = savedTheme;
+            } catch (error) {
+                theme = fallbackTheme;
+            }
+
+            document.documentElement.dataset.theme = theme;
+            document.documentElement.style.colorScheme = theme;
+
+            const themeMeta = document.querySelector('meta[name="theme-color"]');
+            if (themeMeta) themeMeta.setAttribute("content", theme === "dark" ? "#080808" : "#f8f8f9");
+        })();
+    </script>
     <link rel="preload" href="./assets/images/optimized/encontrando-fretes-cover.jpg" as="image">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" type="image/png" href="./assets/icons/iconSite.png">
@@ -36,7 +55,7 @@
                 <a href="#projects" data-nav="projects">Projetos</a>
                 <a href="#contact" data-nav="contact">Contato</a>
                 <button class="theme-button icon-button" type="button" data-theme-toggle aria-label="Alternar tema">
-                    <span data-theme-icon aria-hidden="true">☾</span>
+                    <span data-theme-icon data-icon="moon" aria-hidden="true"></span>
                 </button>
                 <button class="lang-button" type="button" data-lang-toggle aria-label="Change language">
                     <span data-current-lang>PT</span>
