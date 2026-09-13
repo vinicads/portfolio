@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfólio de Vinicius Augusto dos Santos, desenvolvedor full stack focado em sistemas web, interfaces responsivas e produtos digitais profissionais.">
-    <meta name="theme-color" content="#f8f8f9">
+    <meta name="theme-color" content="#f7f6f1">
     <title>Vinicius Augusto dos Santos | Desenvolvedor Full Stack</title>
     <script>
         (() => {
@@ -50,8 +50,8 @@
 
             <div class="nav-panel" id="siteMenu" data-menu>
                 <a href="#about" data-nav="about">Sobre</a>
-                <a href="#paths" data-nav="paths">Atuação</a>
-                <a href="#services" data-nav="services">Serviços</a>
+                <a href="#experience" data-nav="experience">Experiência</a>
+                <a href="#stack" data-nav="stack">Stack</a>
                 <a href="#projects" data-nav="projects">Projetos</a>
                 <a href="#contact" data-nav="contact">Contato</a>
                 <button class="theme-button icon-button" type="button" data-theme-toggle aria-label="Alternar tema">
@@ -62,6 +62,10 @@
                 </button>
                 <a class="nav-cta" href="#contact" data-copy="navCta"></a>
             </div>
+
+            <button class="lang-button header-lang-button" type="button" data-lang-toggle aria-label="Change language">
+                <span data-current-lang>PT</span>
+            </button>
         </nav>
     </header>
 
@@ -69,13 +73,17 @@
 
     <main id="main">
         <section class="hero" id="hero">
-            <div class="hero-copy reveal">
+            <div class="hero-copy reveal" data-parallax data-parallax-speed="-0.08">
                 <div class="hero-control-row">
                     <p class="section-kicker" data-copy="hero.eyebrow"></p>
                 </div>
                 <h1 data-hero-title></h1>
                 <p class="hero-role" data-copy="hero.role"></p>
                 <p class="hero-lead" data-copy="hero.lead"></p>
+                <div class="hero-purpose" data-parallax data-parallax-speed="0.035">
+                    <strong data-copy="hero.purposeTitle"></strong>
+                    <span data-copy="hero.purposeText"></span>
+                </div>
                 <ul class="hero-points" aria-label="Destaques">
                     <li><span data-copy="hero.pointOne"></span></li>
                     <li><span data-copy="hero.pointTwo"></span></li>
@@ -85,17 +93,29 @@
                 <div class="hero-actions">
                     <a class="button primary" href="#projects" data-copy="hero.primaryCta"></a>
                     <a class="button secondary" href="#contact" data-copy="hero.secondaryCta"></a>
-                    <a class="button ghost" href="#services" data-copy="hero.tertiaryCta"></a>
+                    <a class="button ghost" href="#stack" data-copy="hero.tertiaryCta"></a>
                 </div>
             </div>
 
-            <aside class="hero-showcase reveal" data-hero-showcase aria-label="Projeto em destaque"></aside>
+            <aside class="hero-pipeline reveal" data-hero-pipeline data-parallax data-parallax-speed="0.12" aria-label="Fluxo técnico"></aside>
 
-            <dl class="facts-strip reveal" data-stats></dl>
+            <div class="hero-footer-line reveal">
+                <a href="#impact" data-copy="hero.scrollCta"></a>
+                <div class="hero-socials" data-hero-socials></div>
+            </div>
         </section>
 
         <section class="tech-section" aria-label="Tecnologias">
             <div class="tech-list" data-tech-list></div>
+        </section>
+
+        <section class="section impact-section" id="impact">
+            <div class="section-heading reveal" data-parallax data-parallax-speed="-0.025">
+                <p class="section-kicker" data-copy="impact.eyebrow"></p>
+                <h2 data-copy="impact.title"></h2>
+                <p data-copy="impact.lead"></p>
+            </div>
+            <dl class="facts-strip reveal" data-stats></dl>
         </section>
 
         <section class="section paths-section" id="paths">
@@ -115,6 +135,24 @@
                     <a class="button soft" href="#projects" data-copy="paths.secondaryCta"></a>
                 </div>
             </div>
+        </section>
+
+        <section class="section experience-section" id="experience">
+            <div class="section-heading reveal">
+                <p class="section-kicker" data-copy="experience.eyebrow"></p>
+                <h2 data-copy="experience.title"></h2>
+                <p data-copy="experience.lead"></p>
+            </div>
+            <div class="experience-board reveal" data-experience></div>
+        </section>
+
+        <section class="section stack-map-section" id="stack">
+            <div class="section-heading reveal">
+                <p class="section-kicker" data-copy="stack.eyebrow"></p>
+                <h2 data-copy="stack.title"></h2>
+                <p data-copy="stack.lead"></p>
+            </div>
+            <div class="stack-map reveal" data-stack-map data-parallax data-parallax-speed="0.028"></div>
         </section>
 
         <section class="section about-section" id="about">
@@ -140,6 +178,12 @@
                 <h3 data-copy="about.educationTitle"></h3>
                 <div class="timeline" data-education></div>
             </div>
+
+            <div class="philosophy-band reveal" data-parallax data-parallax-speed="-0.032">
+                <span data-copy="philosophy.eyebrow"></span>
+                <strong data-copy="philosophy.title"></strong>
+                <p data-copy="philosophy.lead"></p>
+            </div>
         </section>
 
         <section class="section" id="services">
@@ -162,7 +206,7 @@
         </section>
 
         <section class="section workflow-section" id="workflow" aria-label="Processo de entrega">
-            <div class="workflow-panel reveal">
+            <div class="workflow-panel reveal" data-parallax data-parallax-speed="0.018">
                 <div class="section-heading">
                     <p class="section-kicker" data-copy="workflow.eyebrow"></p>
                     <h2 data-copy="workflow.title"></h2>
@@ -197,13 +241,65 @@
         </section>
 
         <section class="section contact-section" id="contact">
-            <div class="contact-panel panel reveal">
+            <div class="contact-panel panel reveal" data-parallax data-parallax-speed="-0.018">
                 <div>
                     <p class="section-kicker" data-copy="contact.eyebrow"></p>
                     <h2 data-copy="contact.title"></h2>
                     <p data-copy="contact.lead"></p>
+                    <div class="contact-highlights">
+                        <div>
+                            <span>01</span>
+                            <strong data-copy="contact.highlightOneTitle"></strong>
+                            <small data-copy="contact.highlightOneText"></small>
+                        </div>
+                        <div>
+                            <span>02</span>
+                            <strong data-copy="contact.highlightTwoTitle"></strong>
+                            <small data-copy="contact.highlightTwoText"></small>
+                        </div>
+                        <div>
+                            <span>03</span>
+                            <strong data-copy="contact.highlightThreeTitle"></strong>
+                            <small data-copy="contact.highlightThreeText"></small>
+                        </div>
+                    </div>
                 </div>
                 <div class="contact-side">
+                    <form class="contact-form" data-contact-form>
+                        <div class="contact-form-head">
+                            <strong data-copy="contact.formTitle"></strong>
+                            <p data-copy="contact.formLead"></p>
+                        </div>
+                        <div class="form-grid">
+                            <label class="field">
+                                <span data-copy="contact.nameLabel"></span>
+                                <input type="text" name="name" autocomplete="name" required data-copy-placeholder="contact.namePlaceholder">
+                            </label>
+                            <label class="field">
+                                <span data-copy="contact.emailLabel"></span>
+                                <input type="email" name="email" autocomplete="email" required data-copy-placeholder="contact.emailPlaceholder">
+                            </label>
+                        </div>
+                        <label class="field">
+                            <span data-copy="contact.projectTypeLabel"></span>
+                            <select name="type" required>
+                                <option value="" data-copy="contact.projectTypePlaceholder"></option>
+                                <option value="Site / landing page" data-copy="contact.typeSite"></option>
+                                <option value="Sistema web" data-copy="contact.typeSystem"></option>
+                                <option value="WordPress / CMS" data-copy="contact.typeWordPress"></option>
+                                <option value="Manutenção / legado" data-copy="contact.typeMaintenance"></option>
+                                <option value="Integração / automação" data-copy="contact.typeIntegration"></option>
+                            </select>
+                        </label>
+                        <label class="field">
+                            <span data-copy="contact.messageLabel"></span>
+                            <textarea name="message" rows="5" required data-copy-placeholder="contact.messagePlaceholder"></textarea>
+                        </label>
+                        <div class="form-bottom">
+                            <small data-copy="contact.formNote"></small>
+                            <button class="button primary" type="submit" data-copy="contact.formSubmit"></button>
+                        </div>
+                    </form>
                     <div class="contact-actions">
                         <a class="button primary" data-whatsapp-link target="_blank" rel="noopener" data-copy="contact.whatsapp"></a>
                         <a class="button secondary" data-resume-link target="_blank" rel="noopener" data-copy="contact.resume"></a>

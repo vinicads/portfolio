@@ -8,7 +8,7 @@
 */
 
 window.PORTFOLIO_CONTENT = {
-    featuredProjectId: "prontuarios-santa-casa",
+    featuredProjectId: "truhail",
     profileImage: "./assets/images/optimized/profile.jpg",
     resumeUrl: "./assets/files/CV_Vinicius.pdf",
     whatsappNumber: "5519992806229",
@@ -38,12 +38,20 @@ window.PORTFOLIO_CONTENT = {
         "JavaScript",
         "TypeScript",
         "React",
+        "React Native",
         "Angular",
         "Vue",
+        "Next.js",
+        "Electron",
         "Bootstrap",
         "Node.js",
         "Express",
         "NestJS",
+        "GraphQL",
+        "WebRTC",
+        "Socket.IO",
+        "Redis",
+        "AWS/S3",
         "PHP",
         "WordPress",
         "Elementor",
@@ -62,40 +70,72 @@ window.PORTFOLIO_CONTENT = {
     ],
     stats: [
         {
-            value: 6,
+            value: 11,
             suffix: "+",
             label: {
-                pt: "projetos publicados",
-                en: "published projects"
+                pt: "projetos, sistemas e interfaces selecionadas",
+                en: "selected projects, systems, and interfaces"
             }
         },
         {
             value: 4,
             suffix: "+",
             label: {
-                pt: "anos entre estudo e prática",
-                en: "years between study and practice"
+                pt: "anos entre formação, produto e manutenção",
+                en: "years across education, product, and maintenance"
             }
         },
         {
             value: 8,
             suffix: "+",
             label: {
-                pt: "frentes: web, WordPress, Delphi e manutenção",
-                en: "tracks: web, WordPress, Delphi, and maintenance"
+                pt: "frentes conectando frontend, API, dados e legado",
+                en: "tracks connecting frontend, API, data, and legacy systems"
+            }
+        }
+    ],
+    heroPipeline: [
+        {
+            label: {
+                pt: "Briefing",
+                en: "Briefing"
+            }
+        },
+        {
+            label: {
+                pt: "Interface",
+                en: "Interface"
+            }
+        },
+        {
+            label: {
+                pt: "Sistema",
+                en: "System"
+            }
+        },
+        {
+            label: {
+                pt: "Integração",
+                en: "Integration"
+            }
+        },
+        {
+            label: {
+                pt: "Entrega",
+                en: "Delivery"
             }
         }
     ],
     paths: [
         {
-            icon: "01",
+            icon: "business",
             title: {
                 pt: "Projetos para empresas",
                 en: "Business projects"
             },
             description: {
-                pt: "Sites, landing pages, sistemas web e painéis com estrutura profissional para vender, atender e organizar processos.",
-                en: "Websites, landing pages, web systems, and dashboards with professional structure to sell, serve, and organize processes."
+                pt: "Sites, landing pages e sistemas para vender, atender e organizar operações com acabamento profissional.",
+                en: "Websites, landing pages, and systems to sell, serve, and organize operations with professional polish."
             },
             items: {
                 pt: ["Site institucional", "Landing page", "Sistema web", "E-commerce"],
@@ -108,14 +148,14 @@ window.PORTFOLIO_CONTENT = {
             }
         },
         {
-            icon: "02",
+            icon: "maintenance",
             title: {
                 pt: "Manutenção e evolução",
                 en: "Maintenance and evolution"
             },
             description: {
-                pt: "Correções, melhorias visuais, novas funcionalidades, ajustes de performance e suporte para projetos que já estão rodando.",
-                en: "Fixes, visual improvements, new features, performance tuning, and support for projects already in production."
+                pt: "Correções, melhorias visuais e evolução técnica para projetos que já estão no ar.",
+                en: "Fixes, visual improvements, and technical evolution for projects already live."
             },
             items: {
                 pt: ["WordPress e CMS", "PHP e páginas existentes", "Performance e SEO", "Ajustes contínuos"],
@@ -128,14 +168,14 @@ window.PORTFOLIO_CONTENT = {
             }
         },
         {
-            icon: "03",
+            icon: "stack",
             title: {
                 pt: "Perfil técnico completo",
                 en: "Complete technical profile"
             },
             description: {
-                pt: "Atuação full stack com frontend, backend, banco de dados, integrações, sistemas legados em Delphi e experiências 2D.",
-                en: "Full stack work across frontend, backend, databases, integrations, Delphi legacy systems, and 2D experiences."
+                pt: "Full stack de ponta a ponta: interface, API, banco, integrações e legado quando precisa.",
+                en: "End-to-end full stack work: UI, API, data, integrations, and legacy systems when needed."
             },
             items: {
                 pt: ["React, Angular e Vue", "Node.js, PHP, C# e Go", "SQL, MySQL e Firebird", "Delphi e GameMaker"],
@@ -146,6 +186,86 @@ window.PORTFOLIO_CONTENT = {
                 pt: "Ver experiência",
                 en: "View experience"
             }
+        }
+    ],
+    experience: [
+        {
+            company: "PSZ Sistemas",
+            period: {
+                pt: "2026 / Atual",
+                en: "2026 / Current"
+            },
+            role: {
+                pt: "Desenvolvedor",
+                en: "Developer"
+            },
+            description: {
+                pt: "Atuação em sistemas corporativos, automações e integrações que conectam operação, dados e software legado.",
+                en: "Work on corporate systems, automations, and integrations connecting operations, data, and legacy software."
+            },
+            tags: ["Delphi", "Firebird", "Python", "Firebase", "RPA", "ERP", "Integrations"]
+        },
+        {
+            company: "Software House",
+            period: "2025 / 2026",
+            role: {
+                pt: "Full-stack developer",
+                en: "Full-stack developer"
+            },
+            description: {
+                pt: "Evolução de produtos web, APIs e interfaces para plataformas como mobilidade, seguros, suporte remoto, educação e gestão imobiliária.",
+                en: "Evolution of web products, APIs, and interfaces for platforms such as mobility, insurance, remote support, education, and property management."
+            },
+            tags: ["Angular", "NestJS", "React Native", "GraphQL", "Electron", "WebRTC", "Socket.IO"]
+        },
+        {
+            company: "Santa Casa",
+            period: "2023 / 2025",
+            role: {
+                pt: "Desenvolvimento de sistemas",
+                en: "Systems development"
+            },
+            description: {
+                pt: "Criação de site institucional, CMS, banco de talentos e solicitação de prontuários para digitalizar fluxos e organizar atendimento.",
+                en: "Creation of institutional website, CMS, talent database, and medical record request system to digitize workflows and organize service."
+            },
+            tags: {
+                pt: ["Site institucional", "CMS", "Banco de talentos", "Prontuários", "Saúde"],
+                en: ["Institutional website", "CMS", "Talent database", "Medical records", "Healthcare"]
+            }
+        }
+    ],
+    stackMap: [
+        {
+            id: "frontend",
+            label: "Frontend",
+            items: ["Angular", "React", "Next.js", "Vue", "TypeScript", "HTML", "CSS"]
+        },
+        {
+            id: "backend",
+            label: "Backend",
+            items: ["Node.js", "NestJS", "Express", "PHP", "C#", "Go", "Delphi"]
+        },
+        {
+            id: "data",
+            label: {
+                pt: "Dados",
+                en: "Data"
+            },
+            items: ["MySQL", "Firebird", "SQL", "Redis", "Firebase", "S3"]
+        },
+        {
+            id: "automation",
+            label: {
+                pt: "Automação",
+                en: "Automation"
+            },
+            items: ["Electron", "RPA", "Workers", "WebRTC", "Socket.IO", "GraphQL"]
+        },
+        {
+            id: "infra",
+            label: "Infra",
+            items: ["Git", "GitHub", "Deploy", "SEO técnico", "Performance", "Manutenção"]
         }
     ],
     views: {
@@ -372,8 +492,8 @@ window.PORTFOLIO_CONTENT = {
             metaDescription: "Portfólio de Vinicius Augusto dos Santos, desenvolvedor full stack para sites, sistemas web, WordPress, manutenção, Delphi, APIs e experiências digitais profissionais.",
             nav: {
                 about: "Sobre",
-                paths: "Atuação",
-                services: "Serviços",
+                experience: "Experiência",
+                stack: "Stack",
                 projects: "Projetos",
                 contact: "Contato"
             },
@@ -390,56 +510,75 @@ window.PORTFOLIO_CONTENT = {
             hero: {
                 eyebrow: "Vinicius Augusto dos Santos",
                 name: "Vinicius Augusto dos Santos",
-                titleStart: "Full Stack",
-                titleEnd: "Developer",
-                role: "Sites, sistemas, WordPress, manutenção, integrações e legados Delphi com acabamento profissional.",
-                lead: "Transformo ideias e sistemas existentes em produtos digitais rápidos, responsivos e fáceis de manter, cuidando da interface, regras de negócio, banco de dados, APIs, publicação e evolução.",
-                pointOne: "Frontend moderno com React, Angular, Vue, TypeScript, HTML e CSS",
-                pointTwo: "Backend, APIs, SQL, MySQL, Firebird, PHP, C#, Go e Node.js",
-                pointThree: "WordPress, manutenção, Delphi, performance, SEO técnico e deploy",
-                primaryCta: "Ver projetos",
+                titleStart: "Sites, sistemas",
+                titleEnd: "e automações que resolvem.",
+                role: "Desenvolvedor full stack para empresas, profissionais e equipes que precisam transformar ideia, rotina ou sistema antigo em produto digital bem acabado.",
+                lead: "Eu crio presença online, sistemas internos, melhorias em WordPress, manutenção de legado Delphi, integrações e automações com foco em clareza, velocidade e evolução simples.",
+                purposeTitle: "Meu propósito aqui",
+                purposeText: "Mostrar que posso pegar um problema real, organizar o caminho e entregar software publicável, bonito e fácil de manter.",
+                pointOne: "Criar sites e landing pages com visual profissional e boa conversão",
+                pointTwo: "Construir sistemas web, painéis e fluxos internos para reduzir trabalho manual",
+                pointThree: "Modernizar WordPress, legado Delphi, APIs, integrações e automações",
+                primaryCta: "Ver cases",
                 secondaryCta: "Pedir orçamento",
-                tertiaryCta: "Ver serviços",
-                availability: "Disponível para projetos freelance, melhorias e oportunidades full stack"
+                tertiaryCta: "Entender stack",
+                availability: "Brasil / 2026 - disponível para freelance, melhorias e oportunidades full stack",
+                scrollCta: "Scroll para explorar ↓"
+            },
+            impact: {
+                eyebrow: "Impacto selecionado",
+                title: "Menos atrito. Mais software funcionando.",
+                lead: "Projetos em saúde, mobilidade, seguros, recrutamento, WordPress, Delphi e automações com foco em clareza, operação e manutenção."
             },
             about: {
                 eyebrow: "Sobre",
-                title: "Desenvolvimento web com visão de produto, manutenção real e cuidado técnico.",
-                paragraphOne: "Sou desenvolvedor full stack com experiência em sites institucionais, sistemas internos, painéis administrativos, plataformas web, WordPress, manutenção de projetos existentes e jogos 2D.",
-                paragraphTwo: "Trabalho do frontend ao backend, conectando interface, regras de negócio, APIs, segurança, organização de dados, bancos SQL, integrações e sistemas legados em Delphi quando o projeto precisa conversar com bases já existentes.",
-                paragraphThree: "Minha prioridade é construir soluções estáveis, responsivas e fáceis de usar, com visual profissional, código organizado e estrutura preparada para crescer sem virar um problema na manutenção.",
+                title: "Mais que código: sistemas simples para problemas complexos.",
+                paragraphOne: "Sou formado em Análise e Desenvolvimento de Sistemas e gosto de criar software que tira tarefas manuais do caminho.",
+                paragraphTwo: "Atuo com aplicações web, sistemas corporativos, integrações, automações, infraestrutura e manutenção de software legado.",
+                paragraphThree: "Minha prioridade é entregar interfaces bonitas, rápidas e sustentáveis, com código organizado para evoluir depois.",
                 skillsTitle: "Habilidades",
                 educationTitle: "Formação"
             },
+            experience: {
+                eyebrow: "Experiência",
+                title: "Experiência aplicada em produto real.",
+                lead: "Saúde, software house e sistemas corporativos moldaram minha base em full stack, automação e manutenção.",
+                watermark: "Experiência"
+            },
+            stack: {
+                eyebrow: "Stack / mapa técnico",
+                title: "Stack para tirar ideias do papel.",
+                lead: "Frontend, backend, dados, automação e infraestrutura trabalhando juntos em projetos reais."
+            },
             paths: {
                 eyebrow: "Atuação",
-                title: "Um portfolio mais direto para quem quer contratar, avaliar ou evoluir um sistema.",
-                lead: "Separei minhas frentes por intenção real: empresa que precisa de entrega, projeto que precisa de manutenção e recrutador que quer entender minha base técnica.",
+                title: "Escolha o ponto de partida.",
+                lead: "Criação, evolução ou análise técnica: cada caminho mostra onde posso entrar no seu projeto.",
                 ctaTitle: "Tem algo parado ou uma ideia nova?",
-                ctaText: "Me mande o cenário: site, WordPress, sistema web, Delphi, manutenção ou integração. Eu te respondo com um caminho prático.",
+                ctaText: "Me mande o cenário e eu respondo com um caminho prático para começar.",
                 primaryCta: "Quero conversar",
                 secondaryCta: "Ver cases reais"
             },
             services: {
                 eyebrow: "Serviços",
-                title: "Soluções digitais para presença online, operação, manutenção e crescimento.",
-                lead: "Crio, melhoro e mantenho sites, sistemas, páginas WordPress e integrações com foco em desempenho, clareza, responsividade e evolução simples.",
+                title: "Sites, sistemas e manutenção com cara profissional.",
+                lead: "Construo, ajusto e mantenho produtos digitais com foco em visual, performance e evolução simples.",
                 ctaTitle: "Precisa corrigir, modernizar ou criar do zero?",
-                ctaText: "Se o problema já existe, eu posso entrar pela manutenção. Se ainda é ideia, eu ajudo a transformar em uma entrega publicável.",
+                ctaText: "Se já existe, eu melhoro. Se ainda é ideia, eu ajudo a publicar.",
                 primaryCta: "Solicitar diagnóstico",
                 secondaryCta: "Como eu entrego"
             },
             workflow: {
                 eyebrow: "Entrega",
-                title: "Processo objetivo, visual moderno e código preparado para continuar evoluindo.",
-                lead: "A ideia é reduzir ruído: entender o que precisa ser feito, construir com qualidade, publicar com cuidado e deixar espaço para melhoria contínua.",
-                ctaText: "Tem um site parado, um WordPress precisando de ajustes, um sistema Delphi legado ou uma ideia nova para sair do papel?",
+                title: "Da ideia ao ar, sem enrolação.",
+                lead: "Entendo o cenário, desenho o caminho, construo e deixo pronto para publicar ou evoluir.",
+                ctaText: "Site parado, WordPress precisando de ajuste, sistema legado ou ideia nova? Vamos organizar o próximo passo.",
                 cta: "Chamar no WhatsApp"
             },
             projects: {
                 eyebrow: "Projetos",
                 title: "Projetos selecionados",
-                lead: "Uma seleção de sistemas, sites, painéis e experiências que mostram entrega real, organização de fluxo, interface responsiva e atenção à manutenção.",
+                lead: "Cases reais com interface, integrações, responsividade e cuidado de manutenção.",
                 featured: "Projeto em destaque",
                 viewDetails: "Ver detalhes",
                 talkToMe: "Quero algo parecido",
@@ -455,18 +594,51 @@ window.PORTFOLIO_CONTENT = {
             },
             contact: {
                 eyebrow: "Contato",
-                title: "Vamos tirar seu próximo projeto do papel ou melhorar o que já existe.",
-                lead: "Se você precisa de site, sistema web, WordPress, manutenção, Delphi, integração ou apoio full stack, me chame com uma descrição rápida do cenário e do objetivo.",
+                title: "Vamos construir algo útil.",
+                lead: "Estou aberto a oportunidades profissionais, projetos freelance e boas conversas sobre software. Se você precisa de site, sistema web, WordPress, manutenção, Delphi, integração ou apoio full stack, me chame com uma descrição rápida do cenário e do objetivo.",
                 whatsapp: "Enviar mensagem",
                 resume: "Baixar currículo",
                 email: "E-mail",
                 phone: "Telefone",
                 location: "Localização",
-                whatsappMessage: "Olá! Vi seu portfólio e quero conversar sobre site, sistema, WordPress, manutenção ou Delphi."
+                whatsappMessage: "Olá! Vi seu portfólio e quero conversar sobre site, sistema, WordPress, manutenção ou Delphi.",
+                formTitle: "Conte o cenário",
+                formLead: "Preencha o básico e eu monto a conversa inicial para o WhatsApp.",
+                nameLabel: "Nome",
+                namePlaceholder: "Seu nome",
+                emailLabel: "E-mail",
+                emailPlaceholder: "voce@email.com",
+                projectTypeLabel: "Tipo de projeto",
+                projectTypePlaceholder: "Selecione uma opção",
+                typeSite: "Site / landing page",
+                typeSystem: "Sistema web",
+                typeWordPress: "WordPress / CMS",
+                typeMaintenance: "Manutenção / legado",
+                typeIntegration: "Integração / automação",
+                messageLabel: "Resumo do projeto",
+                messagePlaceholder: "Ex: preciso modernizar um site, criar um sistema interno ou integrar uma rotina existente...",
+                formNote: "Nada é enviado automaticamente. O botão abre o WhatsApp com a mensagem pronta.",
+                formSubmit: "Montar mensagem",
+                formMessageIntro: "Olá! Vi seu portfólio e quero conversar sobre um projeto.",
+                formMessageName: "Nome",
+                formMessageEmail: "E-mail",
+                formMessageType: "Tipo",
+                formMessageDetails: "Detalhes",
+                highlightOneTitle: "Diagnóstico direto",
+                highlightOneText: "Entendo objetivo, urgência e tecnologia atual antes de sugerir o caminho.",
+                highlightTwoTitle: "Entrega publicável",
+                highlightTwoText: "Visual, responsividade, performance e manutenção entram juntos.",
+                highlightThreeTitle: "Do zero ou evolução",
+                highlightThreeText: "Projeto novo, WordPress, legado Delphi ou melhoria em algo que já existe."
             },
             footer: {
                 tagline: "Sites, sistemas, manutenção, WordPress, integrações e código full stack com apresentação profissional.",
                 copyright: "© {year} Vinicius Augusto dos Santos. Todos os direitos reservados."
+            },
+            philosophy: {
+                eyebrow: "/ Filosofia",
+                title: "Bom software deve parecer confiável de um jeito quase óbvio.",
+                lead: "Código não precisa parecer complexo para resolver problemas complexos."
             }
         },
         en: {
@@ -474,8 +646,8 @@ window.PORTFOLIO_CONTENT = {
             metaDescription: "Portfolio of Vinicius Augusto dos Santos, full stack developer for websites, web systems, WordPress, maintenance, Delphi, APIs, and polished digital experiences.",
             nav: {
                 about: "About",
-                paths: "Work",
-                services: "Services",
+                experience: "Experience",
+                stack: "Stack",
                 projects: "Projects",
                 contact: "Contact"
             },
@@ -492,56 +664,75 @@ window.PORTFOLIO_CONTENT = {
             hero: {
                 eyebrow: "Vinicius Augusto dos Santos",
                 name: "Vinicius Augusto dos Santos",
-                titleStart: "Full Stack",
-                titleEnd: "Developer",
-                role: "Websites, systems, WordPress, maintenance, integrations, and Delphi legacy work with professional polish.",
-                lead: "I turn ideas and existing systems into fast, responsive, maintainable digital products, handling interface, business rules, databases, APIs, publishing, and evolution.",
-                pointOne: "Modern frontend with React, Angular, Vue, TypeScript, HTML, and CSS",
-                pointTwo: "Backend, APIs, SQL, MySQL, Firebird, PHP, C#, Go, and Node.js",
-                pointThree: "WordPress, maintenance, Delphi, performance, technical SEO, and deploy",
-                primaryCta: "View projects",
+                titleStart: "Websites, systems,",
+                titleEnd: "and automations that solve.",
+                role: "Full stack developer for businesses, professionals, and teams that need to turn an idea, workflow, or old system into a polished digital product.",
+                lead: "I build online presence, internal systems, WordPress improvements, Delphi legacy maintenance, integrations, and automations focused on clarity, speed, and simple evolution.",
+                purposeTitle: "The point of this portfolio",
+                purposeText: "To show I can take a real problem, organize the path, and deliver software that is publishable, polished, and easy to maintain.",
+                pointOne: "Create websites and landing pages with professional visuals and conversion focus",
+                pointTwo: "Build web systems, dashboards, and internal flows that reduce manual work",
+                pointThree: "Modernize WordPress, Delphi legacy, APIs, integrations, and automations",
+                primaryCta: "View cases",
                 secondaryCta: "Request a quote",
-                tertiaryCta: "View services",
-                availability: "Available for freelance projects, improvements, and full stack opportunities"
+                tertiaryCta: "Understand stack",
+                availability: "Brazil / 2026 - available for freelance projects, improvements, and full stack opportunities",
+                scrollCta: "Scroll to explore ↓"
+            },
+            impact: {
+                eyebrow: "Selected impact",
+                title: "Less friction. More working software.",
+                lead: "Healthcare, mobility, insurance, recruiting, WordPress, Delphi, and automation projects built for clarity, operations, and maintenance."
             },
             about: {
                 eyebrow: "About",
-                title: "Web development with product sense, real maintenance, and technical care.",
-                paragraphOne: "I am a full stack developer with experience in institutional websites, internal systems, admin dashboards, web platforms, WordPress, maintenance for existing projects, and 2D games.",
-                paragraphTwo: "I work across frontend and backend, connecting interface, business rules, APIs, security, data organization, SQL databases, integrations, and Delphi legacy systems when the project needs to talk to existing bases.",
-                paragraphThree: "My priority is to build stable, responsive, easy-to-use solutions with professional visuals, organized code, and structure ready to grow without becoming hard to maintain.",
+                title: "More than code: simple systems for complex problems.",
+                paragraphOne: "I have a degree in Systems Analysis and Development and like building software that removes manual work from the path.",
+                paragraphTwo: "I work with web apps, corporate systems, integrations, automation, infrastructure, and legacy maintenance.",
+                paragraphThree: "My priority is to deliver polished, fast, maintainable interfaces with organized code that can evolve later.",
                 skillsTitle: "Skills",
                 educationTitle: "Education"
             },
+            experience: {
+                eyebrow: "Experience",
+                title: "Experience applied to real products.",
+                lead: "Healthcare, software house, and corporate systems shaped my full stack, automation, and maintenance base.",
+                watermark: "Experience"
+            },
+            stack: {
+                eyebrow: "Stack / technology map",
+                title: "A stack for shipping ideas.",
+                lead: "Frontend, backend, data, automation, and infrastructure working together in real projects."
+            },
             paths: {
                 eyebrow: "Work",
-                title: "A clearer portfolio for hiring, technical review, and system evolution.",
-                lead: "I separated my work by real intent: businesses that need delivery, existing projects that need maintenance, and recruiters who want to understand my technical base.",
+                title: "Choose the starting point.",
+                lead: "Build, improve, or evaluate: each path shows where I can enter your project.",
                 ctaTitle: "Have a stalled project or a new idea?",
-                ctaText: "Send me the context: website, WordPress, web system, Delphi, maintenance, or integration. I will reply with a practical path.",
+                ctaText: "Send me the context and I will reply with a practical starting path.",
                 primaryCta: "Start a conversation",
                 secondaryCta: "View real cases"
             },
             services: {
                 eyebrow: "Services",
-                title: "Digital solutions for online presence, operations, maintenance, and growth.",
-                lead: "I create, improve, and maintain websites, systems, WordPress pages, and integrations focused on performance, clarity, responsiveness, and simple evolution.",
+                title: "Websites, systems, and maintenance with professional polish.",
+                lead: "I build, adjust, and maintain digital products focused on visuals, performance, and simple evolution.",
                 ctaTitle: "Need to fix, modernize, or build from scratch?",
-                ctaText: "If the problem already exists, I can start with maintenance. If it is still an idea, I help turn it into a publishable delivery.",
+                ctaText: "If it exists, I improve it. If it is still an idea, I help publish it.",
                 primaryCta: "Request diagnosis",
                 secondaryCta: "How I deliver"
             },
             workflow: {
                 eyebrow: "Delivery",
-                title: "Focused process, modern visuals, and code prepared to keep evolving.",
-                lead: "The idea is to reduce noise: understand what needs to be done, build with quality, publish carefully, and leave room for continuous improvement.",
-                ctaText: "Do you have a stalled website, WordPress fixes, a Delphi legacy system, or a new idea to launch?",
+                title: "From idea to live, without noise.",
+                lead: "I understand the context, shape the path, build, and leave it ready to publish or evolve.",
+                ctaText: "Stalled website, WordPress fixes, legacy system, or a new idea? Let us organize the next step.",
                 cta: "Message on WhatsApp"
             },
             projects: {
                 eyebrow: "Projects",
                 title: "Selected projects",
-                lead: "A selection of systems, websites, dashboards, and experiences showing real delivery, workflow organization, responsive UI, and maintenance care.",
+                lead: "Real cases with interfaces, integrations, responsiveness, and maintenance care.",
                 featured: "Featured project",
                 viewDetails: "View details",
                 talkToMe: "I want something similar",
@@ -557,18 +748,51 @@ window.PORTFOLIO_CONTENT = {
             },
             contact: {
                 eyebrow: "Contact",
-                title: "Let us launch your next project or improve what already exists.",
-                lead: "If you need a website, web system, WordPress, maintenance, Delphi, integration, or full stack support, send me a short description of the context and goal.",
+                title: "Let us build something useful.",
+                lead: "I am open to professional opportunities, freelance projects, and good conversations about software. If you need a website, web system, WordPress, maintenance, Delphi, integration, or full stack support, send me a short description of the context and goal.",
                 whatsapp: "Send message",
                 resume: "Download resume",
                 email: "Email",
                 phone: "Phone",
                 location: "Location",
-                whatsappMessage: "Hi! I saw your portfolio and want to talk about a website, system, WordPress, maintenance, or Delphi."
+                whatsappMessage: "Hi! I saw your portfolio and want to talk about a website, system, WordPress, maintenance, or Delphi.",
+                formTitle: "Share the context",
+                formLead: "Fill in the basics and I will prepare the first WhatsApp message.",
+                nameLabel: "Name",
+                namePlaceholder: "Your name",
+                emailLabel: "Email",
+                emailPlaceholder: "you@email.com",
+                projectTypeLabel: "Project type",
+                projectTypePlaceholder: "Choose an option",
+                typeSite: "Website / landing page",
+                typeSystem: "Web system",
+                typeWordPress: "WordPress / CMS",
+                typeMaintenance: "Maintenance / legacy",
+                typeIntegration: "Integration / automation",
+                messageLabel: "Project summary",
+                messagePlaceholder: "Example: I need to modernize a website, create an internal system, or integrate an existing workflow...",
+                formNote: "Nothing is sent automatically. The button opens WhatsApp with the message ready.",
+                formSubmit: "Prepare message",
+                formMessageIntro: "Hi! I saw your portfolio and want to talk about a project.",
+                formMessageName: "Name",
+                formMessageEmail: "Email",
+                formMessageType: "Type",
+                formMessageDetails: "Details",
+                highlightOneTitle: "Direct diagnosis",
+                highlightOneText: "I understand the goal, urgency, and current tech before suggesting a path.",
+                highlightTwoTitle: "Ready to publish",
+                highlightTwoText: "Visual polish, responsiveness, performance, and maintenance move together.",
+                highlightThreeTitle: "New build or evolution",
+                highlightThreeText: "New project, WordPress, Delphi legacy, or improvements to something live."
             },
             footer: {
                 tagline: "Websites, systems, maintenance, WordPress, integrations, and full stack code with professional presentation.",
                 copyright: "© {year} Vinicius Augusto dos Santos. All rights reserved."
+            },
+            philosophy: {
+                eyebrow: "/ Philosophy",
+                title: "Good software should feel boringly reliable.",
+                lead: "Code does not need to look complex to solve complex problems."
             }
         }
     },
@@ -836,6 +1060,7 @@ window.PORTFOLIO_CONTENT = {
     workflow: [
         {
             step: "01",
+            icon: "search",
             title: {
                 pt: "Diagnóstico",
                 en: "Discovery"
@@ -847,6 +1072,7 @@ window.PORTFOLIO_CONTENT = {
         },
         {
             step: "02",
+            icon: "map",
             title: {
                 pt: "Plano enxuto",
                 en: "Lean plan"
@@ -858,6 +1084,7 @@ window.PORTFOLIO_CONTENT = {
         },
         {
             step: "03",
+            icon: "code",
             title: {
                 pt: "Construção",
                 en: "Build"
@@ -869,6 +1096,7 @@ window.PORTFOLIO_CONTENT = {
         },
         {
             step: "04",
+            icon: "rocket",
             title: {
                 pt: "Publicação e suporte",
                 en: "Launch and support"
@@ -1116,6 +1344,136 @@ window.PORTFOLIO_CONTENT = {
                     url: "https://talentos.santacasamococa.org.br"
                 }
             ]
+        },
+        {
+            id: "truhail",
+            category: "systems",
+            cover: "./assets/images/optimized/truhail-real.png",
+            title: {
+                pt: "TruHail",
+                en: "TruHail"
+            },
+            subtitle: {
+                pt: "Plataforma de mobilidade com aplicativos conectados em tempo real.",
+                en: "Mobility platform with real-time connected applications."
+            },
+            description: {
+                pt: "Plataforma de mobilidade com API, comunicação em tempo real, painel operacional e aplicativos móveis dedicados para motorista e passageiro. Atuação full stack na integração dos fluxos, mapas e estados da corrida.",
+                en: "Mobility platform with an API, real-time communication, operations dashboard, and dedicated mobile apps for drivers and riders. Full stack work connecting ride flows, maps, and trip states."
+            },
+            year: "2026",
+            tags: {
+                pt: ["React Native", "Node.js", "Tempo real", "Mapas"],
+                en: ["React Native", "Node.js", "Real time", "Maps"]
+            },
+            images: [
+                "./assets/images/optimized/truhail-real.png"
+            ],
+            links: []
+        },
+        {
+            id: "smartrent",
+            category: "systems",
+            cover: "./assets/images/optimized/smartrent-real.png",
+            title: {
+                pt: "SmartRent",
+                en: "SmartRent"
+            },
+            subtitle: {
+                pt: "Plataforma de gestão imobiliária para locações e operações.",
+                en: "Property management platform for rentals and operations."
+            },
+            description: {
+                pt: "Sistema full stack para organizar imóveis, locações, usuários, documentos e pagamentos, com áreas para operação, proprietários e inquilinos. Inclui filas de e-mail, upload de arquivos e regras de acesso.",
+                en: "Full stack system for managing properties, rentals, users, documents, and payments, with spaces for operations, owners, and tenants. Includes email queues, file uploads, and access rules."
+            },
+            year: "2025",
+            tags: {
+                pt: ["NestJS", "Angular", "Mobile", "Pagamentos"],
+                en: ["NestJS", "Angular", "Mobile", "Payments"]
+            },
+            images: [
+                "./assets/images/optimized/smartrent-real.png"
+            ],
+            links: []
+        },
+        {
+            id: "multicalculo",
+            category: "systems",
+            cover: "./assets/images/optimized/multicalculo-real.png",
+            title: {
+                pt: "MultiCálculo",
+                en: "MultiCálculo"
+            },
+            subtitle: {
+                pt: "Plataforma de cotações e cálculos para operações de seguros.",
+                en: "Quoting and calculation platform for insurance operations."
+            },
+            description: {
+                pt: "Sistema de negócio com painel Angular e API NestJS/GraphQL para centralizar cotações, cálculos, integrações e documentos. A solução combina regras de domínio, autenticação, armazenamento de arquivos e fluxos operacionais.",
+                en: "Business system with an Angular dashboard and NestJS/GraphQL API to centralize quotes, calculations, integrations, and documents. The solution combines domain rules, authentication, file storage, and operational flows."
+            },
+            year: "2025",
+            tags: {
+                pt: ["Angular", "NestJS", "GraphQL", "Seguros"],
+                en: ["Angular", "NestJS", "GraphQL", "Insurance"]
+            },
+            images: [
+                "./assets/images/optimized/multicalculo-real.png"
+            ],
+            links: []
+        },
+        {
+            id: "ninestacks",
+            category: "systems",
+            cover: "./assets/images/optimized/ninestacks-real.png",
+            title: {
+                pt: "NINEstacks",
+                en: "NINEstacks"
+            },
+            subtitle: {
+                pt: "Plataforma colaborativa de aprendizagem e projetos, desenvolvida em conjunto com a equipe da Nineworks.",
+                en: "Collaborative learning and project platform developed together with the Nineworks team."
+            },
+            description: {
+                pt: "Plataforma com autenticação, perfis, cursos, exercícios, publicação e exploração de projetos, favoritos e interação entre usuários. Atuação em conjunto com a equipe da Nineworks no desenvolvimento do produto.",
+                en: "Platform with authentication, profiles, courses, exercises, project publishing and discovery, favorites, and user interaction. Collaborative work with the Nineworks team throughout product development."
+            },
+            year: "2025",
+            tags: {
+                pt: ["Angular", "NestJS", "Educação", "Comunidade"],
+                en: ["Angular", "NestJS", "Learning", "Community"]
+            },
+            images: [
+                "./assets/images/optimized/ninestacks-real.png"
+            ],
+            links: []
+        },
+        {
+            id: "multicalculo-winbot",
+            category: "systems",
+            cover: "./assets/images/optimized/winbot-real.png",
+            title: {
+                pt: "Multicálculo Winbot",
+                en: "Multicálculo Winbot"
+            },
+            subtitle: {
+                pt: "Automação desktop para processamento de apólices em PDF.",
+                en: "Desktop automation for processing policy PDFs."
+            },
+            description: {
+                pt: "Aplicativo Electron + Angular que monitora uma pasta, identifica PDFs, coloca arquivos em fila, envia apólices automaticamente, reprocessa falhas e exibe progresso e status em tempo real.",
+                en: "Electron + Angular app that watches a folder, identifies PDFs, queues files, uploads policies automatically, retries failures, and shows progress and real-time status."
+            },
+            year: "2026",
+            tags: {
+                pt: ["Electron", "Angular", "Automação", "Filas"],
+                en: ["Electron", "Angular", "Automation", "Queues"]
+            },
+            images: [
+                "./assets/images/optimized/winbot-real.png"
+            ],
+            links: []
         }
     ]
 };

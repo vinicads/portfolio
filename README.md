@@ -4,13 +4,15 @@ Portfólio estático de Vinicius Augusto dos Santos, feito com HTML, CSS e JavaS
 
 ## O que mudou
 
-- Design completamente refeito com uma interface mais profissional e responsiva.
+- Design editorial inspirado no protótipo, com tipografia gigante, linhas técnicas, azul elétrico e estética de software moderno.
 - Tema claro e escuro com preferência salva no navegador.
-- Alternância entre português e inglês.
+- Alternância entre português e inglês, com botão visível também no mobile.
+- Hero com fluxo técnico animado, cursor customizado, ticker de tecnologias, reveal on scroll e parallax.
+- Novas seções de impacto, experiência, mapa de stack e filosofia de trabalho.
 - Projetos renderizados a partir de dados em `content.js`.
 - Galerias de projetos carregadas sob demanda para reduzir peso inicial.
 - Capas otimizadas em `assets/images/optimized`.
-- Remoção do parallax e dos fundos pesados da primeira dobra.
+- Layout responsivo para desktop e mobile, mantendo conteúdo completo em PT e EN.
 
 ## Como editar projetos
 

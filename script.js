@@ -27,21 +27,28 @@
         scrollProgress: document.querySelector("[data-scroll-progress]"),
         themeToggle: document.querySelector("[data-theme-toggle]"),
         themeIcon: document.querySelector("[data-theme-icon]"),
-        languageToggle: document.querySelector("[data-lang-toggle]"),
-        currentLanguage: document.querySelector("[data-current-lang]"),
+        languageToggles: document.querySelectorAll("[data-lang-toggle]"),
+        currentLanguageLabels: document.querySelectorAll("[data-current-lang]"),
         heroTitle: document.querySelector("[data-hero-title]"),
         heroShowcase: document.querySelector("[data-hero-showcase]"),
+        heroPipeline: document.querySelector("[data-hero-pipeline]"),
+        heroSocials: document.querySelector("[data-hero-socials]"),
         stats: document.querySelector("[data-stats]"),
         techList: document.querySelector("[data-tech-list]"),
         paths: document.querySelector("[data-paths]"),
+        experience: document.querySelector("[data-experience]"),
+        stackMap: document.querySelector("[data-stack-map]"),
         skills: document.querySelector("[data-skills]"),
         education: document.querySelector("[data-education]"),
         services: document.querySelector("[data-services]"),
         workflow: document.querySelector("[data-workflow]"),
         projectFilters: document.querySelector("[data-project-filters]"),
         projects: document.querySelector("[data-projects]"),
+        contactSection: document.querySelector("#contact"),
         whatsappLinks: document.querySelectorAll("[data-whatsapp-link]"),
         resumeLinks: document.querySelectorAll("[data-resume-link]"),
+        floatingCta: document.querySelector(".floating-cta"),
+        contactForm: document.querySelector("[data-contact-form]"),
         contactList: document.querySelector("[data-contact-list]"),
         footerSocials: document.querySelector("[data-footer-socials]"),
         footerCopy: document.querySelector("[data-footer-copy]"),
@@ -58,11 +65,59 @@
         galleryCounter: document.querySelector("[data-gallery-counter]")
     };
 
+    const LINE_ICON_PATHS = {
+        business: [
+            "M4.5 7.5h15v11h-15z",
+            "M9 7.5V5.8c0-1 .8-1.8 1.8-1.8h2.4c1 0 1.8.8 1.8 1.8v1.7",
+            "M4.5 12h15",
+            "M10 12v1.2c0 .4.3.8.8.8h2.4c.4 0 .8-.4.8-.8V12"
+        ],
+        maintenance: [
+            "M14.8 5.2a4.5 4.5 0 0 0 4.9 5l-8.8 8.8a2.3 2.3 0 0 1-3.2 0L5 16.3a2.3 2.3 0 0 1 0-3.2l8.8-8.8c.2.3.5.6 1 .9Z",
+            "M7.8 14.4l1.8 1.8"
+        ],
+        stack: [
+            "M12 4 20 8.2 12 12.4 4 8.2 12 4Z",
+            "M4 12l8 4.2 8-4.2",
+            "M4 15.8 12 20l8-4.2"
+        ],
+        search: [
+            "M11 17a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z",
+            "m16 16 4 4"
+        ],
+        map: [
+            "M4 6.5 9 4l6 2.5 5-2.5v13l-5 2.5L9 18l-5 2.5z",
+            "M9 4v14",
+            "M15 6.5v14"
+        ],
+        code: [
+            "m9 8-4 4 4 4",
+            "m15 8 4 4-4 4",
+            "m13 6-2 12"
+        ],
+        rocket: [
+            "M12 15.5 8.5 12C9.7 7.5 12.3 4.7 17.5 4.5c-.2 5.2-3 7.8-7.5 9Z",
+            "M8.5 12 6 13.2l-1.5 4.3 4.3-1.5L10 13.5",
+            "M14.5 7.5h.1",
+            "M6.5 17.5 4 20"
+        ],
+        spark: [
+            "M12 3v5",
+            "M12 16v5",
+            "M3 12h5",
+            "M16 12h5",
+            "m6.5 6.5 2.7 2.7",
+            "m14.8 14.8 2.7 2.7",
+            "m17.5 6.5-2.7 2.7",
+            "m9.2 14.8-2.7 2.7"
+        ]
+    };
+
     const revealObserver = "IntersectionObserver" in window
         ? new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add("is-visible");
+                    revealElement(entry.target);
                     revealObserver.unobserve(entry.target);
                 }
             });
@@ -75,9 +130,11 @@
         applyTheme();
         renderLanguage();
         bindEvents();
+        bindParallax();
         observeReveals();
         showInitialReveals();
         observeNavigation();
+        observeContactCta();
         updateScrollProgress();
     }
 
@@ -146,12 +203,14 @@
             applyTheme();
         });
 
-        dom.languageToggle?.addEventListener("click", () => {
+        dom.languageToggles.forEach((button) => button.addEventListener("click", () => {
             state.lang = state.lang === "pt" ? "en" : "pt";
             setStoredValue(LANGUAGE_STORAGE_KEY, state.lang);
             renderLanguage();
             observeReveals();
-        });
+        }));
+
+        dom.contactForm?.addEventListener("submit", handleContactSubmit);
 
         dom.projectFilters?.addEventListener("click", (event) => {
             const button = event.target.closest("[data-filter]");
@@ -197,6 +256,10 @@
             element.textContent = t(element.dataset.copy);
         });
 
+        document.querySelectorAll("[data-copy-placeholder]").forEach((element) => {
+            element.setAttribute("placeholder", t(element.dataset.copyPlaceholder));
+        });
+
         renderFloatingCtaIcon();
 
         document.querySelectorAll("[data-nav]").forEach((link) => {
@@ -212,14 +275,22 @@
             dom.heroTitle.append(first, second);
         }
 
-        if (dom.currentLanguage) dom.currentLanguage.textContent = state.lang.toUpperCase();
-        dom.languageToggle?.setAttribute("aria-label", state.lang === "pt" ? "Switch to English" : "Mudar para português");
+        dom.currentLanguageLabels.forEach((label) => {
+            label.textContent = state.lang.toUpperCase();
+        });
+        dom.languageToggles.forEach((button) => {
+            button.setAttribute("aria-label", state.lang === "pt" ? "Switch to English" : "Mudar para português");
+        });
         dom.menuToggle?.setAttribute("aria-label", document.body.classList.contains("menu-open") ? t("menu.close") : t("menu.open"));
 
         renderHeroShowcase();
+        renderHeroPipeline();
+        renderHeroSocials();
         renderStats();
         renderTechList();
         renderPaths();
+        renderExperience();
+        renderStackMap();
         renderSkills();
         renderEducation();
         renderServices();
@@ -239,13 +310,37 @@
     }
 
     function renderFloatingCtaIcon() {
-        const link = document.querySelector(".floating-cta");
+        const link = dom.floatingCta;
         if (!link) return;
 
         const label = t("floatingCta");
         link.setAttribute("aria-label", label);
         link.setAttribute("title", label);
         link.replaceChildren(createWhatsAppIcon());
+    }
+
+    function createLineIcon(name = "spark", className = "line-icon") {
+        const wrapper = document.createElement("span");
+        wrapper.className = className;
+        wrapper.setAttribute("aria-hidden", "true");
+
+        const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        svg.setAttribute("viewBox", "0 0 24 24");
+        svg.setAttribute("fill", "none");
+        svg.setAttribute("stroke", "currentColor");
+        svg.setAttribute("stroke-width", "1.9");
+        svg.setAttribute("stroke-linecap", "round");
+        svg.setAttribute("stroke-linejoin", "round");
+        svg.setAttribute("focusable", "false");
+
+        (LINE_ICON_PATHS[name] || LINE_ICON_PATHS.spark).forEach((pathData) => {
+            const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            path.setAttribute("d", pathData);
+            svg.append(path);
+        });
+
+        wrapper.append(svg);
+        return wrapper;
     }
 
     function createWhatsAppIcon() {
@@ -367,6 +462,49 @@
         dom.heroShowcase.replaceChildren(media, body);
     }
 
+    function renderHeroPipeline() {
+        if (!dom.heroPipeline) return;
+
+        const fragment = document.createDocumentFragment();
+        const line = document.createElement("div");
+        line.className = "pipeline-line";
+        line.setAttribute("aria-hidden", "true");
+        fragment.append(line);
+
+        (content.heroPipeline || []).forEach((step, index) => {
+            const item = document.createElement("div");
+            item.className = "pipeline-step";
+            item.style.setProperty("--step-index", index);
+
+            const dot = document.createElement("span");
+            dot.className = "pipeline-dot";
+            dot.setAttribute("aria-hidden", "true");
+
+            const label = document.createElement("strong");
+            label.textContent = localize(step.label);
+
+            item.append(dot, label);
+            fragment.append(item);
+        });
+
+        dom.heroPipeline.replaceChildren(fragment);
+    }
+
+    function renderHeroSocials() {
+        if (!dom.heroSocials) return;
+
+        const links = content.socials.slice(0, 2).map((social) => {
+            const link = document.createElement("a");
+            link.href = social.url;
+            link.target = "_blank";
+            link.rel = "noopener";
+            link.textContent = `${social.label} ↗`;
+            return link;
+        });
+
+        dom.heroSocials.replaceChildren(...links);
+    }
+
     function renderStats() {
         if (!dom.stats) return;
 
@@ -409,11 +547,10 @@
             const card = document.createElement("article");
             card.className = "path-card reveal";
             card.style.transitionDelay = `${Math.min(index * 70, 280)}ms`;
+            card.dataset.parallax = "";
+            card.dataset.parallaxSpeed = String(0.018 + index * 0.009);
 
-            const icon = document.createElement("span");
-            icon.className = "path-icon";
-            icon.textContent = path.icon;
-            icon.setAttribute("aria-hidden", "true");
+            const icon = createLineIcon(path.icon, "path-icon");
 
             const title = document.createElement("h3");
             title.textContent = localize(path.title);
@@ -438,6 +575,88 @@
         });
 
         dom.paths.replaceChildren(fragment);
+        observeReveals();
+    }
+
+    function renderExperience() {
+        if (!dom.experience) return;
+
+        dom.experience.dataset.label = t("experience.watermark");
+        const fragment = document.createDocumentFragment();
+        (content.experience || []).forEach((experience, index) => {
+            const item = document.createElement("article");
+            item.className = "experience-item reveal";
+            item.style.transitionDelay = `${Math.min(index * 80, 320)}ms`;
+            item.dataset.parallax = "";
+            item.dataset.parallaxSpeed = String(0.012 + index * 0.006);
+
+            const marker = document.createElement("span");
+            marker.className = "experience-marker";
+            marker.setAttribute("aria-hidden", "true");
+
+            const contentWrapper = document.createElement("div");
+            contentWrapper.className = "experience-content";
+
+            const meta = document.createElement("p");
+            meta.className = "experience-meta";
+            meta.textContent = `${localize(experience.period)} — ${localize(experience.role)}`;
+
+            const title = document.createElement("h3");
+            title.textContent = experience.company;
+
+            const description = document.createElement("p");
+            description.textContent = localize(experience.description);
+
+            const tags = document.createElement("div");
+            tags.className = "experience-tags";
+            localize(experience.tags || []).forEach((tag) => tags.append(createTag(tag)));
+
+            contentWrapper.append(meta, title, description, tags);
+            item.append(marker, contentWrapper);
+            fragment.append(item);
+        });
+
+        dom.experience.replaceChildren(fragment);
+        observeReveals();
+    }
+
+    function renderStackMap() {
+        if (!dom.stackMap) return;
+
+        const center = document.createElement("div");
+        center.className = "stack-center";
+        center.textContent = "Vinicius";
+
+        const orbit = document.createElement("div");
+        orbit.className = "stack-orbit";
+        orbit.setAttribute("aria-hidden", "true");
+
+        const fragment = document.createDocumentFragment();
+        fragment.append(orbit, center);
+
+        (content.stackMap || []).forEach((group, index) => {
+            const node = document.createElement("section");
+            node.className = `stack-node stack-node-${group.id || index} reveal`;
+            node.style.setProperty("--node-index", index);
+            node.style.transitionDelay = `${Math.min(index * 60, 300)}ms`;
+            node.dataset.parallax = "";
+            node.dataset.parallaxSpeed = String(0.014 + index * 0.004);
+
+            const title = document.createElement("h3");
+            title.textContent = localize(group.label);
+
+            const list = document.createElement("ul");
+            localize(group.items || []).forEach((itemText) => {
+                const item = document.createElement("li");
+                item.textContent = itemText;
+                list.append(item);
+            });
+
+            node.append(title, list);
+            fragment.append(node);
+        });
+
+        dom.stackMap.replaceChildren(fragment);
         observeReveals();
     }
 
@@ -498,6 +717,8 @@
             const card = document.createElement("article");
             card.className = "service-card reveal";
             card.style.transitionDelay = `${Math.min(index * 60, 240)}ms`;
+            card.dataset.parallax = "";
+            card.dataset.parallaxSpeed = String(0.014 + (index % 3) * 0.006);
 
             const header = document.createElement("div");
             header.className = "service-head";
@@ -544,9 +765,11 @@
             const item = document.createElement("article");
             item.className = "workflow-step reveal";
             item.style.transitionDelay = `${Math.min(index * 60, 240)}ms`;
+            item.dataset.parallax = "";
+            item.dataset.parallaxSpeed = String(0.012 + index * 0.006);
 
-            const number = document.createElement("span");
-            number.textContent = step.step;
+            const icon = createLineIcon(step.icon || "spark", "workflow-icon");
+            icon.dataset.step = step.step;
 
             const title = document.createElement("h3");
             title.textContent = localize(step.title);
@@ -554,7 +777,7 @@
             const description = document.createElement("p");
             description.textContent = localize(step.description);
 
-            item.append(number, title, description);
+            item.append(icon, title, description);
             fragment.append(item);
         });
 
@@ -605,6 +828,8 @@
             const card = document.createElement("article");
             card.className = "case-card reveal";
             card.style.transitionDelay = `${Math.min(index * 60, 240)}ms`;
+            card.dataset.parallax = "";
+            card.dataset.parallaxSpeed = String(0.01 + (index % 4) * 0.004);
 
             const media = document.createElement("div");
             media.className = "case-media";
@@ -661,6 +886,32 @@
 
         dom.projects.replaceChildren(fragment);
         observeReveals();
+    }
+
+    function handleContactSubmit(event) {
+        event.preventDefault();
+        if (!(event.currentTarget instanceof HTMLFormElement)) return;
+
+        const formData = new FormData(event.currentTarget);
+        const name = String(formData.get("name") || "").trim();
+        const email = String(formData.get("email") || "").trim();
+        const typeSelect = event.currentTarget.elements.type;
+        const type = typeSelect instanceof HTMLSelectElement
+            ? typeSelect.options[typeSelect.selectedIndex]?.textContent.trim() || String(formData.get("type") || "").trim()
+            : String(formData.get("type") || "").trim();
+        const message = String(formData.get("message") || "").trim();
+
+        const lines = [
+            t("contact.formMessageIntro"),
+            "",
+            `${t("contact.formMessageName")}: ${name}`,
+            `${t("contact.formMessageEmail")}: ${email}`,
+            `${t("contact.formMessageType")}: ${type}`,
+            `${t("contact.formMessageDetails")}: ${message}`
+        ];
+
+        const whatsappUrl = `https://api.whatsapp.com/send?phone=${content.whatsappNumber}&text=${encodeURIComponent(lines.join("\n"))}`;
+        window.open(whatsappUrl, "_blank", "noopener");
     }
 
     function renderContact() {
@@ -854,9 +1105,9 @@
         let targetY = 0;
         let textTarget = null;
         let largeTarget = null;
-        const largeCursorSelector = "h1, .section-heading h2";
-        const textCursorSelector = ".section-kicker, .button, .path-link, .project-action, .nav-panel a, .floating-cta, .theme-button, .lang-button";
-        const activeCursorSelector = "a, button, .path-card, .case-card, .skill-group, .service-card, .workflow-step, .tech-pill, .fact-card";
+        const largeCursorSelector = "h1, .section-heading h2, .philosophy-band strong";
+        const textCursorSelector = ".section-kicker, .button, .path-link, .project-action, .nav-panel a, .floating-cta, .theme-button, .lang-button, .hero-footer-line a";
+        const activeCursorSelector = "a, button, .path-card, .case-card, .skill-group, .service-card, .workflow-step, .tech-pill, .fact-card, .experience-item, .stack-node";
 
         document.body.classList.add("has-custom-cursor");
 
@@ -922,17 +1173,56 @@
         }
     }
 
+    function bindParallax() {
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+        let ticking = false;
+
+        const scheduleUpdate = () => {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(() => {
+                updateParallax();
+                ticking = false;
+            });
+        };
+
+        window.addEventListener("scroll", scheduleUpdate, { passive: true });
+        window.addEventListener("resize", scheduleUpdate);
+        updateParallax();
+    }
+
+    function revealElement(element) {
+        element.classList.add("is-visible");
+        if (!element.matches("[data-parallax]")) return;
+
+        window.setTimeout(() => {
+            if (element.isConnected) element.classList.add("is-parallax-ready");
+        }, 920);
+    }
+
+    function updateParallax() {
+        const viewportCenter = window.innerHeight / 2;
+        document.querySelectorAll("[data-parallax]").forEach((element) => {
+            const speed = Number(element.dataset.parallaxSpeed || 0);
+            const rect = element.getBoundingClientRect();
+            const elementCenter = rect.top + rect.height / 2;
+            const offset = (elementCenter - viewportCenter) * speed;
+            element.style.setProperty("--parallax-y", `${Math.max(Math.min(offset, 90), -90).toFixed(2)}px`);
+        });
+    }
+
     function observeReveals() {
         document.querySelectorAll(".reveal:not([data-observed])").forEach((item) => {
             item.dataset.observed = "true";
             if (revealObserver) revealObserver.observe(item);
-            else item.classList.add("is-visible");
+            else revealElement(item);
         });
     }
 
     function showInitialReveals() {
         document.querySelectorAll(".hero .reveal").forEach((item) => {
-            item.classList.add("is-visible");
+            revealElement(item);
         });
     }
 
@@ -940,7 +1230,9 @@
         if (!("IntersectionObserver" in window)) return;
 
         const navLinks = Array.from(document.querySelectorAll("[data-nav]"));
-        const sections = ["about", "paths", "services", "projects", "contact"]
+        const sections = navLinks
+            .map((link) => link.getAttribute("href")?.replace("#", ""))
+            .filter(Boolean)
             .map((id) => document.getElementById(id))
             .filter(Boolean);
 
@@ -957,6 +1249,29 @@
         });
 
         sections.forEach((section) => observer.observe(section));
+    }
+
+    function observeContactCta() {
+        if (!dom.floatingCta || !dom.contactSection || !("IntersectionObserver" in window)) return;
+
+        const mobileQuery = window.matchMedia("(max-width: 760px)");
+        let contactVisible = false;
+        const sync = () => {
+            dom.floatingCta.classList.toggle("is-hidden-on-contact", contactVisible && mobileQuery.matches);
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            contactVisible = entries.some((entry) => entry.isIntersecting);
+            sync();
+        }, { threshold: 0.08 });
+
+        observer.observe(dom.contactSection);
+
+        if (typeof mobileQuery.addEventListener === "function") {
+            mobileQuery.addEventListener("change", sync);
+        } else {
+            mobileQuery.addListener(sync);
+        }
     }
 
     function createTag(text) {
