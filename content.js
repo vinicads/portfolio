@@ -1,6 +1,7 @@
 /*
   Edição rápida:
-  - Textos e traduções ficam em `copy`.
+  - Dados de perfil, carreira e projetos ficam neste arquivo.
+  - Textos da interface atual ficam em `design-copy.js`; `copy` mantém a versão anterior.
   - Para adicionar um projeto, duplique um item do array `projects`,
     altere `id`, textos, capa, imagens, tags e links.
   - A página carrega apenas as capas no início; as imagens da galeria
@@ -9,14 +10,25 @@
 
 window.PORTFOLIO_CONTENT = {
     featuredProjectId: "truhail",
-    profileImage: "./assets/images/optimized/profile.jpg",
+    profileImage: "./assets/images/optimized/profile-new.png",
+    profileImageWidth: 400,
+    profileImageHeight: 400,
     resumeUrl: "./assets/files/CV_Vinicius.pdf",
+    resumeUrlEn: "./assets/files/CV_Vinicius_EN.pdf",
     whatsappNumber: "5519992806229",
     email: "vinicim.augusto@outlook.com",
     phone: "+55 (19) 99280-6229",
+    headline: {
+        pt: "Desenvolvedor Full Stack Pleno · Backend, integrações e automação",
+        en: "Mid-level Full Stack Developer · Backend, integrations and automation"
+    },
+    bio: {
+        pt: "Sou desenvolvedor de software formado em Análise e Desenvolvimento de Sistemas. Trabalho com aplicações web, desktop e mobile, APIs, integrações e automações. Minha experiência também passa pelo suporte técnico e atendimento a clientes, que ajudam a conectar o desenvolvimento às necessidades de quem usa o sistema.",
+        en: "I'm a software developer with a degree in Systems Analysis and Development. I work on web, desktop and mobile applications, APIs, integrations and automation. My experience also includes technical support and customer service, which help me connect development with the needs of the people using the software."
+    },
     location: {
-        pt: "São Paulo, Brasil",
-        en: "São Paulo, Brazil"
+        pt: "Mococa, São Paulo, Brasil",
+        en: "Mococa, São Paulo, Brazil"
     },
     socials: [
         {
@@ -33,40 +45,45 @@ window.PORTFOLIO_CONTENT = {
         }
     ],
     tech: [
+        "Node.js",
+        "NestJS",
+        "TypeScript",
+        "Angular",
+        "Delphi",
+        "Python",
+        "PHP",
+        "Electron",
+        "Capacitor",
+        "Vue.js",
+        "React",
+        "JavaScript",
         "HTML",
         "CSS",
-        "JavaScript",
-        "TypeScript",
-        "React",
-        "React Native",
-        "Angular",
-        "Vue",
-        "Next.js",
-        "Electron",
-        "Bootstrap",
-        "Node.js",
-        "Express",
-        "NestJS",
-        "GraphQL",
-        "WebRTC",
-        "Socket.IO",
-        "Redis",
-        "AWS/S3",
-        "PHP",
-        "WordPress",
-        "Elementor",
-        "Delphi",
-        "Firebird",
-        "MySQL",
-        "C#",
         "Go",
+        "Express",
+        "TypeORM",
+        "Firebird",
+        "PostgreSQL",
+        "MySQL",
+        "SQLite",
         "SQL",
+        "Redis",
+        "BullMQ",
+        "Socket.IO",
+        "WebSockets",
+        "Firebase",
         "REST APIs",
+        "PDFKit",
+        "Docker",
+        "Docker Compose",
+        "Nginx",
+        "GitHub Actions",
+        "CI/CD",
         "Git",
-        "SEO técnico",
-        "Manutenção",
-        "GameMaker",
-        "UX/UI"
+        "WordPress",
+        "Playwright",
+        "Ollama",
+        "RPA"
     ],
     stats: [
         {
@@ -192,59 +209,117 @@ window.PORTFOLIO_CONTENT = {
         {
             company: "PSZ Sistemas",
             period: {
-                pt: "2026 / Atual",
-                en: "2026 / Current"
+                pt: "Mar 2026 — Atual",
+                en: "Mar 2026 — Present"
             },
             role: {
-                pt: "Desenvolvedor",
-                en: "Developer"
+                pt: "Desenvolvedor de Software",
+                en: "Software Developer"
             },
             description: {
-                pt: "Atuação em sistemas corporativos, automações e integrações que conectam operação, dados e software legado.",
-                en: "Work on corporate systems, automations, and integrations connecting operations, data, and legacy software."
+                pt: "Desenvolvimento e evolução de sistemas em Delphi e Firebird. Integrações com WhatsApp e Firebase, dashboard gerencial, automações em Python e RPA para o Portal Postal, com melhorias a partir das necessidades dos clientes e da equipe de suporte.",
+                en: "Development and maintenance of Delphi and Firebird systems. WhatsApp and Firebase integrations, a management dashboard, Python automation and RPA for Portal Postal, with improvements informed by customers and the support team."
             },
-            tags: ["Delphi", "Firebird", "Python", "Firebase", "RPA", "ERP", "Integrations"]
+            employment: {
+                pt: "Tempo integral · Presencial · Mococa, SP",
+                en: "Full-time · On-site · Mococa, SP"
+            },
+            tags: ["Delphi", "Firebird", "Firebase", "Python", "WhatsApp", "RPA"]
         },
         {
-            company: "Software House",
-            period: "2025 / 2026",
+            company: "Trusom innovation",
+            period: {
+                pt: "Ago 2025 — Jun 2026",
+                en: "Aug 2025 — Jun 2026"
+            },
             role: {
-                pt: "Full-stack developer",
-                en: "Full-stack developer"
+                pt: "Desenvolvedor Full Stack Pleno",
+                en: "Mid-level Full Stack Developer"
             },
             description: {
-                pt: "Evolução de produtos web, APIs e interfaces para plataformas como mobilidade, seguros, suporte remoto, educação e gestão imobiliária.",
-                en: "Evolution of web products, APIs, and interfaces for platforms such as mobility, insurance, remote support, education, and property management."
+                pt: "Desenvolvimento de sistemas corporativos, seguros, contratos e benefícios integrados à folha. Aplicações web, desktop e híbridas, chats com WebSockets, componentes reutilizáveis, automações e integrações de pagamento com Mercado Pago e Asaas.",
+                en: "Development of business and insurance systems, plus contracts and benefits integrated with payroll. Web, desktop and hybrid applications, WebSocket chats, reusable components, automation and payment integrations with Mercado Pago and Asaas."
             },
-            tags: ["Angular", "NestJS", "React Native", "GraphQL", "Electron", "WebRTC", "Socket.IO"]
+            employment: {
+                pt: "Autônomo · Remoto",
+                en: "Self-employed · Remote"
+            },
+            tags: ["Angular", "NestJS", "Node.js", "PHP", "Electron", "Capacitor", "WebSockets"]
         },
         {
-            company: "Santa Casa",
-            period: "2023 / 2025",
+            company: "Trusom innovation",
+            period: {
+                pt: "Jan 2025 — Jul 2025",
+                en: "Jan 2025 — Jul 2025"
+            },
             role: {
-                pt: "Desenvolvimento de sistemas",
-                en: "Systems development"
+                pt: "Desenvolvedor Full Stack Júnior",
+                en: "Junior Full Stack Developer"
             },
             description: {
-                pt: "Criação de site institucional, CMS, banco de talentos e solicitação de prontuários para digitalizar fluxos e organizar atendimento.",
-                en: "Creation of institutional website, CMS, talent database, and medical record request system to digitize workflows and organize service."
+                pt: "Desenvolvimento e manutenção de aplicações com Angular, NestJS, Node.js, PHP e WordPress. APIs REST, integrações, RPAs, automação de documentos, processamento assíncrono e aplicações híbridas com Capacitor, incluindo deploy e sustentação em produção.",
+                en: "Development and maintenance of Angular, NestJS, Node.js, PHP and WordPress applications. REST APIs, integrations, RPA, document automation, asynchronous processing and hybrid applications with Capacitor, including deployment and production support."
+            },
+            employment: {
+                pt: "Autônomo · Remoto",
+                en: "Self-employed · Remote"
+            },
+            tags: ["Angular", "NestJS", "Node.js", "PHP", "WordPress", "Capacitor", "RPA"]
+        },
+        {
+            company: "PSZ Sistemas",
+            period: {
+                pt: "Jan 2025 — Fev 2026",
+                en: "Jan 2025 — Feb 2026"
+            },
+            role: {
+                pt: "Suporte técnico",
+                en: "Technical Support"
+            },
+            description: {
+                pt: "Atendimento remoto aos clientes, diagnóstico e resolução de problemas, reprodução de erros e apoio em configurações e atualizações. O contato com usuários e regras de negócio serviu de base para a atuação posterior no desenvolvimento.",
+                en: "Remote customer support, troubleshooting, bug reproduction and assistance with configuration and updates. Direct experience with users and business rules provided a foundation for the later move into development."
+            },
+            employment: {
+                pt: "Tempo integral · Presencial · Mococa, SP",
+                en: "Full-time · On-site · Mococa, SP"
             },
             tags: {
-                pt: ["Site institucional", "CMS", "Banco de talentos", "Prontuários", "Saúde"],
-                en: ["Institutional website", "CMS", "Talent database", "Medical records", "Healthcare"]
+                pt: ["AnyDesk", "Suporte remoto", "Diagnóstico", "Regras de negócio"],
+                en: ["AnyDesk", "Remote support", "Troubleshooting", "Business rules"]
             }
+        },
+        {
+            company: "Irmandade Da Santa Casa De Misericordia De Mococa",
+            period: {
+                pt: "Jun 2023 — Dez 2024",
+                en: "Jun 2023 — Dec 2024"
+            },
+            role: {
+                pt: "Estagiário de desenvolvimento de sistemas",
+                en: "Systems Development Intern"
+            },
+            description: {
+                pt: "Desenvolvimento e manutenção de sistemas internos com Node.js, Vue.js e NestJS. Atuação nos sistemas de solicitação de prontuários, banco de talentos e CMS do site institucional, integrando interfaces, APIs e banco de dados.",
+                en: "Development and maintenance of internal systems with Node.js, Vue.js and NestJS. Work on medical record requests, the talent pool and the institutional website CMS, connecting interfaces, APIs and databases."
+            },
+            employment: {
+                pt: "Estágio · Presencial · Mococa, SP",
+                en: "Internship · On-site · Mococa, SP"
+            },
+            tags: ["Node.js", "Vue.js", "NestJS", "Express", "CMS"]
         }
     ],
     stackMap: [
         {
             id: "frontend",
             label: "Frontend",
-            items: ["Angular", "React", "Next.js", "Vue", "TypeScript", "HTML", "CSS"]
+            items: ["Angular", "TypeScript", "Vue.js", "React", "HTML", "CSS"]
         },
         {
             id: "backend",
             label: "Backend",
-            items: ["Node.js", "NestJS", "Express", "PHP", "C#", "Go", "Delphi"]
+            items: ["Node.js", "NestJS", "TypeORM", "PHP", "Python", "Delphi"]
         },
         {
             id: "data",
@@ -252,7 +327,7 @@ window.PORTFOLIO_CONTENT = {
                 pt: "Dados",
                 en: "Data"
             },
-            items: ["MySQL", "Firebird", "SQL", "Redis", "Firebase", "S3"]
+            items: ["MySQL", "PostgreSQL", "Firebird", "SQLite", "Redis", "Firebase"]
         },
         {
             id: "automation",
@@ -260,12 +335,12 @@ window.PORTFOLIO_CONTENT = {
                 pt: "Automação",
                 en: "Automation"
             },
-            items: ["Electron", "RPA", "Workers", "WebRTC", "Socket.IO", "GraphQL"]
+            items: ["BullMQ", "RPA", "Playwright", "Socket.IO", "PDFKit", "WebSockets"]
         },
         {
             id: "infra",
             label: "Infra",
-            items: ["Git", "GitHub", "Deploy", "SEO técnico", "Performance", "Manutenção"]
+            items: ["Docker", "Docker Compose", "Nginx", "GitHub Actions", "CI/CD", "Git"]
         }
     ],
     views: {
@@ -488,8 +563,8 @@ window.PORTFOLIO_CONTENT = {
     },
     copy: {
         pt: {
-            documentTitle: "Vinicius Augusto | Full Stack, WordPress, Delphi e Manutenção",
-            metaDescription: "Portfólio de Vinicius Augusto dos Santos, desenvolvedor full stack para sites, sistemas web, WordPress, manutenção, Delphi, APIs e experiências digitais profissionais.",
+            documentTitle: "Vinicius Augusto | Desenvolvedor Full Stack Pleno",
+            metaDescription: "Vinicius Augusto dos Santos, desenvolvedor full stack em Mococa, SP. Angular, NestJS, Node.js, TypeScript, integrações, automação e evolução de sistemas.",
             nav: {
                 about: "Sobre",
                 experience: "Experiência",
@@ -512,8 +587,8 @@ window.PORTFOLIO_CONTENT = {
                 name: "Vinicius Augusto dos Santos",
                 titleStart: "Sites, sistemas",
                 titleEnd: "e automações que resolvem.",
-                role: "Desenvolvedor full stack para empresas, profissionais e equipes que precisam transformar ideia, rotina ou sistema antigo em produto digital bem acabado.",
-                lead: "Eu crio presença online, sistemas internos, melhorias em WordPress, manutenção de legado Delphi, integrações e automações com foco em clareza, velocidade e evolução simples.",
+                role: "Desenvolvedor Full Stack Pleno com foco em backend, integrações e automação.",
+                lead: "Trabalho com aplicações web, desktop e mobile, APIs e sistemas corporativos. Angular, NestJS, Node.js e TypeScript fazem parte da minha base, junto de Delphi, Python e bancos de dados.",
                 purposeTitle: "Meu propósito aqui",
                 purposeText: "Mostrar que posso pegar um problema real, organizar o caminho e entregar software publicável, bonito e fácil de manter.",
                 pointOne: "Criar sites e landing pages com visual profissional e boa conversão",
@@ -533,16 +608,16 @@ window.PORTFOLIO_CONTENT = {
             about: {
                 eyebrow: "Sobre",
                 title: "Mais que código: sistemas simples para problemas complexos.",
-                paragraphOne: "Sou formado em Análise e Desenvolvimento de Sistemas e gosto de criar software que tira tarefas manuais do caminho.",
-                paragraphTwo: "Atuo com aplicações web, sistemas corporativos, integrações, automações, infraestrutura e manutenção de software legado.",
-                paragraphThree: "Minha prioridade é entregar interfaces bonitas, rápidas e sustentáveis, com código organizado para evoluir depois.",
+                paragraphOne: "Sou desenvolvedor de software em Mococa, SP, formado em Análise e Desenvolvimento de Sistemas. Minha experiência passa por aplicações web, desktop e mobile, sistemas corporativos, seguros e pagamentos.",
+                paragraphTwo: "Desenvolvo APIs, integrações, RPAs, automações de documentos e processos assíncronos. Trabalho também com comunicação em tempo real, dashboards e manutenção de aplicações em produção.",
+                paragraphThree: "Passei pelo suporte técnico e atendimento a clientes antes de assumir o desenvolvimento na PSZ Sistemas. Esse contato ajuda a entender o problema por trás de cada pedido e a construir soluções de fácil manutenção.",
                 skillsTitle: "Habilidades",
                 educationTitle: "Formação"
             },
             experience: {
                 eyebrow: "Experiência",
                 title: "Experiência aplicada em produto real.",
-                lead: "Saúde, software house e sistemas corporativos moldaram minha base em full stack, automação e manutenção.",
+                lead: "Da Santa Casa à Trusom innovation e à PSZ Sistemas: desenvolvimento, suporte, integrações e automação em operações reais.",
                 watermark: "Experiência"
             },
             stack: {
@@ -642,8 +717,8 @@ window.PORTFOLIO_CONTENT = {
             }
         },
         en: {
-            documentTitle: "Vinicius Augusto | Full Stack, WordPress, Delphi, and Maintenance",
-            metaDescription: "Portfolio of Vinicius Augusto dos Santos, full stack developer for websites, web systems, WordPress, maintenance, Delphi, APIs, and polished digital experiences.",
+            documentTitle: "Vinicius Augusto | Mid-level Full Stack Developer",
+            metaDescription: "Vinicius Augusto dos Santos, a full stack developer in Mococa, Brazil. Angular, NestJS, Node.js, TypeScript, integrations, automation and software development.",
             nav: {
                 about: "About",
                 experience: "Experience",
@@ -666,8 +741,8 @@ window.PORTFOLIO_CONTENT = {
                 name: "Vinicius Augusto dos Santos",
                 titleStart: "Websites, systems,",
                 titleEnd: "and automations that solve.",
-                role: "Full stack developer for businesses, professionals, and teams that need to turn an idea, workflow, or old system into a polished digital product.",
-                lead: "I build online presence, internal systems, WordPress improvements, Delphi legacy maintenance, integrations, and automations focused on clarity, speed, and simple evolution.",
+                role: "Mid-level Full Stack Developer focused on backend, integrations and automation.",
+                lead: "I work on web, desktop and mobile applications, APIs and business systems. Angular, NestJS, Node.js and TypeScript are part of my core stack, alongside Delphi, Python and databases.",
                 purposeTitle: "The point of this portfolio",
                 purposeText: "To show I can take a real problem, organize the path, and deliver software that is publishable, polished, and easy to maintain.",
                 pointOne: "Create websites and landing pages with professional visuals and conversion focus",
@@ -687,16 +762,16 @@ window.PORTFOLIO_CONTENT = {
             about: {
                 eyebrow: "About",
                 title: "More than code: simple systems for complex problems.",
-                paragraphOne: "I have a degree in Systems Analysis and Development and like building software that removes manual work from the path.",
-                paragraphTwo: "I work with web apps, corporate systems, integrations, automation, infrastructure, and legacy maintenance.",
-                paragraphThree: "My priority is to deliver polished, fast, maintainable interfaces with organized code that can evolve later.",
+                paragraphOne: "I'm a software developer in Mococa, Brazil, with a degree in Systems Analysis and Development. My experience spans web, desktop and mobile applications, business systems, insurance and payments.",
+                paragraphTwo: "I develop APIs, integrations, RPA, document automation and asynchronous processes. I also work with real-time communication, dashboards and production application maintenance.",
+                paragraphThree: "I worked in technical support and customer service before moving into development at PSZ Sistemas. That experience helps me understand the problem behind each request and build maintainable solutions.",
                 skillsTitle: "Skills",
                 educationTitle: "Education"
             },
             experience: {
                 eyebrow: "Experience",
                 title: "Experience applied to real products.",
-                lead: "Healthcare, software house, and corporate systems shaped my full stack, automation, and maintenance base.",
+                lead: "From Santa Casa to Trusom innovation and PSZ Sistemas: development, support, integrations and automation in real operations.",
                 watermark: "Experience"
             },
             stack: {
@@ -832,14 +907,14 @@ window.PORTFOLIO_CONTENT = {
                 pt: "Frontend",
                 en: "Frontend"
             },
-            items: ["HTML", "CSS", "JavaScript", "TypeScript", "Vue", "React", "Angular", "Bootstrap", "Responsividade"]
+            items: ["Angular", "TypeScript", "Vue.js", "React", "JavaScript", "HTML", "CSS"]
         },
         {
             title: {
                 pt: "Backend",
                 en: "Backend"
             },
-            items: ["Node.js", "Express", "NestJS", "PHP", "C#", "Go", "REST APIs"]
+            items: ["Node.js", "NestJS", "Express", "TypeORM", "PHP", "Python", "Go", "REST APIs"]
         },
         {
             title: {
@@ -847,8 +922,8 @@ window.PORTFOLIO_CONTENT = {
                 en: "CMS and WordPress"
             },
             items: {
-                pt: ["WordPress", "Elementor", "Ajustes de temas", "Páginas institucionais", "Manutenção de conteúdo"],
-                en: ["WordPress", "Elementor", "Theme adjustments", "Institutional pages", "Content maintenance"]
+                pt: ["WordPress", "PHP", "CMS personalizados", "Manutenção de aplicações"],
+                en: ["WordPress", "PHP", "Custom CMS", "Application maintenance"]
             }
         },
         {
@@ -857,8 +932,8 @@ window.PORTFOLIO_CONTENT = {
                 en: "Delphi and legacy"
             },
             items: {
-                pt: ["Delphi", "Firebird", "Sistemas existentes", "Correções", "Evolução incremental"],
-                en: ["Delphi", "Firebird", "Existing systems", "Fixes", "Incremental evolution"]
+                pt: ["Delphi", "Object Pascal", "Firebird", "Integração com ERP", "Migração de dados"],
+                en: ["Delphi", "Object Pascal", "Firebird", "ERP integration", "Data migration"]
             }
         },
         {
@@ -867,38 +942,38 @@ window.PORTFOLIO_CONTENT = {
                 en: "Data and integrations"
             },
             items: {
-                pt: ["SQL", "MySQL", "Firebird", "Modelagem de dados", "Integrações web", "Automação de fluxos"],
-                en: ["SQL", "MySQL", "Firebird", "Data modeling", "Web integrations", "Workflow automation"]
+                pt: ["MySQL", "PostgreSQL", "SQLite", "Firebase", "WhatsApp", "Mercado Pago", "Asaas"],
+                en: ["MySQL", "PostgreSQL", "SQLite", "Firebase", "WhatsApp", "Mercado Pago", "Asaas"]
             }
         },
         {
             title: {
-                pt: "Interface e experiência",
-                en: "Interface and experience"
+                pt: "Web, desktop e mobile",
+                en: "Web, desktop and mobile"
             },
             items: {
-                pt: ["Responsividade", "UX/UI", "Acessibilidade", "Design de interfaces", "Microinterações"],
-                en: ["Responsiveness", "UX/UI", "Accessibility", "Interface design", "Microinteractions"]
+                pt: ["Electron", "Capacitor", "Componentes reutilizáveis", "Formulários dinâmicos", "Dashboards"],
+                en: ["Electron", "Capacitor", "Reusable components", "Dynamic forms", "Dashboards"]
             }
         },
         {
             title: {
-                pt: "Qualidade",
-                en: "Quality"
+                pt: "Automação e processamento",
+                en: "Automation and processing"
             },
             items: {
-                pt: ["Código limpo", "Boas práticas", "Performance", "SEO técnico", "Manutenção evolutiva", "Organização de projeto"],
-                en: ["Clean code", "Best practices", "Performance", "Technical SEO", "Product maintenance", "Project organization"]
+                pt: ["RPA", "Redis", "BullMQ", "Socket.IO", "WebSockets", "PDFKit", "Playwright"],
+                en: ["RPA", "Redis", "BullMQ", "Socket.IO", "WebSockets", "PDFKit", "Playwright"]
             }
         },
         {
             title: {
-                pt: "Ferramentas e jogos",
-                en: "Tools and games"
+                pt: "Infraestrutura e entrega",
+                en: "Infrastructure and delivery"
             },
             items: {
-                pt: ["Git", "GitHub", "GameMaker", "Pixel art 2D", "Dashboards", "Documentação"],
-                en: ["Git", "GitHub", "GameMaker", "2D pixel art", "Dashboards", "Documentation"]
+                pt: ["Docker", "Docker Compose", "Nginx", "GitHub Actions", "CI/CD", "Git", "VPS"],
+                en: ["Docker", "Docker Compose", "Nginx", "GitHub Actions", "CI/CD", "Git", "VPS"]
             }
         }
     ],
@@ -908,16 +983,22 @@ window.PORTFOLIO_CONTENT = {
                 pt: "Técnico em Desenvolvimento de Sistemas",
                 en: "Technical degree in Systems Development"
             },
-            place: "Eletrô Mococa",
-            period: "2020 - 2022"
+            place: "Eletrô Etec João Baptista De Lima Figueiredo",
+            period: {
+                pt: "Jan 2020 — Dez 2022",
+                en: "Jan 2020 — Dec 2022"
+            }
         },
         {
             title: {
                 pt: "Análise e Desenvolvimento de Sistemas",
                 en: "Systems Analysis and Development"
             },
-            place: "Fatec Mococa",
-            period: "2023 - 2024"
+            place: "Faculdade de Tecnologia de São Paulo - FATEC-SP",
+            period: {
+                pt: "Jan 2023 — Dez 2024",
+                en: "Jan 2023 — Dec 2024"
+            }
         }
     ],
     services: [
@@ -1104,6 +1185,56 @@ window.PORTFOLIO_CONTENT = {
             description: {
                 pt: "Faço a entrega com revisão, publicação, ajustes finais e espaço para manutenção evolutiva.",
                 en: "I deliver with review, publishing, final refinements, and room for ongoing maintenance."
+            }
+        }
+    ],
+    recentHighlights: [
+        {
+            id: "gerenciador-convenios",
+            title: {
+                pt: "Gerenciador de Convênios",
+                en: "Benefits Management System"
+            },
+            description: {
+                pt: "Sistema em produção para associados, fornecedores, vendas, limites, parcelas e retornos da folha. Inclui migração e conciliação de dados, relatórios financeiros e deploy automático em ambientes separados de homologação e produção.",
+                en: "Production system for members, suppliers, sales, credit limits, installments and payroll returns. Includes data migration and reconciliation, financial reports and automated deployment to separate staging and production environments."
+            },
+            stack: ["Angular", "NestJS", "TypeScript", "TypeORM", "MySQL", "Redis", "BullMQ", "Socket.IO", "PDFKit", "Docker", "GitHub Actions"],
+            role: {
+                pt: "Desenvolvimento full stack, migração de dados, implantação e automação de deploy.",
+                en: "Full stack development, data migration, deployment and release automation."
+            }
+        },
+        {
+            id: "vyntra",
+            title: {
+                pt: "Vyntra",
+                en: "Vyntra"
+            },
+            description: {
+                pt: "Base full stack reutilizável para web, desktop e mobile. Compartilha contratos entre frontend e backend e reúne componentes configuráveis, autenticação, uploads, filas e alertas em tempo real, com adapters para cada plataforma.",
+                en: "Reusable full stack foundation for web, desktop and mobile. Shares contracts across frontend and backend and provides configurable components, authentication, uploads, queues and real-time alerts, with adapters for each platform."
+            },
+            stack: ["Angular", "NestJS", "TypeScript", "TypeORM", "Redis", "BullMQ", "Socket.IO", "Electron", "Capacitor", "SQLite", "MySQL"],
+            role: {
+                pt: "Arquitetura e desenvolvimento da base full stack e dos componentes reutilizáveis.",
+                en: "Architecture and development of the full stack foundation and reusable components."
+            }
+        },
+        {
+            id: "menu-tv-erp",
+            title: {
+                pt: "Menu TV integrado ao ERP",
+                en: "ERP-integrated TV Menu"
+            },
+            description: {
+                pt: "Produtos, promoções e configurações sincronizados do ERP para menus exibidos em TVs. Cada dispositivo é vinculado por um código no primeiro acesso, e um mesmo menu pode ser usado em várias televisões.",
+                en: "Products, promotions and settings synchronized from an ERP to menus displayed on TVs. Each device is linked with a code on first access, and the same menu can be used across multiple televisions."
+            },
+            stack: ["Delphi", "Firebase", "Web", "ERP"],
+            role: {
+                pt: "Vinicius: integração do ERP em Delphi e sincronização de dados. Gabriel Souza: página de exibição e conexão com o Firebase.",
+                en: "Vinicius: Delphi ERP integration and data synchronization. Gabriel Souza: display page and Firebase connection."
             }
         }
     ],

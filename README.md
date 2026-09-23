@@ -1,70 +1,42 @@
-# Portfólio pessoal
+# Vinicius Augusto — portfólio
 
-Portfólio estático de Vinicius Augusto dos Santos, feito com HTML, CSS e JavaScript puro.
+Site estático em HTML, CSS e JavaScript, sem build ou dependências de execução.
 
-## O que mudou
+## Design e navegação
 
-- Design editorial inspirado no protótipo, com tipografia gigante, linhas técnicas, azul elétrico e estética de software moderno.
-- Tema claro e escuro com preferência salva no navegador.
-- Alternância entre português e inglês, com botão visível também no mobile.
-- Hero com fluxo técnico animado, cursor customizado, ticker de tecnologias, reveal on scroll e parallax.
-- Novas seções de impacto, experiência, mapa de stack e filosofia de trabalho.
-- Projetos renderizados a partir de dados em `content.js`.
-- Galerias de projetos carregadas sob demanda para reduzir peso inicial.
-- Capas otimizadas em `assets/images/optimized`.
-- Layout responsivo para desktop e mobile, mantendo conteúdo completo em PT e EN.
+- Apresentação pessoal com nome e foto real; paletas roxas para os temas claro e escuro.
+- Tema inicial acompanha o sistema; a escolha manual fica salva no navegador.
+- Português e inglês com preferência persistida, incluindo as descrições, os menus e o currículo correspondente.
+- Layout responsivo, navegação por teclado, link para pular ao conteúdo e respeito a movimento reduzido.
+- Parallax discreto, entrada de conteúdo ao rolar e microinterações. A rolagem continua nativa.
+- Quatro projetos em destaque; filtros e expansão dão acesso aos 11 projetos com galeria de imagens.
+- Projetos recentes apresentados em texto: Gerenciador de Convênios, Vyntra e Menu TV integrado ao ERP. Sem capturas inventadas.
+- Contato por e-mail e WhatsApp. O formulário prepara a mensagem; o visitante a revisa e envia no WhatsApp.
 
-## Como editar projetos
+## Arquivos principais
 
-Abra `content.js` e procure o array `projects`.
+- `index.html`: estrutura e conteúdo inicial.
+- `style.css`: layout, temas, componentes e breakpoints.
+- `design-copy.js`: textos da interface em português e inglês.
+- `content.js`: dados profissionais, projetos, experiências, contatos e traduções do conteúdo.
+- `script.js`: idioma, tema, filtros, galeria, contatos e navegação.
+- `custom-select.js`: seletor de projeto com teclado, validação, traduções e posicionamento adaptável.
+- `motion.js`: parallax, animações de entrada, progresso de rolagem e interações discretas.
+- `assets/fonts/`: Manrope e IBM Plex Mono locais, com licenças OFL. Nenhuma requisição ao Google Fonts durante a navegação.
+- `assets/images/optimized/profile-new.png`: foto atual.
+- `assets/files/CV_Vinicius.pdf`: currículo em português.
+- `assets/files/CV_Vinicius_EN.pdf`: currículo em inglês.
 
-Para adicionar um projeto:
+## Editar conteúdo
 
-1. Copie um objeto existente dentro de `projects`.
-2. Troque o `id` por um identificador único.
-3. Ajuste `category` para `web`, `systems` ou `game`.
-4. Informe uma `cover` leve, de preferência dentro de `assets/images/optimized`.
-5. Coloque as imagens completas em `images`.
-6. Preencha textos em português e inglês nos campos `title`, `subtitle` e `description`.
-7. Adicione links em `links`, usando `type: "external"` para site ou `type: "download"` para arquivo.
+Os dados profissionais foram atualizados com o texto de LinkedIn fornecido em setembro de 2026. As datas explícitas de cada experiência prevalecem sobre as durações relativas do LinkedIn.
 
-Exemplo resumido:
+Para adicionar um projeto, inclua um objeto em `PORTFOLIO_CONTENT.projects`, com um `id` único e os campos `category`, `cover`, `title`, `subtitle`, `description`, `year`, `tags`, `images` e `links`. Use as categorias `sites`, `systems` ou `game`. Textos traduzidos usam `{ pt: '...', en: '...' }`. `tags` pode ser um array ou um objeto com arrays PT/EN.
 
-```js
-{
-    id: "meu-projeto",
-    category: "web",
-    cover: "./assets/images/optimized/meu-projeto-cover.jpg",
-    title: {
-        pt: "Meu Projeto",
-        en: "My Project"
-    },
-    subtitle: {
-        pt: "Descrição curta do projeto.",
-        en: "Short project description."
-    },
-    description: {
-        pt: "Descrição completa em português.",
-        en: "Full description in English."
-    },
-    year: "2026",
-    tags: {
-        pt: ["Web", "Dashboard"],
-        en: ["Web", "Dashboard"]
-    },
-    images: [
-        "./assets/images/meuProjeto1.jpg",
-        "./assets/images/meuProjeto2.jpg"
-    ],
-    links: [
-        {
-            type: "external",
-            url: "https://exemplo.com"
-        }
-    ]
-}
-```
+As capas são carregadas sob demanda. As imagens completas da galeria só são solicitadas ao abrir o projeto. Links públicos usam `type: 'external'`; arquivos para download usam `type: 'download'`. Projetos sem URL pública podem manter `links: []`.
 
-## Como abrir
+Os destaques iniciais são Encontrando Fretes, SmartRent, Santa Casa e NINEstacks. A ordem é controlada por `projectOrder` em `script.js`. `recentHighlights` reúne os projetos recentes que ainda não têm capturas nesta pasta.
 
-Como é um site estático, basta abrir `index.html` no navegador.
+## Executar
+
+Abra `index.html` no navegador ou sirva a pasta com um servidor HTTP estático. Não é necessário instalar pacotes. Para publicar, envie os arquivos da pasta para um host estático, preservando os caminhos relativos de `assets/`.
